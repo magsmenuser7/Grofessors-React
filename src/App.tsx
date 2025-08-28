@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename={import.meta.env.DEV ? "/" : "/Grofessors-React"}>
+    <Router basename="/">
       <div className="App">
         <Header />
         <motion.main
