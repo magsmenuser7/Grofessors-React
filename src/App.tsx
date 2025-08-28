@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename={import.meta.env.DEV ? "/Grofessors-React" : "/"}>
       <div className="App">
         <Header />
         <motion.main
@@ -31,7 +31,7 @@ function App() {
         </motion.main>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
