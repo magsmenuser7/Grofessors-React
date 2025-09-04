@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
       icon: Mail,
       label: 'Email',
       value: 'connect@magsmen.com',
-      href: 'mailto:connect@magsmen.com'
+      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=connect@magsmen.com'
     },
     {
       icon: Phone,
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
               Let's Connect
             </h1>
             <p className="text-xl md:text-2xl text-[#6C6765] max-w-4xl mx-auto leading-relaxed">
-              Whether it's <span className="text-[#F15A29] font-semibold">collaboration</span>, <span className="text-[#F15A29] font-semibold">partnerships</span>, or new ideas — we'd love to hear from you.
+              Whether it's <span className="text-[#F15A29] font-semibold">collaboration</span>, <span className="text-[#F15A29] font-semibold">partnerships</span>, or new ideas we'd love to hear from you.
             </p>
           </motion.div>
         </div>
@@ -349,7 +349,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-[#6C6765] text-sm leading-relaxed">
-                  Located in the heart of India's innovation ecosystem, we're always open to in-person conversations and collaboration.
+                  Located in the heart of India's innovation ecosystem, we're always open to in person conversations and collaboration.
                 </p>
               </motion.div>
 
@@ -396,11 +396,13 @@ const Contact: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               The future is built by conversations. Let's start ours today.
             </h2>
-            
-            <button className="inline-flex items-center space-x-2 px-8 py-4 bg-[#F15A29] text-white font-bold rounded-full hover:bg-white hover:text-[#5A514F] hover:border-[#F15A29] border-2 border-transparent transition-all duration-300 group text-lg">
-              <span>Book a Call</span>
-              <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-            </button>
+
+            <a href="tel:+919044910449">
+              <button className="inline-flex items-center space-x-2 px-8 py-4 bg-[#F15A29] text-white font-bold rounded-full hover:bg-white hover:text-[#5A514F] hover:border-[#F15A29] border-2 border-transparent transition-all duration-300 group text-lg">
+                <span>Book a Call</span>
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              </button>
+            </a>
           </motion.div>
         </div>
       </section>

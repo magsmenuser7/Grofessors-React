@@ -32,7 +32,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white pt-20">
+    <div className="bg-white">
       {/* Hero Section */}
       <section className="py-20 lg:py-32 bg-[#F7F6F5]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -45,8 +45,8 @@ const About: React.FC = () => {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#5A514F] mb-8 leading-tight">
                 Who We Are
               </h1>
-              <p className="text-xl md:text-2xl text-[#6C6765] mb-12 leading-relaxed">
-                At <span className="text-[#F15A29] font-semibold">Grofessors Innovations Pvt Ltd</span>, we are more than an organization. We are a hub of <span className="text-[#F15A29] font-semibold">strategy</span>, <span className="text-[#F15A29] font-semibold">creativity</span>, and <span className="text-[#F15A29] font-semibold">innovation</span> — redefining what's possible and building the future of ideas.
+              <p className="text-xl md:text-2xl text-[#6C6765] mb-12 leading-relaxed text-justify ">
+                At <span className="text-[#F15A29] font-semibold">Grofessors Innovations Pvt Ltd</span>, we are more than an organization. We are a hub of <span className="text-[#F15A29] font-semibold">strategy</span>, <span className="text-[#F15A29] font-semibold">creativity</span>, and <span className="text-[#F15A29] font-semibold">innovation</span> redefining what's possible and building the future of ideas.
               </p>
               <Link
                 to="/ecosystem"
@@ -127,8 +127,8 @@ const About: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-[#5A514F] mb-8">
                 More Than a <span className="text-[#F15A29]">Company</span>
               </h2>
-              <p className="text-[#6C6765] text-lg leading-relaxed">
-                Grofessors was founded with one belief — that <span className="text-[#F15A29] font-semibold">creativity</span> and <span className="text-[#F15A29] font-semibold">strategy</span> are not opposites, but partners in shaping the future. What began as a vision has become a launchpad of ventures, each challenging conventions and delivering impact.
+              <p className="text-[#6C6765] text-lg leading-relaxed text-justify">
+                Grofessors was founded with one belief that <span className="text-[#F15A29] font-semibold">creativity</span> and <span className="text-[#F15A29] font-semibold">strategy</span> are not opposites, but partners in shaping the future. What began as a vision has become a launchpad of ventures, each challenging conventions and delivering impact.
               </p>
             </motion.div>
 
@@ -205,27 +205,9 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#5A514F] mb-8">
-              Our <span className="text-[#F15A29]">Philosophy</span>
-            </h2>
-            <p className="text-[#6C6765] text-lg max-w-4xl mx-auto leading-relaxed">
-              <span className="text-[#F15A29] font-semibold">Innovation</span> is not about doing different things — it's about seeing differently, thinking boldly, and building fearlessly. At Grofessors, every idea is a seed, every venture is a movement.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Values */}
-      <section className="py-20 lg:py-32 bg-[#F7F6F5]">
+      {/* <section className="py-20 lg:py-32 bg-[#F7F6F5]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -264,45 +246,118 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* CTA Strip */}
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-[#5A514F] to-[#675F5D] relative overflow-hidden">
-        {/* Background animation */}
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              x: ['-100%', '100%'],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-[#F15A29]/10 to-transparent"
-          />
+
+
+{/* Founder Section */}
+<section className="py-20 lg:py-28 bg-black">
+  <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    
+    {/* Title */}
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+      Meet the  <span className="text-[#F15A29]">Founder</span>
+    </h2>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      {/* Founder Left Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="flex justify-center"
+      >
+        <div className="relative w-80 h-80 rounded-xl border-2 border-white-600 hover:border-[#F15A29] bg-[#1a202c] flex items-center justify-center shadow-xl">
+          <span className="text-7xl font-extrabold text-white">SN</span>
         </div>
+      </motion.div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
+      {/* Founder Right Content */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <h3 className="text-2xl font-semibold text-white mb-6">
+          Sandeep N
+        </h3>
+
+        <p className="text-gray-300 mb-6">
+          Founder of Magsmen and visionary behind India’s most strategic brand transformations.
+        </p>
+
+        {/* Achievements */}
+        <ul className="space-y-4 text-gray-300 mb-6">
+                <li className="flex items-center space-x-3">
+                  <span className="text-white-500">★</span>
+                  <span>Founder of <strong>Magsmen</strong> Strategy led brand consulting for Indian businesses.</span>
+                </li>
+          <li className="flex items-center space-x-3">
+            <span className="text-white-500">★</span>
+            <span>Creator of <strong>InTalks Podcast</strong> & <strong>SanStrategies</strong></span>
+          </li>
+          <li className="flex items-center space-x-3">
+            <span className="text-white-500">★</span>
+            <span>Built India’s first <strong>Brand Budgeting System – MlBbs</strong></span>
+          </li>
+          {/* <li className="flex items-center space-x-3">
+            <span className="text-white-500">★</span>
+            <span>Consultant to IPL sponsors & Fortune 25 brands</span>
+          </li> */}
+          <li className="flex items-center space-x-3">
+            <span className="text-white-500">★</span>
+            <span>Recognized as <strong>Consultant of the Year 2023</strong></span>
+          </li>
+          <li className="flex items-center space-x-3">
+            <span className="text-white-500">★</span>
+            <span>8+ years of research in brand strategy</span>
+          </li>
+        </ul>
+
+        {/* Quote */}
+        <blockquote className="border-l-4 border-white-500 pl-4 italic text-gray-400 mb-6">
+          "Branding is about trust, identity, and connection. It's about building something that lives beyond you."
+        </blockquote>
+
+        {/* CTA */}
+        <a
+          href="https://www.linkedin.com/in/itsnsandeep/?trk=public-profile-badge-profile-badge-view-profile-cta&originalSubdomain=in"
+          className="inline-block bg-white hover:bg-[#F15A29] hover:text-white text-black px-6 py-3 rounded-xl font-semibold transition-colors"
+        >
+          Connect with Sandeep
+        </a>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+
+
+      {/* Philosophy */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Join us in redefining boundaries.
+            <h2 className="text-4xl md:text-5xl font-bold text-[#5A514F] mb-8">
+              Our <span className="text-[#F15A29]">Philosophy</span>
             </h2>
-            
-            <Link
-              to="/contact"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-[#F15A29] text-white font-bold rounded-full hover:bg-white hover:text-[#5A514F] hover:border-[#F15A29] border-2 border-transparent transition-all duration-300 group text-lg"
-            >
-              <span>Let's Start a Conversation</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
+            <p className="text-[#6C6765] text-lg max-w-4xl mx-auto leading-relaxed">
+              <span className="text-[#F15A29] font-semibold">Innovation</span> is not about doing different things it's about seeing differently, thinking boldly, and building fearlessly. At Grofessors, every idea is a seed, every venture is a movement.
+            </p>
           </motion.div>
         </div>
       </section>
+
+
+
+
     </div>
   );
 };

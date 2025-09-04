@@ -78,7 +78,7 @@ const Home: React.FC = () => {
   }, [testimonials.length]);
 
   return (
-    <div className="bg-white pt-14">
+    <div className="bg-white">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         {/* Background Pattern */}
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2, duration: 0.8 }}
-              className="text-xl md:text-2xl text-[#6C6765] mb-12 leading-relaxed"
+              className="text-xl md:text-lg text-[#6C6765] mb-12 leading-relaxed text-justify "
             >
               At Grofessors Innovations Pvt Ltd, we are more than a company. We are a hub of ideas, a launchpad for creativity, and a force redefining boundaries. With strategy at the core and innovation as our culture, we shape what comes next.
             </motion.p>
@@ -256,39 +256,50 @@ const Home: React.FC = () => {
               The Grofessors <span className="text-[#F15A29]">Ecosystem</span>
             </h2>
             <p className="text-[#6C6765] text-lg max-w-3xl mx-auto leading-relaxed">
-              We thrive through diverse ventures, each unique in its purpose yet united by the same DNA — strategy, creativity, and innovation.
+              We thrive through diverse ventures, each unique in its purpose yet united by the same DNA strategy, creativity, and innovation.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {featuredVentures.map((venture, index) => (
-              <motion.div
-                key={venture.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="group"
-              >
-                <Link
-                  to={`/ventures/${venture.id}`}
-                  className="block p-8 bg-white rounded-2xl hover:shadow-xl hover:border-[#F15A29] border-2 border-transparent transition-all duration-300 transform hover:-translate-y-2"
-                >
-                  <div className="w-16 h-16 bg-[#F15A29]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F15A29] transition-all duration-300">
-                    <span className="text-[#F15A29] group-hover:text-white font-bold text-2xl transition-colors duration-300">
-                      {venture.name.charAt(0)}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#5A514F] mb-3 group-hover:text-[#F15A29] transition-colors duration-300">
-                    {venture.name}
-                  </h3>
-                  <p className="text-[#6C6765] text-sm leading-relaxed">
-                    {venture.tagline}
-                  </p>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+  {featuredVentures.map((venture, index) => (
+    <motion.div
+      key={venture.id}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.6 }}
+      className="group"
+    >
+      <Link
+        // to={`/ventures/${venture.id}`}
+        to={``}
+        className="block p-8 bg-white rounded-2xl hover:shadow-xl hover:border-[#F15A29] border-2 border-transparent transition-all duration-300 transform hover:-translate-y-2"
+      >
+        {/* Logo container */}
+        <div className="w-30 h-16  rounded-2xl flex items-start justify-start mb-6 transition-all duration-300">
+          {/* ✅ Keep logo original color (no hover filter) */}
+          <img
+            src={venture.logo}
+            alt={`${venture.name} logo`}
+            className="h-10 object-contain rounded-lg"
+          />
+        </div>
+
+        {/* Venture Name */}
+        <h3 className="text-xl font-bold text-[#5A514F] mb-3 group-hover:text-[#F15A29] transition-colors duration-300">
+          {venture.name}
+        </h3>
+
+        {/* Venture Tagline */}
+        <p className="text-[#6C6765] text-sm leading-relaxed">
+          {venture.tagline}
+        </p>
+      </Link>
+    </motion.div>
+  ))}
+</div>
+
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

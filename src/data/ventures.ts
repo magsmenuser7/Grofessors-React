@@ -1,4 +1,11 @@
 import { Venture } from '../types';
+import magsmenLogo from "../components/assets/logos/magsmen-new-version.png";
+import mibbsLogo from "../components/assets/logos/mibbs.png";
+import sanstratagieslogo from "../components/assets/logos/san-log.png";
+import intalkslogo from "../components/assets/logos/intalks-logo.png";
+import schoolofstrategylogo from "../components/assets/logos/school-of-strategy.png";
+import Gamanamlogo1 from "../components/assets/logos/Gamanam-logo-1.png";
+
 
 
 
@@ -8,8 +15,8 @@ export const ventures: Venture[] = [
     name: 'Magsmen',
     tagline: 'Strategy-led brand consulting for Indian businesses to stand out, scale, and build legacy.',
     shortDescription: 'From positioning and identity to rebrands and go-to-market, Magsmen builds brand systems that create trust and drive growth. Engagements span startups to Fortune-scale enterprises, with a focus on measurable outcomes and strategic clarity.',
-    heroImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    logo: '/logos/magsmen-new-version.png',
+    heroImage: '',
+    logo: magsmenLogo,
     primaryCTA: {
       label: 'Visit Magsmen.com',
       url: 'https://magsmen.com'
@@ -73,11 +80,11 @@ export const ventures: Venture[] = [
     name: 'School of Strategy',
     tagline: 'Workshops that turn teams into brand builders.',
     shortDescription: 'Immersive learning sprints on positioning, storytelling, pricing logic, and go-to-market. Built for founders, leadership, and in-house teams who want repeatable strategic frameworks.',
-    heroImage: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    logo: '/logos/school-of-strategy-logo.svg',
+    heroImage: '',
+    logo: schoolofstrategylogo,
     primaryCTA: {
       label: 'Explore Workshops',
-      url: '#contact'
+      url: '#'
     },
     kpis: [
       { label: 'Workshops Delivered', value: '50+' },
@@ -118,7 +125,7 @@ export const ventures: Venture[] = [
     tagline: "India's First Brand Budgeting System - Clarity on where every brand rupee should go.",
     shortDescription: 'MIbbs is a structured brand budgeting system that allocates spend across identity, experience, and activation with unit-economics discipline. Replace guesswork with a model that links investment to outcomes.',
     heroImage: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    logo: '/logos/mibbs-logo.svg',
+    logo: mibbsLogo,
     primaryCTA: {
       label: 'Start Budgeting',
       url: '#contact'
@@ -162,7 +169,7 @@ export const ventures: Venture[] = [
     tagline: "India's first marketplace podcast for creators and influencers.",
     shortDescription: '"InTalks goes beyond being just another podcast — it’s a growing movement that bridges creators, brands, and audiences through strategic storytelling. With 16.6M YouTube views, 17.6k+ Instagram views, and a thriving 1 lakh+ community, InTalks has quickly become a hub where conversations spark ideas and collaborations. With 28 impactful episodes already shaping discussions, the platform continues to disrupt how India connects, engages, and builds influence in the creator economy."',
     heroImage: 'https://images.pexels.com/photos/7971016/pexels-photo-7971016.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    logo: '/logos/intalks-logo.svg',
+    logo: intalkslogo,
     primaryCTA: {
       label: 'Watch on YouTube',
       url: 'https://youtu.be/EXf7R4PePmk?si=P4MhJboR-7CIHtQu'
@@ -212,7 +219,7 @@ export const ventures: Venture[] = [
     tagline: 'A learning channel to build brands without heavy ads.',
     shortDescription: 'Founder-led insights, playbooks, and breakdowns on building brands that outlast campaigns. Practical, grounded, and built for the Indian context.',
     heroImage: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    logo: '/logos/sanstrategies-logo.svg',
+    logo: sanstratagieslogo,
     primaryCTA: {
       label: 'Work With Us',
       url: '/contact'
@@ -257,7 +264,7 @@ export const ventures: Venture[] = [
     tagline: "Telugu's first mother's marketplace to share experiences with the next generation.",
     shortDescription: 'A living community on Instagram where mothers\' voices, wisdom, and stories shape culture. A space for empathy, learning, and legacy.',
     heroImage: 'https://images.pexels.com/photos/1794089/pexels-photo-1794089.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    logo: '/logos/gamanam-logo.svg',
+    logo: Gamanamlogo1,
     primaryCTA: {
       label: 'Join Live',
       url: '#'

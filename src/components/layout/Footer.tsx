@@ -8,12 +8,12 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const ecosystemLinks = [
-    { name: 'Magsmen', path: '/ventures/magsmen' },
-    { name: 'InTalks', path: '/ventures/intalks' },
-    { name: 'MIbbs', path: '/ventures/mibbs' },
-    { name: 'School of Strategy', path: '/ventures/school-of-strategy' },
-    { name: 'SanStrategies', path: '/ventures/sanstrategies' },
-    { name: 'Gamanam', path: '/ventures/gamanam' }
+    { name: 'Magsmen', path: 'https://magsmen.com/' },
+    { name: 'InTalks', path: 'https://intalks.in/' },
+    { name: 'MIbbs', path: 'https://mibbs.ai/' },
+    { name: 'School of Strategy', path: '' },
+    { name: 'SanStrategies', path: 'https://sanstrategies.com/' },
+    { name: 'Gamanam', path: 'https://youtube.com/@gamanambyrs?si=XO77nsVmDygwZreP' }
   ];
 
   const socialLinks = [
@@ -54,11 +54,15 @@ const Footer: React.FC = () => {
         </motion.div>
 
         {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-3 mb-6">
-            <img src={Logo} alt="Grofessors Logo" className="w-full h-10 rounded-lg" />
+            <img
+              src={Logo}
+              alt="Grofessorslogo"
+              className="w-48 h-12 object-contain rounded-lg"
+            />
               {/* <div className="w-10 h-10 bg-[#F15A29] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">G</span>
               </div>
@@ -142,6 +146,27 @@ const Footer: React.FC = () => {
               ))}
             </ul>
           </div>
+
+
+  <div>
+    <h4 className="text-white font-semibold mb-6">Contact</h4>
+    <ul className="space-y-3 text-[#675F5D]">
+      <li className="hover:text-white transition-colors duration-300">
+        4th Floor, Icon Spaces, 6th Lane,
+        Brodipet, Guntur,
+        Andhra Pradesh 522002
+      </li>
+      <li className="hover:text-white transition-colors duration-300">
+        <a href="tel:9044910449" className="underline">+91 9044910449</a>
+      </li>
+      <li className="hover:text-white transition-colors duration-300">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=connect@magsmen.com" className="underline">connect@magsmen.com</a>
+      </li>
+    </ul>
+  </div>
+
+          
+         
         </div>
 
         {/* Bottom Bar */}

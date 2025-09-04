@@ -20,13 +20,23 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const ecosystemItems = [
-    { name: 'Magsmen', path: '/ventures/magsmen', description: 'Brand Consulting' },
-    { name: 'InTalks', path: '/ventures/intalks', description: 'Podcast' },
-    { name: 'MIbbs', path: '/ventures/mibbs', description: 'Brand Budgeting' },
-    { name: 'School of Strategy', path: '/ventures/school-of-strategy', description: 'Brand Lab' },
-    { name: 'SanStrategies', path: '/ventures/sanstrategies', description: 'Advisory' },
-    { name: 'Gamanam', path: '/ventures/gamanam', description: 'Community' }
+  // const ecosystemItems = [
+  //   { name: 'Magsmen', path: '/ventures/magsmen', description: 'Brand Consulting' },
+  //   { name: 'InTalks', path: '/ventures/intalks', description: 'Podcast' },
+  //   { name: 'MIbbs', path: '/ventures/mibbs', description: 'Brand Budgeting' },
+  //   { name: 'School of Strategy', path: '/ventures/school-of-strategy', description: 'Brand Lab' },
+  //   { name: 'SanStrategies', path: '/ventures/sanstrategies', description: 'Advisory' },
+  //   { name: 'Gamanam', path: '/ventures/gamanam', description: 'Community' }
+  // ];
+
+
+    const ecosystemItems = [
+    { name: 'Magsmen', path: 'https://magsmen.com/', description: 'Brand Consulting' },
+    { name: 'InTalks', path: 'https://intalks.in/', description: 'Podcast' },
+    { name: 'MIbbs', path: 'https://mibbs.ai/', description: 'Brand Budgeting' },
+    { name: 'School of Strategy', path: '', description: 'Brand Lab' },
+    { name: 'SanStrategies', path: 'https://sanstrategies.com/', description: 'Advisory' },
+    { name: 'Gamanam', path: 'https://youtube.com/@gamanambyrs?si=XO77nsVmDygwZreP', description: 'Community' }
   ];
 
   const navItems = [
@@ -39,8 +49,8 @@ const Header: React.FC = () => {
 
   return (
     <motion.header
-      className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md bg-black/90  ${
-        isScrolled ? 'shadow-md bg-black/90 backdrop-blur-lg' : 'bg-transparent'
+      className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md   ${
+        isScrolled ? 'shadow-md bg-white z-50' : 'bg-transparent'
       }py-6`}
       initial={{ y: -100 }}
       animate={{ y:0 }}
@@ -50,7 +60,11 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-          <img src={Logo} alt="Grofessors Logo" className="w-full h-10 rounded-lg" />
+            <img
+              src={Logo}
+              alt="Grofessors Logo"
+              className="w-48 h-12 object-contain rounded-lg"
+            />
             {/* <div className="w-10 h-10 bg-[#F15A29] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">G</span>
               <img src={Logo} alt="Grofessors Logo" className="w-full h-10 rounded-lg" />
@@ -63,26 +77,26 @@ const Header: React.FC = () => {
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.hasDropdown ? (
-                  <div 
+                  <div
                     className="relative"
                     onMouseEnter={() => setIsEcosystemOpen(true)}
                     onMouseLeave={() => setIsEcosystemOpen(false)}
                   >
-                    <button className="flex items-center space-x-1 text-white hover:text-[#F15A29] transition-colors duration-300 group">
+                    <button className="flex items-center space-x-1 text-gray-500 hover:text-[#F15A29] transition-colors duration-300 group">
                       <span className="relative">
                         {item.name}
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F15A29] transition-all duration-300 group-hover:w-full"></span>
                       </span>
                       <ChevronDown className="w-4 h-4" />
                     </button>
-                    
+
                     <AnimatePresence>
                       {isEcosystemOpen && (
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="absolute top-full left-0 mt-2 w-64 bg-black border border-[#675F5D] rounded-lg shadow-xl"
+                          className="absolute top-full left-0 mt-2 w-64 bg-gray-100 border border-[#675F5D] rounded-lg shadow-xl"
                         >
                           <div className="py-2">
                             {ecosystemItems.map((ecosystemItem) => (
@@ -91,7 +105,7 @@ const Header: React.FC = () => {
                                 to={ecosystemItem.path}
                                 className="block px-4 py-3 hover:bg-[#675F5D]/20 transition-colors duration-200"
                               >
-                                <div className="text-white font-medium">{ecosystemItem.name}</div>
+                                <div className="text-black font-medium">{ecosystemItem.name}</div>
                                 <div className="text-[#675F5D] text-sm">{ecosystemItem.description}</div>
                               </Link>
                             ))}
@@ -103,16 +117,15 @@ const Header: React.FC = () => {
                 ) : item.isButton ? (
                   <Link
                     to={item.path}
-                    className="px-6 py-2 border-2 border-white text-white hover:bg-[#F15A29] hover:border-[#F15A29] hover:text-black transition-all duration-300 rounded-full font-medium"
+                    className="px-6 py-2 border-2 border-gray-500 text-gray-500 hover:bg-[#F15A29] hover:border-[#F15A29] hover:text-black transition-all duration-300 rounded-full font-medium"
                   >
                     {item.name}
                   </Link>
                 ) : (
                   <Link
                     to={item.path}
-                    className={`text-white hover:text-[#F15A29] transition-colors duration-300 relative group ${
-                      location.pathname === item.path ? 'text-[#F15A29]' : ''
-                    }`}
+                    className={`text-gray-500 hover:text-[#F15A29] transition-colors duration-300 relative group ${location.pathname === item.path ? 'text-[#F15A29]' : ''
+                      }`}
                   >
                     {item.name}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F15A29] transition-all duration-300 group-hover:w-full"></span>
@@ -122,10 +135,11 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-white hover:text-[#F15A29] transition-colors duration-300"
+            className="lg:hidden text-white hover:text-[#F15A29] transition-colors duration-300 z-50 bg-gray-500"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -138,16 +152,16 @@ const Header: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden overflow-hidden"
+              className="lg:hidden overflow-hidden bg-gray-500"
             >
-              <nav className="py-4 space-y-4">
+              <nav className=" p-3 py-4 space-y-4">
                 {navItems.map((item) => (
                   <div key={item.name}>
                     {item.hasDropdown ? (
                       <div>
                         <Link
                           to={item.path}
-                          className="block text-white hover:text-[#F15A29] transition-colors duration-300 py-2"
+                          className="block text-white hover:text-[#F15A29] bg-gray-200 transition-colors duration-300 py-2 z-50"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {item.name}
@@ -157,7 +171,7 @@ const Header: React.FC = () => {
                             <Link
                               key={ecosystemItem.name}
                               to={ecosystemItem.path}
-                              className="block text-[#675F5D] hover:text-white transition-colors duration-300 py-1"
+                              className="block text-[#fff] hover:text-white transition-colors duration-300 py-1 z-50"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               {ecosystemItem.name}
@@ -168,11 +182,10 @@ const Header: React.FC = () => {
                     ) : (
                       <Link
                         to={item.path}
-                        className={`block py-2 transition-colors duration-300 ${
-                          item.isButton
+                        className={`block py-2 transition-colors duration-300 ${item.isButton
                             ? 'text-[#F15A29] font-medium'
                             : 'text-white hover:text-[#F15A29]'
-                        }`}
+                          }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
