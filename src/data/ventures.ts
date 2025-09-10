@@ -128,7 +128,7 @@ export const ventures: Venture[] = [
     logo: mibbsLogo,
     primaryCTA: {
       label: 'Start Budgeting',
-      url: '#contact'
+      url: 'https://mibbs.ai/'
     },
     kpis: [
       { label: 'Businesses Guided', value: '500+' },
@@ -172,11 +172,11 @@ export const ventures: Venture[] = [
     logo: intalkslogo,
     primaryCTA: {
       label: 'Watch on YouTube',
-      url: 'https://youtu.be/EXf7R4PePmk?si=P4MhJboR-7CIHtQu'
+      url: 'https://intalks.in/'
     },
     secondaryCTA: {
       label: 'Become a Guest',
-      url: '/contact'
+      url: 'https://intalks.in/'
     },
     kpis: [
       { label: 'YouTube Views', value: '16.6M' },
@@ -222,7 +222,7 @@ export const ventures: Venture[] = [
     logo: sanstratagieslogo,
     primaryCTA: {
       label: 'Work With Us',
-      url: '/contact'
+      url: 'https://sanstrategies.com/'
     },
     kpis: [
       { label: 'Weekly Drops', value: 'Active' },
@@ -267,7 +267,7 @@ export const ventures: Venture[] = [
     logo: Gamanamlogo1,
     primaryCTA: {
       label: 'Join Live',
-      url: '#'
+      url: 'https://www.youtube.com/@gamanambyrs'
     },
     secondaryCTA: {
       label: 'Follow on Instagram',

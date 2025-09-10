@@ -270,13 +270,14 @@ const Home: React.FC = () => {
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className="group"
     >
-      <Link
-        // to={`/ventures/${venture.id}`}
-        to={``}
+      <a
+        href={venture.primaryCTA.url}
+        target="_blank"
+        rel="noopener noreferrer"
         className="block p-8 bg-white rounded-2xl hover:shadow-xl hover:border-[#F15A29] border-2 border-transparent transition-all duration-300 transform hover:-translate-y-2"
       >
         {/* Logo container */}
-        <div className="w-30 h-16  rounded-2xl flex items-start justify-start mb-6 transition-all duration-300">
+        <div className="w-30 h-16 rounded-2xl flex items-start justify-start mb-6 transition-all duration-300">
           {/* ✅ Keep logo original color (no hover filter) */}
           <img
             src={venture.logo}
@@ -294,10 +295,11 @@ const Home: React.FC = () => {
         <p className="text-[#6C6765] text-sm leading-relaxed">
           {venture.tagline}
         </p>
-      </Link>
+      </a>
     </motion.div>
   ))}
 </div>
+
 
 
 

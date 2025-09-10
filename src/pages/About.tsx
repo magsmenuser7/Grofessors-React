@@ -324,7 +324,7 @@ const About: React.FC = () => {
 
         {/* CTA */}
         <a
-          href="https://www.linkedin.com/in/itsnsandeep/?trk=public-profile-badge-profile-badge-view-profile-cta&originalSubdomain=in"
+          href="https://www.linkedin.com/in/itsnsandeep/?trk=public-profile-badge-profile-badge-view-profile-cta&originalSubdomain=in" target='_blank'
           className="inline-block bg-white hover:bg-[#F15A29] hover:text-white text-black px-6 py-3 rounded-xl font-semibold transition-colors"
         >
           Connect with Sandeep
