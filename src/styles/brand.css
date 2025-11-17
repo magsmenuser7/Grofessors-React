@@ -1,0 +1,66 @@
+:root {
+  --brand-red: #C8102E;
+  --brand-yellow: #F8C300;
+  --brand-gold: #D6AF37;
+  --brand-green: #2A7D46;
+  --white: #FFFFFF;
+  --black: #0D0D0D;
+
+  --success: #2A7D46;
+  --warning: #F4A300;
+  --danger: #E02F2F;
+  --muted: #6B7280;
+  --surface-100: #F9FAFB;
+  --surface-200: #E5E7EB;
+
+  --gradient-sunrise: linear-gradient(135deg, #F8C300 0%, #FFD95E 100%);
+  --gradient-spice-red: linear-gradient(135deg, #C8102E 0%, #E02F2F 100%);
+  --gradient-gold-glow: linear-gradient(135deg, #D6AF37 0%, #FBE9A6 100%);
+  --gradient-green-mist: linear-gradient(135deg, #2A7D46 0%, #6FCF97 100%);
+  --gradient-dashboard-warm: linear-gradient(135deg, #FFFDF2 0%, #FFF4C6 100%);
+
+  --radius: 8px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+@layer utilities {
+  .gradient-sunrise {
+    background: var(--gradient-sunrise);
+  }
+
+  .gradient-spice-red {
+    background: var(--gradient-spice-red);
+  }
+
+  .gradient-gold-glow {
+    background: var(--gradient-gold-glow);
+  }
+
+  .gradient-green-mist {
+    background: var(--gradient-green-mist);
+  }
+
+  .gradient-dashboard-warm {
+    background: var(--gradient-dashboard-warm);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+}

@@ -63,3 +63,77 @@ export interface TeamMember {
   bio: string;
   linkedinUrl: string;
 }
+
+
+
+
+
+
+
+// ====================================TDH ECOMMERCE UI SYSTEM========================
+
+export type UserRole = 'customer' | 'distributor' | 'logistics' | 'admin';
+
+export interface User {
+  id: string;
+  email: string;
+  role: UserRole;
+  name: string;
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+  stock: number;
+  unit: string;
+}
+
+export interface Order {
+  id: string;
+  customerId: string;
+  distributorId?: string;
+  logisticsId?: string;
+  items: OrderItem[];
+  status: OrderStatus;
+  total: number;
+  address: string;
+  createdAt: string;
+  estimatedDelivery?: string;
+}
+
+export interface OrderItem {
+  productId: string;
+  productName: string;
+  quantity: number;
+  price: number;
+}
+
+export type OrderStatus =
+  | 'pending'
+  | 'accepted'
+  | 'preparing'
+  | 'ready_for_pickup'
+  | 'picked_up'
+  | 'out_for_delivery'
+  | 'delivered'
+  | 'cancelled';
+
+export interface Distributor {
+  id: string;
+  name: string;
+  location: string;
+  rating: number;
+  activeOrders: number;
+  completedOrders: number;
+}
+
+export interface KPIMetric {
+  label: string;
+  value: string | number;
+  change?: number;
+  trend?: 'up' | 'down' | 'neutral';
+}
