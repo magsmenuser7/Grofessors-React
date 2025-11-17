@@ -32,10 +32,10 @@ const featuredProducts: Product[] = [
   },
   {
     id: '3',
-    name: 'Ground Nuts',
+    name: 'Fried Gramdall',
     description: 'Pure turmeric powder for authentic flavor',
     price: 85,
-    image: Groundnuts1,
+    image: TenaliDoubleHorseMoongChilkaDall,
     category: 'Spices',
     stock: 8,
     unit: '500g',
@@ -143,7 +143,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {featuredProducts.map((product) => (
             <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
           ))}
