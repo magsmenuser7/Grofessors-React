@@ -3,44 +3,49 @@ import { Button } from '../../components/tdhecommercepages/Button';
 import { Card } from '../../components/tdhecommercepages/Card';
 import { ProductCard } from '../../components/tdhecommercepages/ProductCard';
 import type { Product } from '../../types';
+import TenaliDoubleHorseFriedGramdall from '../../components/assets/logos/tenalidoublehorse/Tenali-Double-Horse-FriedGram-dall.webp'
+import TenaliDoubleHorseMoongChilkaDall from '../../components/assets/logos/tenalidoublehorse/Tenali-Double-Horse-Moong-Chilka-Dall.webp'
+import Groundnuts1 from '../../components/assets/logos/tenalidoublehorse/Groundnuts1.webp'
+import TenaliDoublehorseMoongWhole from '../../components/assets/logos/tenalidoublehorse/Tenali-Double-horse-Moong-Whole.webp'
+
 
 const featuredProducts: Product[] = [
   {
     id: '1',
-    name: 'Premium Atta',
+    name: 'Moong Chilka Dall',
     description: 'Stone ground whole wheat flour for soft rotis',
     price: 120,
-    image: 'https://images.pexels.com/photos/1756055/pexels-photo-1756055.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: TenaliDoubleHorseFriedGramdall,
     category: 'Flour',
     stock: 50,
     unit: 'kg',
   },
   {
     id: '2',
-    name: 'Basmati Rice',
+    name: 'Fried Gramdall',
     description: 'Premium aged basmati rice with authentic aroma',
     price: 180,
-    image: 'https://images.pexels.com/photos/315938/pexels-photo-315938.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: TenaliDoubleHorseMoongChilkaDall,
     category: 'Rice',
     stock: 35,
     unit: 'kg',
   },
   {
     id: '3',
-    name: 'Turmeric Powder',
+    name: 'Ground Nuts',
     description: 'Pure turmeric powder for authentic flavor',
     price: 85,
-    image: 'https://images.pexels.com/photos/7658392/pexels-photo-7658392.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: Groundnuts1,
     category: 'Spices',
     stock: 8,
     unit: '500g',
   },
   {
     id: '4',
-    name: 'Pulses Mix',
+    name: 'Moong Whole',
     description: 'Healthy mix of lentils and pulses',
     price: 95,
-    image: 'https://images.pexels.com/photos/4519881/pexels-photo-4519881.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: TenaliDoublehorseMoongWhole,
     category: 'Pulses',
     stock: 42,
     unit: 'kg',

@@ -58,22 +58,22 @@ export function Navigation({ role, currentPage, onNavigate }: NavigationProps) {
   }[role];
 
   return (
-    <nav className="bg-white border-b border-[#E5E7EB] sticky top-0 z-50">
+    <nav className="bg-white border-b border-[#E5E7EB] sticky md:sticky lg:sticky top-0 z-50 fixed py-6">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-[#C8102E] to-[#E02F2F] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">TDH</span>
             </div>
-            <span className="font-bold text-xl text-[#0D0D0D]">Tenali Double Horse</span>
+            <span className="font-bold text-md md:text-xl  lg:text-xl text-[#0D0D0D]">Tenali Double Horse</span>
           </div>
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 md:gap-2 lg:gap-2 px-3">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`flex items-center gap-2 px-2 md:px-4 lg:px-4 py-2 rounded-lg font-medium transition-all ${
                   currentPage === item.id
                     ? 'bg-gradient-to-r from-[#C8102E] to-[#E02F2F] text-white'
                     : 'text-[#6B7280] hover:bg-[#F9FAFB]'
