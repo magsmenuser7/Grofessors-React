@@ -101,7 +101,7 @@ function App() {
           <Route path="ventures/:id" element={<VentureDetail />} />
           <Route path="insights" element={<Insights />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="tdhretailcanvas" element={<TDHRetailCanvas />} />
+          <Route path="tdh-retail-canvas" element={<TDHRetailCanvas />} />
         </Route>
 
         {/* TDH PROTEIN SITE */}
