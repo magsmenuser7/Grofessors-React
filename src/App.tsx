@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // MAIN PAGES
@@ -11,7 +11,7 @@ import Ecosystem from './pages/Ecosystem';
 import VentureDetail from './pages/VentureDetail';
 import Insights from './pages/Insights';
 import Contact from './pages/Contact';
-import TdhProteinDashboard from './pages/TdhProteinDashboard';
+import TDHRetailCanvas from './pages/TDHRetailCanvas';
 
 // TDH PAGES
 import Navigation from './components/tdhecommercepages/Navigation';
@@ -31,7 +31,26 @@ import { ChairmanDashboard } from './pages/admin/ChairmanDashboard';
 import { ITMonitoring } from './pages/admin/ITMonitoring';
 
 import type { UserRole } from './types';
+import { Outlet } from 'react-router-dom';
 
+// ------------------ MAIN LAYOUT ------------------
+function MainLayout() {
+  return (
+    <>
+      <Header />
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Outlet />
+      </motion.main>
+      <Footer />
+    </>
+  );
+}
+
+// ------------------ APP MAIN ----------------------
 function App() {
   const [currentRole, setCurrentRole] = useState<UserRole>('customer');
   const [currentPage, setCurrentPage] = useState('home');
@@ -44,36 +63,26 @@ function App() {
   const renderTdhPage = () => {
     if (currentRole === 'customer') {
       switch (currentPage) {
-        case 'home':
-          return <HomePage onNavigate={setCurrentPage} />;
-        case 'products':
-          return <ProductsPage />;
+        case 'home': return <HomePage onNavigate={setCurrentPage} />;
+        case 'products': return <ProductsPage />;
         case 'orders':
-        case 'profile':
-          return <OrderTrackingPage />;
-        default:
-          return <HomePage onNavigate={setCurrentPage} />;
+        case 'profile': return <OrderTrackingPage />;
+        default: return <HomePage onNavigate={setCurrentPage} />;
       }
     }
 
     if (currentRole === 'distributor') return <DistributorDashboard />;
     if (currentRole === 'logistics') return <LogisticsDashboard />;
+
     if (currentRole === 'admin') {
       switch (currentPage) {
-        case 'dashboard':
-          return <AdminDashboard />;
-        case 'chairman':
-          return <ChairmanDashboard />;
-        case 'inventory':
-          return <InventoryManagement />;
-        case 'support':
-          return <CustomerSupport />;
-        case 'taxation':
-          return <TaxationManagement />;
-        case 'it-monitoring':
-          return <ITMonitoring />;
-        default:
-          return <AdminDashboard />;
+        case 'dashboard': return <AdminDashboard />;
+        case 'chairman': return <ChairmanDashboard />;
+        case 'inventory': return <InventoryManagement />;
+        case 'support': return <CustomerSupport />;
+        case 'taxation': return <TaxationManagement />;
+        case 'it-monitoring': return <ITMonitoring />;
+        default: return <AdminDashboard />;
       }
     }
 
@@ -83,42 +92,39 @@ function App() {
   return (
     <Router basename={import.meta.env.DEV ? "/Grofessors-React" : "/"}>
       <Routes>
-        {/* MAIN SITE ROUTES */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Header />
-              <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-                <Routes>
-                  <Route index element={<Home />} />
-                  <Route path="about" element={<About />} />
-                  <Route path="ecosystem" element={<Ecosystem />} />
-                  <Route path="ventures/:id" element={<VentureDetail />} />
-                  <Route path="insights" element={<Insights />} />
-                  <Route path="contact" element={<Contact />} />
-                  <Route path="tdh-protein-market-opportunity" element={<TdhProteinDashboard />} />
-                </Routes>
-              </motion.main>
-              <Footer />
-            </>
-          }
-        />
+
+        {/* MAIN PAGE GROUP WITH LAYOUT */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="ecosystem" element={<Ecosystem />} />
+          <Route path="ventures/:id" element={<VentureDetail />} />
+          <Route path="insights" element={<Insights />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="tdhretailcanvas" element={<TDHRetailCanvas />} />
+        </Route>
 
         {/* TDH PROTEIN SITE */}
         <Route
           path="/tenali-double-horse/*"
           element={
             <div className="min-h-screen bg-[#F9FAFB] flex flex-col">
-              <Navigation role={currentRole} currentPage={currentPage} onNavigate={setCurrentPage} />
-              <div className="flex-1 pb-8">{renderTdhPage()}</div>
-              <FooterSection currentRole={currentRole} onRoleChange={handleRoleChange} />
+              <Navigation
+                role={currentRole}
+                currentPage={currentPage}
+                onNavigate={setCurrentPage}
+              />
+              <div className="flex-1 pb-8">
+                {renderTdhPage()}
+              </div>
+              <FooterSection
+                currentRole={currentRole}
+                onRoleChange={handleRoleChange}
+              />
             </div>
           }
         />
 
-        {/* Redirect unknown paths */}
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
