@@ -18,7 +18,7 @@ import {
   Target // Icon for objectives in Timeline
 } from 'lucide-react';
 
-const TDHRetailCanvas = () => {
+const TdhRetailStrategyCanvas = () => {
   // 'strategy' (Creative Plan), 'comms' (Communication), or 'timeline' (Activation Timeline)
   const [activeTab, setActiveTab] = useState('strategy'); 
   const [activeId, setActiveId] = useState<number | null>(null);
@@ -571,4 +571,4 @@ const TDHRetailCanvas = () => {
   );
 };
 
-export default TDHRetailCanvas;
+export default TdhRetailStrategyCanvas;
