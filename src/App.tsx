@@ -12,6 +12,7 @@ import VentureDetail from './pages/VentureDetail';
 import Insights from './pages/Insights';
 import Contact from './pages/Contact';
 import TDHRetailCanvas from './pages/TDHRetailCanvas';
+import BrandAuditPavitraLokesh from './pages/BrandAuditPavitraLokesh';
 
 // TDH PAGES
 import Navigation from './components/tdhecommercepages/Navigation';
@@ -102,6 +103,7 @@ function App() {
           <Route path="insights" element={<Insights />} />
           <Route path="contact" element={<Contact />} />
           <Route path="tdh-retail-canvas" element={<TDHRetailCanvas />} />
+          <Route path="brand-audit" element={<BrandAuditPavitraLokesh />} />
         </Route>
 
         {/* TDH PROTEIN SITE */}
