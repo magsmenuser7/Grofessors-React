@@ -641,10 +641,10 @@ const App = () => {
                     </nav>
 
                     {/* Footer/Auth Info */}
-                    <div className="mt-8 pt-4 border-t text-xs text-gray-400">
+                    {/* <div className="mt-8 pt-4 border-t text-xs text-gray-400">
                         <p className="font-semibold">Analysis Date: Nov 26, 2025</p>
                         <p>User ID: <span className="font-mono text-gray-500 break-all">{userId}</span></p>
-                    </div>
+                    </div> */}
                 </div>
             </aside>
 
