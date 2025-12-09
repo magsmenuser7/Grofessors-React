@@ -107,7 +107,7 @@ function App() {
           <Route path="tdh-retail-canvas" element={<TDHRetailCanvas />} />
           <Route path="brand-audit" element={<BrandAuditPavitraLokesh />} />
           <Route path="tdh-retail-strategy-canvas" element={<TdhRetailStrategyCanvas />} />
-          <Route path="india-9k-gold-jewellery-market" element={<India9kGoldJewelleryMarket />} />
+          <Route path="india-9kt-gold-jewellery-market" element={<India9kGoldJewelleryMarket />} />
         </Route>
 
         {/* TDH PROTEIN SITE */}
