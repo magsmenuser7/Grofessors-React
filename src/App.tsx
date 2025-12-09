@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import TDHRetailCanvas from './pages/TDHRetailCanvas';
 import BrandAuditPavitraLokesh from './pages/BrandAuditPavitraLokesh';
 import TdhRetailStrategyCanvas from './pages/TdhRetailStrategyCanvas';
+import India9kGoldJewelleryMarket from './pages/India9kGoldJewelleryMarket';
 
 // TDH PAGES
 import Navigation from './components/tdhecommercepages/Navigation';
@@ -106,6 +107,7 @@ function App() {
           <Route path="tdh-retail-canvas" element={<TDHRetailCanvas />} />
           <Route path="brand-audit" element={<BrandAuditPavitraLokesh />} />
           <Route path="tdh-retail-strategy-canvas" element={<TdhRetailStrategyCanvas />} />
+          <Route path="india-9k-gold-jewellery-market" element={<India9kGoldJewelleryMarket />} />
         </Route>
 
         {/* TDH PROTEIN SITE */}
