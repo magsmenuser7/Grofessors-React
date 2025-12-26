@@ -270,51 +270,64 @@ const StrategicBrandDashboard = () => {
                 <Loader2 className="w-5 h-5 animate-spin" />
               ) : (
                 <>
-                  <span>Access Dashboard</span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </>
-              )}
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="min-h-screen bg-slate-100 text-slate-900 font-sans selection:bg-blue-100 flex md:pt-20">
-      <aside className="w-72 bg-white/80 border-r border-slate-200 hidden md:flex flex-col flex-shrink-0 pt-10">
-        <nav className="flex-1 p-6 space-y-2 overflow-y-auto">
-          {industries.map((ind) => (
-            <button
-              key={ind.id}
-              onClick={() => setActiveTab(ind.id)}
-              className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 text-left ${
-                activeTab === ind.id 
-                  ? 'bg-[#1E293B] text-white shadow-lg' 
-                  : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'
-              }`}
-            >
-              <span className={activeTab === ind.id ? 'text-blue-400' : 'text-slate-400'}>
-                {ind.icon}
-              </span>
-              <span className="truncate">{ind.title}</span>
-            </button>
-          ))}
-        </nav>
-      </aside>
-
-      <main className="flex-1 overflow-y-auto">
-        <header className="sticky top-0 z-20 bg-slate-100/90 backdrop-blur-md px-10 py-8 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="p-2 bg-white rounded-lg border border-slate-200">
-              <LayoutDashboard className="w-5 h-5 text-slate-600" />
+                                    <span>Access Dashboard</span>
+                                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </>
+                            )}
+                        </button>
+                    </form>
+                </div>
             </div>
-            <p className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] max-w-xs sm:max-w-none">
-              Simple Advice to Help Businesses Grow
-            </p>
-          </div>
-        </header>
+        );
+    }
+
+    return (
+        <div className="min-h-screen bg-slate-100 text-slate-900 font-sans selection:bg-blue-100 flex md:pt-20">
+            <aside className="w-72 bg-white/80 border-r border-slate-200 hidden md:flex flex-col flex-shrink-0 pt-10">
+                <nav className="flex-1 p-6 space-y-2 overflow-y-auto">
+                    {industries.map((ind) => (
+                        <button
+                            key={ind.id}
+                            onClick={() => setActiveTab(ind.id)}
+                            className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 text-left ${activeTab === ind.id
+                                    ? 'bg-[#1E293B] text-white shadow-lg'
+                                    : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'
+                                }`}
+                        >
+                            <span className={activeTab === ind.id ? 'text-blue-400' : 'text-slate-400'}>
+                                {ind.icon}
+                            </span>
+                            <span className="truncate">{ind.title}</span>
+                        </button>
+                    ))}
+                </nav>
+            </aside>
+
+            <main className="flex-1 overflow-y-auto">
+                <header className="sticky top-0 z-20 bg-slate-100/90 backdrop-blur-md px-10 py-8">
+                    <div className="flex items-center justify-between">
+
+                        {/* LEFT SIDE */}
+                        <div className="flex items-center gap-4">
+                            <div className="p-2 bg-white rounded-lg border border-slate-200">
+                                <LayoutDashboard className="w-5 h-5 text-slate-600" />
+                            </div>
+                            <p className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] max-w-xs sm:max-w-none">
+                                Simple Advice to Help Businesses Grow
+                            </p>
+                        </div>
+
+                        {/* RIGHT SIDE */}
+                        <button
+                            onClick={() => setIsLoggedIn(false)}
+                            className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] hover:text-slate-900 transition-colors"
+                        >
+                            Back to Login
+                        </button>
+
+                    </div>
+                </header>
+
 
         <div className="px-10 pb-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 items-stretch">
