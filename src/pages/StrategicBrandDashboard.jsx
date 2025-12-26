@@ -18,57 +18,234 @@ const StrategicBrandDashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
+// if (isLoading) return;
+//     const isUserAlreadyRegistered = (phone) => {
+//       const storedUsers = JSON.parse(
+//         localStorage.getItem('strategic_dashboard_users') || '[]'
+//       );
+//       return storedUsers.some(user => user.phone === phone);
+//     };
+
+// const saveUserToLocalStorage = (user) => {
+//   const storedUsers = JSON.parse(
+//     localStorage.getItem('strategic_dashboard_users') || '[]'
+//   );
+
+//   storedUsers.push(user);
+//   localStorage.setItem(
+//     'strategic_dashboard_users',
+//     JSON.stringify(storedUsers)
+//   );
+// };
 
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError('');
-    setIsLoading(true);
-    
-    // Capture form data
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const phone = formData.get('phone');
+const getUsers = () => {
+  return JSON.parse(localStorage.getItem('registeredUsers')) || [];
+};
 
-    // PHONE NUMBER VALIDATION LOGIC
-    // Regex for 10-digit Indian numbers starting with 6, 7, 8, or 9
-    const phoneRegex = /^[6-9]\d{9}$/;
+const saveUserToLocalStorage = (user) => {
+  const users = getUsers();
+  users.push(user);
+  localStorage.setItem('registeredUsers', JSON.stringify(users));
+};
 
-    if (!phoneRegex.test(phone)) {
-      setError('Please enter a valid 10-digit mobile number.');
+const findUserByPhone = (phone) => {
+  const users = getUsers();
+  return users.find(u => u.phone === phone);
+};
+
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+
+  setError('');
+  setSuccessMessage('');
+  setIsLoading(true);
+
+  const formData = new FormData(e.target);
+  const name = formData.get('name').trim();
+  const phone = formData.get('phone').trim();
+
+  const phoneRegex = /^[6-9]\d{9}$/;
+
+  // ❌ Phone validation
+  if (!phoneRegex.test(phone)) {
+    setError('Please enter a valid 10-digit mobile number.');
+    setIsLoading(false);
+    setTimeout(() => setError(''), 5000);
+    return;
+  }
+
+  const existingUser = findUserByPhone(phone);
+
+  // 🟢 CASE 2: EXISTING USER → LOGIN
+  if (existingUser) {
+    if (existingUser.name.toLowerCase() !== name.toLowerCase()) {
+      setError('Phone number already registered with a different name.');
       setIsLoading(false);
+      setTimeout(() => setError(''), 5000);
       return;
     }
 
-    const payload = { name, phone };
+    setSuccessMessage('👋 Welcome back! Logging you in...');
+    setTimeout(() => setSuccessMessage(''), 5000);
+
+    setTimeout(() => {
+      setIsLoggedIn(true);
+    }, 1000);
+
+    setIsLoading(false);
+    return;
+  }
+
+  // 🟢 CASE 1: NEW USER → REGISTER
+  try {
+    await emailjs.send(
+      'service_alp1zsm',
+      'template_77v8c0t',
+      { name, phone },
+      '3wTsQ9ooVSx-OAMuR'
+    );
+
+    saveUserToLocalStorage({ name, phone });
+
+    setSuccessMessage('✅ Registered successfully! Redirecting...');
+    setTimeout(() => setSuccessMessage(''), 5000);
+
+    setTimeout(() => {
+      setIsLoggedIn(true);
+    }, 1200);
+
+  } catch (err) {
+    console.error('EmailJS Error:', err);
+    setError('⚠️ Registration failed. Please try again.');
+    setTimeout(() => setError(''), 5000);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
 
-    try {
-      // ✅ EMAILJS SEND
-      await emailjs.send(
-        'service_alp1zsm',        // SERVICE ID
-        'template_77v8c0t',       // TEMPLATE ID
-        {
-          name: name,
-          phone: phone,
-        },
-        '3wTsQ9ooVSx-OAMuR'         // PUBLIC KEY
-      );
 
-       // ✅ SUCCESS MESSAGE
-  setSuccessMessage('✅ Details submitted successfully! Redirecting...');
+// const handleLogin = async (e) => {
+//   e.preventDefault();
+
+//   setError('');
+//   setSuccessMessage('');
+//   setIsLoading(true);
+
+//   const formData = new FormData(e.target);
+//   const name = formData.get('name');
+//   const phone = formData.get('phone');
+
+//   const phoneRegex = /^[6-9]\d{9}$/;
+
+//   // ❌ PHONE VALIDATION
+//   if (!phoneRegex.test(phone)) {
+//     setError('Please enter a valid 10-digit mobile number.');
+//     setIsLoading(false);
+
+//     // ⏱️ AUTO CLEAR ERROR
+//     setTimeout(() => setError(''), 5000);
+//     return;
+//   }
+
+//   // ❌ DUPLICATE USER CHECK
+//   if (isUserAlreadyRegistered(phone)) {
+//     setError('Username / Phone number already registered.');
+//     setIsLoading(false);
+
+//     // ⏱️ AUTO CLEAR ERROR
+//     setTimeout(() => setError(''), 5000);
+//     return;
+//   }
+
+//   try {
+//     await emailjs.send(
+//       'service_alp1zsm',
+//       'template_77v8c0t',
+//       { name, phone },
+//       '3wTsQ9ooVSx-OAMuR'
+//     );
+
+//     // ✅ SAVE USER
+//     saveUserToLocalStorage({ name, phone });
+
+//     // ✅ SUCCESS MESSAGE
+//     setSuccessMessage('✅ Details submitted successfully! Redirecting...');
+
+//     // ⏱️ AUTO CLEAR SUCCESS
+//     setTimeout(() => setSuccessMessage(''), 5000);
+
+//     // ⏩ REDIRECT
+//     setTimeout(() => {
+//       setIsLoggedIn(true);
+//     }, 1200);
+
+//   } catch (err) {
+//     console.error('EmailJS Error:', err);
+
+//     setError('⚠️ Something went wrong. Please try again.');
+
+//     // ⏱️ AUTO CLEAR ERROR
+//     setTimeout(() => setError(''), 5000);
+
+//   } finally {
+//     setIsLoading(false);
+//   }
+// };
+
+
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     setError('');
+//     setIsLoading(true);
+    
+//     // Capture form data
+//     const formData = new FormData(e.target);
+//     const name = formData.get('name');
+//     const phone = formData.get('phone');
+
+//     // PHONE NUMBER VALIDATION LOGIC
+//     // Regex for 10-digit Indian numbers starting with 6, 7, 8, or 9
+//     const phoneRegex = /^[6-9]\d{9}$/;
+
+//     if (!phoneRegex.test(phone)) {
+//       setError('Please enter a valid 10-digit mobile number.');
+//       setIsLoading(false);
+//       return;
+//     }
+
+//     const payload = { name, phone };
+
+
+//     try {
+//       // ✅ EMAILJS SEND
+//       await emailjs.send(
+//         'service_alp1zsm',        // SERVICE ID
+//         'template_77v8c0t',       // TEMPLATE ID
+//         {
+//           name: name,
+//           phone: phone,
+//         },
+//         '3wTsQ9ooVSx-OAMuR'         // PUBLIC KEY
+//       );
+
+//        // ✅ SUCCESS MESSAGE
+//   setSuccessMessage('✅ Details submitted successfully! Redirecting...');
   
-  setTimeout(() => {
-    setIsLoggedIn(true);
-  }, 1200);
+//   setTimeout(() => {
+//     setIsLoggedIn(true);
+//   }, 1200);
 
-} catch (err) {
-  console.error('EmailJS Error:', err);
-  setIsLoggedIn(true);
-} finally {
-  setIsLoading(false);
-}
- };
+// } catch (err) {
+//   console.error('EmailJS Error:', err);
+//   setIsLoggedIn(true);
+// } finally {
+//   setIsLoading(false);
+// }
+//  };
 
 //     try {
 //       // SEND DATA TO API
@@ -275,7 +452,7 @@ const StrategicBrandDashboard = () => {
                                 </>
                             )}
                         </button>
-                    </form>
+            </form>
                 </div>
             </div>
         );
