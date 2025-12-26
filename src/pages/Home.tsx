@@ -94,7 +94,7 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="mt-16 md:mt-20 text-5xl md:text-6xl lg:text-7xl font-bold text-[#5A514F] mb-8 leading-tight">
+            <h1 className="mt-16 md:mt-40 text-5xl md:text-6xl lg:text-7xl font-bold text-[#5A514F] mb-8 leading-tight">
               <TypewriterText text="Where Strategy Meets Innovation." />
             </h1>
 
@@ -138,7 +138,7 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative w-full h-96 lg:h-[500px]">
+            <div className="relative w-full h-96 lg:h-[500px] md:mt-36">
               {/* Abstract shapes */}
               <motion.div
                 animate={{ 
