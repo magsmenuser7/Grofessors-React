@@ -18,6 +18,13 @@ import India9kGoldJewelleryMarket from './pages/India9kGoldJewelleryMarket';
 import StrategicBrandDashboard from './pages/StrategicBrandDashboard';
 import NewsletterViewer from './pages/NewsletterViewer';
 import TdhGroup from './pages/TdhGroup'
+import TenalidoubleHorse from './pages/Tenali-Double-Horse-Brand-Specific-Audit'
+import TdhYearlyAnalysis from './pages/TDH-Yearly-Analytics-Meta-LinkedIn'
+import TDHPlanOfAction2026 from './pages/TDHPlanOfAction2026'
+import TDHConsumerPreferenceAnalysis from './pages/TDHConsumerPreferenceAnalysis'
+import TDHBrandsProductsToFocusOn from './pages/TDHBrandsProductsToFocusOn'
+
+
 
 // TDH PAGES
 import Navigation from './components/tdhecommercepages/Navigation';
@@ -140,6 +147,11 @@ function App() {
 
         <Route path="/:slug" element={<NewsletterViewer />} />
         <Route path="tdh-group-strategy-review" element={<TdhGroup />} />
+        <Route path="communication-audit-brand-guidelines-digital-packaging" element={<TenalidoubleHorse />} />
+        <Route path="tdh-yearly-analytics-meta-linkedIn" element={<TdhYearlyAnalysis />} />
+        <Route path="tdh-plan-Of-Action-2026" element={<TDHPlanOfAction2026 />} />
+        <Route path="tdh-consumer-preference-analysis" element={<TDHConsumerPreferenceAnalysis />} />
+        <Route path="tdh-brands-products-to-focus-on" element={<TDHBrandsProductsToFocusOn />} />
 
       </Routes>
     </Router>
