@@ -17,6 +17,7 @@ import TdhRetailStrategyCanvas from './pages/TdhRetailStrategyCanvas';
 import India9kGoldJewelleryMarket from './pages/India9kGoldJewelleryMarket';
 import StrategicBrandDashboard from './pages/StrategicBrandDashboard';
 import NewsletterViewer from './pages/NewsletterViewer';
+import TdhGroup from './pages/TdhGroup'
 
 // TDH PAGES
 import Navigation from './components/tdhecommercepages/Navigation';
@@ -112,6 +113,8 @@ function App() {
           <Route path="india-9kt-gold-jewellery-market" element={<India9kGoldJewelleryMarket />} />
           <Route path="strategic-brand-dashboard" element={<StrategicBrandDashboard />} />
           
+
+          
         </Route>
 
         {/* TDH PROTEIN SITE */}
@@ -136,6 +139,7 @@ function App() {
         />
 
         <Route path="/:slug" element={<NewsletterViewer />} />
+        <Route path="tdh-group-strategy-review" element={<TdhGroup />} />
 
       </Routes>
     </Router>
