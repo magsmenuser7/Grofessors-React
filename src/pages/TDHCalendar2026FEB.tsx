@@ -205,12 +205,12 @@ const TDHCalendar2026FEB = () => {
             </button>
           </form>
 
-          <div className="mt-8 text-center">
+          {/* <div className="mt-8 text-center">
             <p className="text-[10px] text-slate-400 font-medium">
               Authorized personnel only. <br />
               <span className="opacity-50">v2.4.0 Secure Build</span>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     );
