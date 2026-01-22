@@ -1,7 +1,7 @@
 import React from "react";
 import nirvapdf from "../components/assets/logos/newsletters/NIRVA_Brand_Analysis.pdf"
 import brandauditsystem from "../components/assets/logos/newsletters/brand-audit-system.pdf"
-import scorecarebrandnameproposal from "../components/assets/logos/newsletters/Scorecare-Brand-name-Proposal.pdf"
+import scorecarebrandnameproposal from "../components/assets/logos/newsletters/Scorecare-Brand-name.pdf"
 
 
 
