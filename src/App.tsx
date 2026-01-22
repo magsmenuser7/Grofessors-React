@@ -23,6 +23,10 @@ import TdhYearlyAnalysis from './pages/TDH-Yearly-Analytics-Meta-LinkedIn'
 import TDHPlanOfAction2026 from './pages/TDHPlanOfAction2026'
 import TDHConsumerPreferenceAnalysis from './pages/TDHConsumerPreferenceAnalysis'
 import TDHBrandsProductsToFocusOn from './pages/TDHBrandsProductsToFocusOn'
+import TDHCalendar2026FEB from './pages/TDHCalendar2026FEB'
+import TDHPlanOfActionLatest from './pages/TDHPlanOfActionLatest'
+
+
 
 
 
@@ -122,6 +126,8 @@ function App() {
           
 
           
+
+          
         </Route>
 
         {/* TDH PROTEIN SITE */}
@@ -152,6 +158,9 @@ function App() {
         <Route path="tdh-plan-Of-Action-2026" element={<TDHPlanOfAction2026 />} />
         <Route path="tdh-consumer-preference-analysis" element={<TDHConsumerPreferenceAnalysis />} />
         <Route path="tdh-brands-products-to-focus-on" element={<TDHBrandsProductsToFocusOn />} />
+        <Route path="tdh-calendar-2026-feb" element={<TDHCalendar2026FEB />} />
+        <Route path="tdh-plan-Of-action-latest" element={<TDHPlanOfActionLatest />} />
+
 
       </Routes>
     </Router>
