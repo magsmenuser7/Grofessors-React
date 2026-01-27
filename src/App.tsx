@@ -26,6 +26,7 @@ import TDHBrandsProductsToFocusOn from './pages/TDHBrandsProductsToFocusOn'
 import TDHCalendar2026FEB from './pages/TDHCalendar2026FEB'
 import TDHPlanOfActionLatest from './pages/TDHPlanOfActionLatest'
 import ProtectedPDF from './pages/ProtectedPDF'
+import TheBeginningOfSomethingGolden from './pages/TheBeginningOfSomethingGolden';
 
 
 
@@ -159,6 +160,7 @@ function App() {
         <Route path="tdh-brands-products-to-focus-on" element={<TDHBrandsProductsToFocusOn />} />
         <Route path="tdh-calendar-2026-feb" element={<TDHCalendar2026FEB />} />
         <Route path="tdh-plan-Of-action-latest" element={<TDHPlanOfActionLatest />} />
+        <Route path="nirva-the-beginning-of-something-golden" element={<TheBeginningOfSomethingGolden />} />
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
 
