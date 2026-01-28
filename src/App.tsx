@@ -27,6 +27,8 @@ import TDHCalendar2026FEB from './pages/TDHCalendar2026FEB'
 import TDHPlanOfActionLatest from './pages/TDHPlanOfActionLatest'
 import ProtectedPDF from './pages/ProtectedPDF'
 import TheBeginningOfSomethingGolden from './pages/TheBeginningOfSomethingGolden';
+import NirvaGoldBrandTheme from './pages/NirvaGoldBrandTheme';
+import NirvaBrandGuidelines2024 from './pages/NirvaBrandGuidelines2024';
 
 
 
@@ -161,6 +163,8 @@ function App() {
         <Route path="tdh-calendar-2026-feb" element={<TDHCalendar2026FEB />} />
         <Route path="tdh-plan-Of-action-latest" element={<TDHPlanOfActionLatest />} />
         <Route path="nirva-the-beginning-of-something-golden" element={<TheBeginningOfSomethingGolden />} />
+        <Route path="nirva-gold-brand-theme" element={<NirvaGoldBrandTheme />} />
+        <Route path="nirva-brand-guidelines-2024" element={<NirvaBrandGuidelines2024 />} />
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
 
