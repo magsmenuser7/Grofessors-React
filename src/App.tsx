@@ -29,6 +29,7 @@ import ProtectedPDF from './pages/ProtectedPDF'
 import TheBeginningOfSomethingGolden from './pages/TheBeginningOfSomethingGolden';
 import NirvaGoldBrandTheme from './pages/NirvaGoldBrandTheme';
 import NirvaBrandGuidelines2024 from './pages/NirvaBrandGuidelines2024';
+import AvakaiFestivalAudit from './pages/AvakaiFestivalAudit';
 
 
 
@@ -165,6 +166,7 @@ function App() {
         <Route path="nirva-the-beginning-of-something-golden" element={<TheBeginningOfSomethingGolden />} />
         <Route path="nirva-gold-brand-theme" element={<NirvaGoldBrandTheme />} />
         <Route path="nirva-brand-guidelines-2024" element={<NirvaBrandGuidelines2024 />} />
+        <Route path="avakai-festival-audit" element={<AvakaiFestivalAudit />} />
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
 
