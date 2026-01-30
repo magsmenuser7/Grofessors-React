@@ -93,21 +93,21 @@ const AvakaiFestivalAudit = () => {
   const visualCritiqueData = [
     {
       type: "Architectural Semiotics",
-      image: image1,
+      image: image2,
       title: "Authenticity Over Accustomed Aesthetics",
       critique: "The existing visual language (arches/domes) utilizes a 'Pan-Indian Accustomed' aesthetic—largely Mughal or Rajputana—which is semiotically inconsistent with the Dravidian/Andhra architectural lexicon. This creates a brand 'blur' where the destination is indistinguishable from festivals in North India.",
       pivot: "Strategic Pivot: Pivot to 'Ancient Andhra' structural motifs. We must mandate the use of the Amaravati Stupa silhouette, the Kakatiya Torana, and the Lepakshi pillar aesthetics. This creates immediate visual distinction and proprietary brand equity for AP Tourism."
     },
     {
       type: "Visual Identity & Attire",
-      image: image3,
+      image: image1,
       title: "The Semiotic Disconnect in Styling",
       critique: "The utilization of non-regional costuming (e.g., specific turban styles) signals a 'Borrowed Identity'. This lack of visual discipline undermines the festival's claim of being a custodian of Andhra's heritage for a global audience.",
       pivot: "Strategic Pivot: Implement a 'Visual Purity' code. Every performer and staff member must serve as a visual ambassador. Prioritize the specific sartorial traditions of Andhra, leveraging local art forms like Perini Sivatandavam to deliver an experience that cannot be replicated elsewhere."
     },
     {
       type: "Brand Architecture & Hierarchy",
-      image: image2,
+      image: image3,
       title: "Institutional Brand Leadership",
       critique: "Current collateral exhibits a weak brand hierarchy where the 'Initiator' (AP Tourism) is positioned as a secondary element. A confused narrative that attempts to satisfy local familiarity while seeking global appeal results in a message that captivates neither.",
       pivot: "Strategic Pivot: Position AP Tourism as the 'Visionary Force'. The brand architecture must be bold, ubiquitous, and authoritative. Every touchpoint must clearly communicate a singular narrative: Amaravati is the global gateway to Ancient Andhra, with the Government as its premier host."
@@ -197,7 +197,7 @@ const AvakaiFestivalAudit = () => {
                 {visualCritiqueData.map((item, idx) => (
                   <div key={idx} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 group">
                     <div className="h-64 bg-slate-100 relative overflow-hidden">
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                      <img src={item.image} alt={item.title} className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
                       <div className="absolute bottom-4 left-6">
                         <span className="bg-blue-600 text-white text-[10px] font-black px-2 py-1 uppercase tracking-widest rounded-sm">
