@@ -54,6 +54,7 @@ import { ITMonitoring } from './pages/admin/ITMonitoring';
 
 import type { UserRole } from './types';
 import { Outlet } from 'react-router-dom';
+import LVLUPDashboard from './pages/LVLUPDashboard';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -167,6 +168,7 @@ function App() {
         <Route path="nirva-gold-brand-theme" element={<NirvaGoldBrandTheme />} />
         <Route path="nirva-brand-guidelines-2024" element={<NirvaBrandGuidelines2024 />} />
         <Route path="avakai-festival-audit" element={<AvakaiFestivalAudit />} />
+        <Route path="lvlup-dashboard" element={<LVLUPDashboard />} />
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
 
