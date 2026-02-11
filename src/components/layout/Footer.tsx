@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
     { name: 'Magsmen', path: 'https://magsmen.com/' },
     { name: 'InTalks', path: 'https://intalks.in/' },
     { name: 'MIbbs', path: 'https://mibbs.ai/' },
-    { name: 'School of Strategy', path: '' },
+    { name: 'School of Strategy', path: 'https://schoolofstrategy.magsmen.com/' },
     { name: 'SanStrategies', path: 'https://sanstrategies.com/' },
     { name: 'Gamanam', path: 'https://youtube.com/@gamanambyrs?si=XO77nsVmDygwZreP' }
   ];
