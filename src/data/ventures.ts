@@ -84,7 +84,7 @@ export const ventures: Venture[] = [
     logo: schoolofstrategylogo,
     primaryCTA: {
       label: 'Explore Workshops',
-      url: '#'
+      url: 'https://schoolofstrategy.magsmen.com/'
     },
     kpis: [
       { label: 'Workshops Delivered', value: '50+' },

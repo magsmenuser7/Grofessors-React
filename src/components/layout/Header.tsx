@@ -34,7 +34,7 @@ const Header: React.FC = () => {
     { name: 'Magsmen', path: 'https://magsmen.com/', description: 'Brand Consulting' },
     { name: 'InTalks', path: 'https://intalks.in/', description: 'Podcast' },
     { name: 'MIbbs', path: 'https://mibbs.ai/', description: 'Brand Budgeting' },
-    { name: 'School of Strategy', path: '', description: 'Brand Lab' },
+    { name: 'School of Strategy', path: 'https://schoolofstrategy.magsmen.com/', description: 'Brand Lab' },
     { name: 'SanStrategies', path: 'https://sanstrategies.com/', description: 'Advisory' },
     { name: 'Gamanam', path: 'https://youtube.com/@gamanambyrs?si=XO77nsVmDygwZreP', description: 'Community' }
   ];
