@@ -1,0 +1,105 @@
+:root {
+  --card-width: 250px;
+  --card-height: 350px;
+  --carousel-radius: 450px; 
+  --rotation-speed: 20s;
+  --bg-color: #111;
+  --accent-color: #d4af37; 
+}
+
+body {
+  background-color: var(--bg-color);
+  color: white;
+  margin: 0;
+  overflow: hidden;
+}
+
+.scene {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.carousel {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  transform-style: preserve-3d;
+  animation: spin var(--rotation-speed) infinite linear;
+  cursor: pointer;
+}
+
+.carousel.paused {
+  animation-play-state: paused;
+}
+
+/* --- GRINDER ROTATION (Counter-Clockwise) --- */
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-360deg); } /* This creates the "Grinder" spin */
+}
+
+.card {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backface-visibility: visible; 
+  transition: transform 0.3s;
+}
+
+/* Hover Effect */
+.card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent-color);
+}
+
+.card img {
+  width: 90%; height: 60%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  pointer-events: none;
+}
+
+.card h3 { margin: 0; font-size: 1.2rem; color: var(--accent-color); }
+.card p { font-size: 0.9rem; color: #ccc; }
+
+/* Modal Styles */
+.preview-modal {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #222; padding: 30px; border-radius: 20px;
+  border: 1px solid var(--accent-color); text-align: center;
+  max-width: 400px; width: 90%; position: relative;
+  animation: popIn 0.3s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.modal-content img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+.close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; color: #fff; cursor: pointer; background: none; border: none; }
+.buy-btn { background: var(--accent-color); color: #000; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root { --card-width: 180px; --card-height: 260px; --carousel-radius: 280px; }
+}

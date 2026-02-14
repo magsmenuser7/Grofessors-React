@@ -30,6 +30,7 @@ import TheBeginningOfSomethingGolden from './pages/TheBeginningOfSomethingGolden
 import NirvaGoldBrandTheme from './pages/NirvaGoldBrandTheme';
 import NirvaBrandGuidelines2024 from './pages/NirvaBrandGuidelines2024';
 import AvakaiFestivalAudit from './pages/AvakaiFestivalAudit';
+// import JewelryCarousel from './pages/JewelryCarousel';
 
 
 
@@ -169,6 +170,7 @@ function App() {
         <Route path="nirva-brand-guidelines-2024" element={<NirvaBrandGuidelines2024 />} />
         <Route path="avakai-festival-audit" element={<AvakaiFestivalAudit />} />
         <Route path="lvlup-dashboard" element={<LVLUPDashboard />} />
+        {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
 
