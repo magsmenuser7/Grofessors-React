@@ -4,6 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Linkedin, Youtube, Instagram, Music } from 'lucide-react';
 import Logo from "../assets/logos/grofessors-logo.png";
 
+import grofesion from "../assets/logos/grofesion.png"
+import grofesionwhite from "../assets/logos/grofesion-white.png"
+
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -59,9 +63,9 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-3 mb-6">
             <img
-              src={Logo}
-              alt="Grofessorslogo"
-              className="w-48 h-12 object-contain rounded-lg"
+              src={grofesionwhite}
+              alt="Grofesion Logo"
+              className="w-48 h-20 object-contain rounded-lg"
             />
               {/* <div className="w-10 h-10 bg-[#F15A29] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">G</span>
@@ -69,7 +73,7 @@ const Footer: React.FC = () => {
               <span className="text-white font-bold text-xl tracking-tight">Grofessors</span> */}
             </Link>
             <p className="text-[#675F5D] mb-6 leading-relaxed text-justify ">
-              Grofessors Innovations Pvt Ltd, we’re more than a company. we’re a dynamic hub of creativity and innovation. With our world-class strategies in brand consulting, we’re not just pushing boundaries, we’re redefining them. 
+              Grofesion Innovations Pvt Ltd, we’re more than a company. we’re a dynamic hub of creativity and innovation. With our world-class strategies in brand consulting, we’re not just pushing boundaries, we’re redefining them. 
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -172,7 +176,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-[#675F5D]/20 mt-12 pt-8 text-center">
           <p className="text-[#675F5D]">
-            © {currentYear} Grofessors Innovations Pvt Ltd. All rights reserved.
+            © {currentYear} Grofesion Innovations Pvt Ltd. All rights reserved.
           </p>
         </div>
       </div>

@@ -22,7 +22,7 @@ const Ecosystem: React.FC = () => {
               Our Ecosystem
             </h1>
             <p className="text-xl md:text-2xl text-[#6C6765] max-w-4xl mx-auto leading-relaxed">
-              Grofessors thrives through a diverse set of ventures, each unique in its mission yet united by the same DNA{' '}
+              Grofesion thrives through a diverse set of ventures, each unique in its mission yet united by the same DNA{' '}
               <span className="text-[#F15A29] font-semibold">strategy</span>,{' '}
               <span className="text-[#F15A29] font-semibold">creativity</span>, and{' '}
               <span className="text-[#F15A29] font-semibold">innovation</span>.

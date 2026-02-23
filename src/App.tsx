@@ -114,7 +114,7 @@ function App() {
   };
 
   return (
-    <Router basename={import.meta.env.DEV ? "/Grofessors-React" : "/"}>
+    <Router basename={import.meta.env.DEV ? "/Grofesion-React" : "/"}>
       <Routes>
 
         {/* MAIN PAGE GROUP WITH LAYOUT */}

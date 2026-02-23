@@ -3,6 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from "../assets/logos/grofessors-logo.png";
+import newlogo from "../assets/logos/grofesion-new-logo.jpeg"
+import grofesionlogo from "../assets/logos/new-grofesion.jpeg"
+
+import grofesion from "../assets/logos/grofesion.png"
 
 
 const Header: React.FC = () => {
@@ -61,9 +65,9 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src={Logo}
-              alt="Grofessors Logo"
-              className="w-48 h-12 object-contain rounded-lg"
+              src={grofesion}
+              alt="Grofesion Logo"
+              className="w-48 h-20 object-contain rounded-lg"
             />
             {/* <div className="w-10 h-10 bg-[#F15A29] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">G</span>

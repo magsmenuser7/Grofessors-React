@@ -52,7 +52,7 @@ const Home: React.FC = () => {
 
   const testimonials = [
     {
-      quote: "Grofessors is a true launchpad for innovation. It redefines what strategy can achieve.",
+      quote: "Grofesion is a true launchpad for innovation. It redefines what strategy can achieve.",
       author: "Business Leader",
       role: "Fortune 500 Executive"
     },
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
               transition={{ delay: 2, duration: 0.8 }}
               className="text-xl md:text-lg text-[#6C6765] mb-12 leading-relaxed text-justify "
             >
-              At Grofessors Innovations Pvt Ltd, we are more than a company. We are a hub of ideas, a launchpad for creativity, and a force redefining boundaries. With strategy at the core and innovation as our culture, we shape what comes next.
+              At Grofesion Innovations Pvt Ltd, we are more than a company. We are a hub of ideas, a launchpad for creativity, and a force redefining boundaries. With strategy at the core and innovation as our culture, we shape what comes next.
             </motion.p>
 
             <motion.div
@@ -202,7 +202,7 @@ const Home: React.FC = () => {
                 A Dynamic Hub of <span className="text-[#F15A29]">Creativity</span>
               </h2>
               <p className="text-[#6C6765] text-lg leading-relaxed mb-8 text-justify">
-                Grofessors Innovations Pvt Ltd, based in Guntur, Andhra Pradesh, is a company that specializes in nurturing innovation and creativity across various industries. We aim to empower individuals and organizations by providing expert guidance and innovative solutions tailored to their unique needs.
+                Grofesion Innovations Pvt Ltd, based in Guntur, Andhra Pradesh, is a company that specializes in nurturing innovation and creativity across various industries. We aim to empower individuals and organizations by providing expert guidance and innovative solutions tailored to their unique needs.
               </p>
               <Link
                 to="/about"
@@ -253,7 +253,7 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#5A514F] mb-6">
-              The Grofessors <span className="text-[#F15A29]">Ecosystem</span>
+              The Grofesion <span className="text-[#F15A29]">Ecosystem</span>
             </h2>
             <p className="text-[#6C6765] text-lg max-w-3xl mx-auto leading-relaxed">
               We thrive through diverse ventures, each unique in its purpose yet united by the same DNA strategy, creativity, and innovation.
@@ -420,7 +420,7 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#5A514F] mb-6">
-              Voices About <span className="text-[#F15A29]">Grofessors</span>
+              Voices About <span className="text-[#F15A29]">Grofesion</span>
             </h2>
           </motion.div>
 

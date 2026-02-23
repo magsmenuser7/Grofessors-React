@@ -46,7 +46,7 @@ const About: React.FC = () => {
                 Who We Are
               </h1>
               <p className="text-xl md:text-2xl text-[#6C6765] mb-12 leading-relaxed text-justify ">
-                At <span className="text-[#F15A29] font-semibold">Grofessors Innovations Pvt Ltd</span>, we are more than an organization. We are a hub of <span className="text-[#F15A29] font-semibold">strategy</span>, <span className="text-[#F15A29] font-semibold">creativity</span>, and <span className="text-[#F15A29] font-semibold">innovation</span> redefining what's possible and building the future of ideas.
+                At <span className="text-[#F15A29] font-semibold">Grofesion Innovations Pvt Ltd</span>, we are more than an organization. We are a hub of <span className="text-[#F15A29] font-semibold">strategy</span>, <span className="text-[#F15A29] font-semibold">creativity</span>, and <span className="text-[#F15A29] font-semibold">innovation</span> redefining what's possible and building the future of ideas.
               </p>
               <Link
                 to="/ecosystem"
@@ -128,7 +128,7 @@ const About: React.FC = () => {
                 More Than a <span className="text-[#F15A29]">Company</span>
               </h2>
               <p className="text-[#6C6765] text-lg leading-relaxed text-justify">
-                Grofessors was founded with one belief that <span className="text-[#F15A29] font-semibold">creativity</span> and <span className="text-[#F15A29] font-semibold">strategy</span> are not opposites, but partners in shaping the future. What began as a vision has become a launchpad of ventures, each challenging conventions and delivering impact.
+                Grofesion was founded with one belief that <span className="text-[#F15A29] font-semibold">creativity</span> and <span className="text-[#F15A29] font-semibold">strategy</span> are not opposites, but partners in shaping the future. What began as a vision has become a launchpad of ventures, each challenging conventions and delivering impact.
               </p>
             </motion.div>
 
@@ -349,7 +349,7 @@ const About: React.FC = () => {
               Our <span className="text-[#F15A29]">Philosophy</span>
             </h2>
             <p className="text-[#6C6765] text-lg max-w-4xl mx-auto leading-relaxed">
-              <span className="text-[#F15A29] font-semibold">Innovation</span> is not about doing different things it's about seeing differently, thinking boldly, and building fearlessly. At Grofessors, every idea is a seed, every venture is a movement.
+              <span className="text-[#F15A29] font-semibold">Innovation</span> is not about doing different things it's about seeing differently, thinking boldly, and building fearlessly. At Grofesion, every idea is a seed, every venture is a movement.
             </p>
           </motion.div>
         </div>
