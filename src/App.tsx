@@ -42,6 +42,8 @@ import { FooterSection } from './components/tdhecommercepages/FooterSection';
 import { HomePage } from './pages/customer/HomePage';
 import { ProductsPage } from './pages/customer/ProductsPage';
 import { OrderTrackingPage } from './pages/customer/OrderTrackingPage';
+import TdhContentCalenderMarch from './pages/TdhContentCalenderMarch';
+
 
 // Distributor, Logistics, Admin Pages
 import { DistributorDashboard } from './pages/distributor/DistributorDashboard';
@@ -170,6 +172,7 @@ function App() {
         <Route path="nirva-brand-guidelines-2024" element={<NirvaBrandGuidelines2024 />} />
         <Route path="avakai-festival-audit" element={<AvakaiFestivalAudit />} />
         <Route path="lvlup-dashboard" element={<LVLUPDashboard />} />
+        <Route path="tdh-content-calendar-march" element={<TdhContentCalenderMarch />} />
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
