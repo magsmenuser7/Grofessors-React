@@ -1,6 +1,8 @@
 import React, { useState, useMemo, FormEvent } from 'react';
 import { Search, Star, Instagram, Youtube, Lock, Mail, ArrowRight, Loader2, LayoutDashboard, ChevronRight, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import logo from "../components/assets/logos/logo-01.svg";
+
 
 // --- Type Definitions ---
 export type BrandKey = 'tdh' | 'rishika' | 'millet';
@@ -307,7 +309,7 @@ export default function TdhContentCalenderMarch() {
 <header className="pt-12 pb-8 px-6 text-center flex flex-col items-center">
     {/* Add your logo here */}
     <img 
-        src="src/components/assets/logos/logo-01.svg" 
+        src={logo}
         alt="Company Logo" 
         className="h-16 w-auto mb-6 object-contain" 
     />
