@@ -368,7 +368,7 @@ export default function TdhContentCalenderMarch() {
                                     <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Format</th>
                                     <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Campaign Description</th>
                                     <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Product Focus</th>
-                                    <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Status</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-50">
@@ -409,17 +409,7 @@ export default function TdhContentCalenderMarch() {
                                                     <span className="text-xs font-bold text-gray-500">{post.product}</span>
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-6 text-center">
-                                                <div className="flex flex-col items-center gap-2">
-                                                    <span className={`px-3 py-1 rounded-full text-[11px] font-semibold border border-transparent ${statusStyles[post.status] || 'bg-gray-100 text-gray-600'}`}>
-                                                        {post.status}
-                                                    </span>
-                                                    <div className="flex gap-3 text-gray-300">
-                                                        <Instagram size={14} className="hover:text-pink-500 cursor-pointer transition-colors" />
-                                                        <Youtube size={15} className="hover:text-red-600 cursor-pointer transition-colors" />
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            
                                         </tr>
                                     ))
                                 ) : (
