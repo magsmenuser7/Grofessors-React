@@ -1,11 +1,13 @@
 import { Venture } from '../types';
 import magsmenLogo from "../components/assets/logos/magsmen-new-version.png";
+import newmagsmenlogo from "../components/assets/logos/newmagsmen-logo.png";
 import mibbsLogo from "../components/assets/logos/mibbs.png";
 import sanstratagieslogo from "../components/assets/logos/san-log.png";
 import intalkslogo from "../components/assets/logos/intalks-logo.png";
 import schoolofstrategylogo from "../components/assets/logos/school-of-strategy.png";
 import Gamanamlogo1 from "../components/assets/logos/Gamanam-logo-1.png";
-
+import magsmencropped from "../components/assets/logos/magsmen-cropped-logo.png";
+import MagsmenNewLOgo from "../components/assets/logos/Magsmen-logo-2026.png"
 
 
 
@@ -16,7 +18,7 @@ export const ventures: Venture[] = [
     tagline: 'Strategy-led brand consulting for Indian businesses to stand out, scale, and build legacy.',
     shortDescription: 'From positioning and identity to rebrands and go-to-market, Magsmen builds brand systems that create trust and drive growth. Engagements span startups to Fortune-scale enterprises, with a focus on measurable outcomes and strategic clarity.',
     heroImage: '',
-    logo: magsmenLogo,
+    logo: MagsmenNewLOgo,
     primaryCTA: {
       label: 'Visit Magsmen.com',
       url: 'https://magsmen.com'
