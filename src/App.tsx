@@ -58,6 +58,7 @@ import { ITMonitoring } from './pages/admin/ITMonitoring';
 import type { UserRole } from './types';
 import { Outlet } from 'react-router-dom';
 import LVLUPDashboard from './pages/LVLUPDashboard';
+import ToopaOTCDashboard from './pages/ToopaIceCreamsStrategicProposal';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -173,6 +174,7 @@ function App() {
         <Route path="avakai-festival-audit" element={<AvakaiFestivalAudit />} />
         <Route path="lvlup-dashboard" element={<LVLUPDashboard />} />
         <Route path="tdh-content-calendar-march" element={<TdhContentCalenderMarch />} />
+        <Route path="toopa-otc-dashboard" element={<ToopaOTCDashboard />} />
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
