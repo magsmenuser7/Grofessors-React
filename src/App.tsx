@@ -59,6 +59,11 @@ import type { UserRole } from './types';
 import { Outlet } from 'react-router-dom';
 import LVLUPDashboard from './pages/LVLUPDashboard';
 import ToopaOTCDashboard from './pages/ToopaIceCreamsStrategicProposal';
+import SriVeeraAnjaniPutraRiceMill from './pages/SriVeeraAnjani';
+
+
+
+
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -175,6 +180,7 @@ function App() {
         <Route path="lvlup-dashboard" element={<LVLUPDashboard />} />
         <Route path="tdh-content-calendar-march" element={<TdhContentCalenderMarch />} />
         <Route path="toopa-otc-dashboard" element={<ToopaOTCDashboard />} />
+        <Route path="sri-veera-anjani-putra-rice-mill" element={<SriVeeraAnjaniPutraRiceMill />} />
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
