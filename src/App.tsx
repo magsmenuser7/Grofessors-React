@@ -60,7 +60,7 @@ import { Outlet } from 'react-router-dom';
 import LVLUPDashboard from './pages/LVLUPDashboard';
 import ToopaOTCDashboard from './pages/ToopaIceCreamsStrategicProposal';
 import SriVeeraAnjaniPutraRiceMill from './pages/SriVeeraAnjani';
-
+import SkinAffair from './pages/SkinAffair';
 
 
 
@@ -181,6 +181,7 @@ function App() {
         <Route path="tdh-content-calendar-march" element={<TdhContentCalenderMarch />} />
         <Route path="toopa-otc-dashboard" element={<ToopaOTCDashboard />} />
         <Route path="sri-veera-anjani-putra-rice-mill" element={<SriVeeraAnjaniPutraRiceMill />} />
+        <Route path="skin-affair" element={<SkinAffair />} />
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
