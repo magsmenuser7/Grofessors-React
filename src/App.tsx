@@ -61,7 +61,7 @@ import LVLUPDashboard from './pages/LVLUPDashboard';
 import ToopaOTCDashboard from './pages/ToopaIceCreamsStrategicProposal';
 import SriVeeraAnjaniPutraRiceMill from './pages/SriVeeraAnjani';
 import SkinAffair from './pages/SkinAffair';
-
+import TdhContentCalenderApril from './pages/TdhContentCalenderApril';
 
 
 
@@ -182,6 +182,7 @@ function App() {
         <Route path="toopa-otc-dashboard" element={<ToopaOTCDashboard />} />
         <Route path="sri-veera-anjani-putra-rice-mill" element={<SriVeeraAnjaniPutraRiceMill />} />
         <Route path="skin-affair" element={<SkinAffair />} />
+          <Route path="tdh-content-calendar-april" element={<TdhContentCalenderApril />} />
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
