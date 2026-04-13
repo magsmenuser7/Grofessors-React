@@ -62,7 +62,7 @@ import ToopaOTCDashboard from './pages/ToopaIceCreamsStrategicProposal';
 import SriVeeraAnjaniPutraRiceMill from './pages/SriVeeraAnjani';
 import SkinAffair from './pages/SkinAffair';
 import TdhContentCalenderApril from './pages/TdhContentCalenderApril';
-
+import SriMadhVisualIdentityProposal from './pages/SriMadhVisualIdentityProposal';
 
 
 // ------------------ MAIN LAYOUT ------------------
@@ -183,6 +183,7 @@ function App() {
         <Route path="sri-veera-anjani-putra-rice-mill" element={<SriVeeraAnjaniPutraRiceMill />} />
         <Route path="skin-affair" element={<SkinAffair />} />
           <Route path="tdh-content-calendar-april" element={<TdhContentCalenderApril />} />
+            <Route path="magsmen-brand-identity-and-communication-proposal" element={<SriMadhVisualIdentityProposal />} />
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
