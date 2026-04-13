@@ -14,7 +14,8 @@ import { Star, Instagram, Youtube, Lock, Mail, Loader2, LayoutDashboard, AlertCi
 import emailjs from '@emailjs/browser';
 import { useMemo as useMemoDep } from 'react';
 
-import srimadhbrandidentityandcommunicationproposal from "../components/assets/logos/SriMadh Brand Identity and Communication Proposal.pdf"
+
+import mantraadaptationpdf from "../components/assets/logos/Mantra Adaptation Brand Design Proposal.pdf"
 // --- TYPE DEFINITIONS ---
 interface UserData {
   email: string;
@@ -52,7 +53,7 @@ const COLORS = ['#0f172a', '#475569', '#94a3b8', '#e2e8f0'];
 
 
 
-export default function  SriMadhVisualIdentityProposal() {
+export default function  MantraAdaptation() {
 
 
 
@@ -141,7 +142,7 @@ export default function  SriMadhVisualIdentityProposal() {
 
     setTimeout(() => {
       setIsLoggedIn(true);
-      window.open(srimadhbrandidentityandcommunicationproposal, '_blank');
+      window.open(mantraadaptationpdf, '_blank');
     }, 800);
 
   } catch (err) {

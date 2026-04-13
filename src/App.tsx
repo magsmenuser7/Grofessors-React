@@ -63,7 +63,7 @@ import SriVeeraAnjaniPutraRiceMill from './pages/SriVeeraAnjani';
 import SkinAffair from './pages/SkinAffair';
 import TdhContentCalenderApril from './pages/TdhContentCalenderApril';
 import SriMadhVisualIdentityProposal from './pages/SriMadhVisualIdentityProposal';
-
+import MantraAdaptation from './pages/MantraAdaptation';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -184,6 +184,8 @@ function App() {
         <Route path="skin-affair" element={<SkinAffair />} />
           <Route path="tdh-content-calendar-april" element={<TdhContentCalenderApril />} />
             <Route path="magsmen-brand-identity-and-communication-proposal" element={<SriMadhVisualIdentityProposal />} />
+            <Route path="proposal-for-brand-identity-launch" element={<MantraAdaptation />} />
+        
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
 
