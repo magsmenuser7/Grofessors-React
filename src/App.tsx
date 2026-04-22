@@ -30,6 +30,7 @@ import TheBeginningOfSomethingGolden from './pages/TheBeginningOfSomethingGolden
 import NirvaGoldBrandTheme from './pages/NirvaGoldBrandTheme';
 import NirvaBrandGuidelines2024 from './pages/NirvaBrandGuidelines2024';
 import AvakaiFestivalAudit from './pages/AvakaiFestivalAudit';
+import EmployeOnboardingPortal from './pages/EmployeOnboardingPortal';
 // import JewelryCarousel from './pages/JewelryCarousel';
 
 
@@ -182,9 +183,10 @@ function App() {
         <Route path="toopa-otc-dashboard" element={<ToopaOTCDashboard />} />
         <Route path="sri-veera-anjani-putra-rice-mill" element={<SriVeeraAnjaniPutraRiceMill />} />
         <Route path="skin-affair" element={<SkinAffair />} />
-          <Route path="tdh-content-calendar-april" element={<TdhContentCalenderApril />} />
-            <Route path="magsmen-brand-identity-and-communication-proposal" element={<SriMadhVisualIdentityProposal />} />
-            <Route path="proposal-for-brand-identity-launch" element={<MantraAdaptation />} />
+        <Route path="tdh-content-calendar-april" element={<TdhContentCalenderApril />} />
+        <Route path="magsmen-brand-identity-and-communication-proposal" element={<SriMadhVisualIdentityProposal />} />
+        <Route path="proposal-for-brand-identity-launch" element={<MantraAdaptation />} />
+        <Route path="employee-onboarding-portal" element={<EmployeOnboardingPortal />} />
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
