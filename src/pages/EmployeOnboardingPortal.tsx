@@ -212,9 +212,9 @@ return (
       <nav className="topnav">
         <div className="nav-logo">
           <svg width="136" height="32" viewBox="0 0 136 32" fill="none">
-            <text x="0" y="24" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="26" fill="#E8510A">G</text>
-            <text x="20" y="24" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="26" fill="#0F0F0F">ROFESION</text>
-            <text x="124" y="10" fontFamily="Outfit,sans-serif" fontWeight="500" fontSize="8" fill="#A09D95">™</text>
+            <text x="2" y="24" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="20" fill="#E8510A">G</text>
+            <text x="20" y="23" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="18" fill="#0F0F0F">ROFESION</text>
+            <text x="128" y="10" fontFamily="Outfit,sans-serif" fontWeight="500" fontSize="8" fill="#A09D95">™</text>
           </svg>
           <div className="nav-div"></div>
           <div className="nav-lbl">Employee Onboarding</div>
