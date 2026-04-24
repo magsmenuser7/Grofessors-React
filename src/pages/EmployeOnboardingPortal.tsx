@@ -8,7 +8,7 @@ const hbSections = [
     { id: '3', title: 'Working Hours, Attendance & Leave', req: true, html: <><p><strong>Hours:</strong> 10:00 AM – 6:30 PM, Monday to Friday. Arrive by 10:15 AM.</p><p><strong>Late arrivals:</strong> Up to 3 per month without explanation. Beyond 3 requires written justification.</p><p><strong>Leave:</strong> EL — 4 days; SL — 12 days; CL — 12 days per calendar year.</p><p><strong>Applications:</strong> 3 working days in advance via ClickUp or WhatsApp. Emergency leave must be communicated by phone call.</p><p><strong>Absence Without Leave:</strong> Treated as loss-of-pay. 7+ continuous days may result in termination.</p></> },
     { id: '4', title: 'Dress Code & Office Conduct', req: false, html: <><p><strong>Attire:</strong> Formal every day. Level 3 (business formal) for GM+ client meetings. Level 2 (smart casual) for all other interactions.</p><p><strong>Conduct:</strong> Professional at all times. Workspaces must be clean. Smoking strictly prohibited on premises.</p><p><strong>Lunch:</strong> 1:30 PM – 2:30 PM. Visitors to be seated in the discussion room only.</p></> },
     { id: '5', title: 'Performance, Appraisal & Incentives', req: false, html: <><p><strong>Probation:</strong> 2 months. Confirmation based on appraisal. Poor performance leads to extension or termination.</p><p><strong>Annual Hike:</strong> 7–20% based on individual and company performance.</p><p><strong>Incentives:</strong> Client acquisition incentives after 6 months. 7–10% for managers, flat 5% for others.</p></> },
-    { id: '6', title: 'Confidentiality, Anti-Harassment & Technology', req: true, html: <><p><strong>Anti-Harassment:</strong> All forms of harassment are strictly prohibited and result in immediate termination. Report to HR.</p><p><strong>Confidentiality:</strong> No disclosure of client data, frameworks, or company IP — during or for 24 months post-employment.</p><p><strong>Non-Compete:</strong> No engagement with clients or competitors for 24 months post-separation.</p><p><strong>Technology:</strong> Company systems are for official use only. The company may review any material on its network without notice.</p></> },
+    { id: '6', title: 'Confidentiality, Anti-Harassment & Technology', req: true, html: <><p><strong>Anti-Harassment:</strong> All forms of harassment are strictly prohibited and result in immediate termination. Report to HR.</p><p><strong>Confidentiality:</strong> No disclosure of client data, frameworks, or company IP — during or for 12 months post-employment.</p><p><strong>Non-Compete:</strong> No engagement with clients or competitors for 24 months post-separation.</p><p><strong>Technology:</strong> Company systems are for official use only. The company may review any material on its network without notice.</p></> },
     { id: '7', title: 'Termination & Exit Policy', req: false, html: <><p><strong>Notice:</strong> 30 days from either party. Salary in lieu accepted.</p><p><strong>Immediate Termination:</strong> For fraud, forgery, breach of confidentiality, insubordination, or criminal conduct.</p><p><strong>Exit:</strong> Full written handover of responsibilities and all company assets is mandatory.</p></> },
 ];
 
@@ -553,15 +553,15 @@ return (
               </div>
               <div className="doc-scroll" onScroll={(e) => checkScroll(e, 'offer')}>
                 <h4>Offer of Employment</h4>
-                <p>Grofesion Innovations Private Limited<br />D No. 212, A.P. Cotton Association Building,<br />Lakshmipuram Main Road, Guntur, Andhra Pradesh — 522007</p>
+                <p>Grofesion Innovations Private Limited<br />4th floor, icon spaces 5-98-57/5,<br />6th Lane, Brodipet, Guntur, AP 522002</p>
                 <p>Dear <strong>{vals.firstName} {vals.lastName}</strong>,</p>
                 <p>We are pleased to extend this offer of employment to you at <strong>Grofesion Innovations Private Limited</strong> for the position of <strong>{getRoleText()}</strong> in our <strong>{vals.division}</strong> division, based at <strong>{vals.office}</strong>, effective from <strong>{vals.doj}</strong>.</p>
                 <h4>Terms of Employment</h4>
                 <p><strong>Nature of Engagement:</strong> This offer is for a <span>{empType === 'intern' ? 'Internship / Trainee' : 'Full-Time Employment'}</span> engagement, subject to successful completion of the probation period and all joining formalities.</p>
                 <p><strong>Probation Period:</strong> Your employment will commence with a probation period of two (2) months, during which your performance will be evaluated. Confirmation of employment is contingent on satisfactory performance as assessed by the Head of Operations and the Founder.</p>
-                <p><strong>Working Hours:</strong> The standard working hours are 10:00 AM to 6:30 PM, Monday to Friday. You may be required to work beyond these hours based on operational requirements.</p>
-                <p><strong>Confidentiality:</strong> You are required to maintain strict confidentiality of all company information, client data, proprietary frameworks, and business processes — both during and for 24 months following your employment with us.</p>
-                <p><strong>Non-Compete:</strong> During your employment and for a period of 24 months post-separation, you shall not engage in any capacity with clients or competitors of the company.</p>
+                <p><strong>Working Hours:</strong> The standard working hours are 10:00 AM to 7 PM, Monday to Friday. You may be required to work beyond these hours based on operational requirements.</p>
+                <p><strong>Confidentiality:</strong> You are required to maintain strict confidentiality of all company information, client data, proprietary frameworks, and business processes both during and for 24 months following your employment with us.</p>
+                <p><strong>Non-Compete:</strong> During your employment and for a period of 24 months post separation, you shall not engage in any capacity with clients or competitors of the company.</p>
                 <p><strong>Notice Period:</strong> One (1) calendar month notice is required from either party for separation, unless immediate termination clauses apply as described in the Employee Handbook.</p>
                 <h4>Conditions of This Offer</h4>
                 <p>This offer is conditional upon: (a) verification of all documents submitted during onboarding; (b) satisfactory reference checks; (c) execution of a Non-Disclosure Agreement; and (d) receipt of a signed copy of this offer letter.</p>
@@ -591,7 +591,7 @@ return (
         {/* STEP 5 */}
         {currentStep === 5 && (
           <div className="step active">
-            <div className="step-eye">Step 5 of 7 — Non-Disclosure Agreement</div>
+            <div className="step-eye">Step 5 of 7 Non-Disclosure Agreement</div>
             <div className="step-title">Non-Disclosure Agreement</div>
             <div className="step-sub">This NDA protects both Grofesion and you. Read it fully before signing.</div>
 
@@ -608,13 +608,13 @@ return (
                 <h4>2. Obligations of the Recipient</h4>
                 <p>The Recipient agrees to: (a) hold all Confidential Information in strict confidence; (b) not disclose Confidential Information to any third party without prior written consent of the Company; (c) use Confidential Information solely for the purpose of performing their duties at the Company; (d) take all reasonable measures to protect the secrecy and confidentiality of all Confidential Information.</p>
                 <h4>3. Duration</h4>
-                <p>This Agreement shall remain in effect during the term of employment and for a period of <strong>twenty-four (24) months</strong> following the termination of employment for any reason.</p>
+                <p>This Agreement shall remain in effect during the term of employment and for a period of <strong>twelve (12) months</strong> following the termination of employment for any reason.</p>
                 <h4>4. Return of Information</h4>
                 <p>Upon termination of employment or upon request by the Company, the Recipient shall immediately return or destroy all Confidential Information in their possession, including all copies, notes, and summaries.</p>
                 <h4>5. Intellectual Property</h4>
                 <p>All work product, frameworks, strategies, content, designs, and intellectual property created by the Recipient during the course of employment shall be the exclusive property of Grofesion Innovations Private Limited. The Recipient hereby assigns all rights, title, and interest in such work product to the Company.</p>
                 <h4>6. Non-Solicitation</h4>
-                <p>During employment and for 24 months post-separation, the Recipient shall not directly or indirectly solicit, recruit, or engage any employee, client, or vendor of the Company for personal or competitive business purposes.</p>
+                <p>During employment and for 24 months post separation, the Recipient shall not directly or indirectly solicit, recruit, or engage any employee, client, or vendor of the Company for personal or competitive business purposes.</p>
                 <h4>7. Remedies</h4>
                 <p>The Recipient acknowledges that breach of this Agreement would cause irreparable harm to the Company, and that monetary damages may be insufficient. The Company shall be entitled to seek injunctive relief and any other remedies available under applicable law, including the Indian Contract Act 1872.</p>
                 <h4>8. Governing Law</h4>
@@ -642,7 +642,7 @@ return (
         {/* STEP 6 */}
         {currentStep === 6 && (
           <div className="step active">
-            <div className="step-eye">Step 6 of 7 — Handbook</div>
+            <div className="step-eye">Step 6 of 7 Handbook</div>
             <div className="step-title">Employee Handbook</div>
             <div className="step-sub">Read each section. All sections marked <strong>Required</strong> must be acknowledged before the final step.</div>
 
@@ -695,7 +695,7 @@ return (
         {/* STEP 7 */}
         {currentStep === 7 && (
           <div className="step active">
-            <div className="step-eye">Step 7 of 7 — Declaration</div>
+            <div className="step-eye">Step 7 of 7 Declaration</div>
             <div className="step-title">Sign & Submit Your Onboarding</div>
             <div className="step-sub">Review your summary, sign the declaration, and submit to complete your onboarding.</div>
 
@@ -753,13 +753,13 @@ return (
         {currentStep === 'done' && (
           <div className="step active">
             <div className="success-wrap">
-              <div style={{ marginBottom: '28px' }}>
+              {/* <div style={{ marginBottom: '28px' }}>
                 <svg width="180" height="44" viewBox="0 0 180 44" fill="none">
-                  <text x="0" y="36" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="38" fill="#E8510A">G</text>
-                  <text x="26" y="36" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="38" fill="#0F0F0F">ROFESION</text>
+                  <text x="0" y="36" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="26" fill="#E8510A">G</text>
+                  <text x="26" y="36" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="26" fill="#0F0F0F">ROFESION</text>
                   <text x="170" y="14" fontFamily="Outfit,sans-serif" fontWeight="500" fontSize="11" fill="#A09D95">™</text>
                 </svg>
-              </div>
+              </div> */}
               <div className="s-check">
                 <svg viewBox="0 0 32 32" fill="none"><path d="M6 16l7 7 13-13" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
@@ -771,7 +771,7 @@ return (
                 <div className="sck"><div className="sck-dot">✓</div><span>Offer letter accepted</span></div>
                 <div className="sck"><div className="sck-dot">✓</div><span>NDA signed</span></div>
                 <div className="sck"><div className="sck-dot">✓</div><span>Handbook acknowledged</span></div>
-                <div className="sck"><div className="sck-dot">✓</div><span>HR notified — ceo@grofession.com & hr@magsmen.com</span></div>
+                <div className="sck"><div className="sck-dot">✓</div><span>HR notified ceo@grofession.com & hr@magsmen.com</span></div>
                 <div className="sck"><div className="sck-dot">✓</div><span>Welcome email sent to your inbox</span></div>
               </div>
               <button className="btn-pdf" onClick={downloadPDF}>⬇ Download Onboarding Summary PDF</button>
@@ -782,7 +782,7 @@ return (
                 <div className="ns-item"><div className="ns-num">2</div><span><strong>Day 3–7:</strong> Shadowing period with a senior team member.</span></div>
                 <div className="ns-item"><div className="ns-num">3</div><span><strong>Week 2–4:</strong> Supervised work with daily written feedback.</span></div>
                 <div className="ns-item"><div className="ns-num">4</div><span><strong>Day 30:</strong> First performance check-in with Head of Operations.</span></div>
-                <div className="ns-item"><div className="ns-num">5</div><span><strong>Day 90:</strong> Probation review — formal assessment against role success criteria.</span></div>
+                <div className="ns-item"><div className="ns-num">5</div><span><strong>Day 90:</strong> Probation review formal assessment against role success criteria.</span></div>
               </div>
               <div style={{ marginTop: '24px', fontSize: '12px', color: 'var(--gray-400)' }}>Questions? <strong style={{ color: 'var(--black)' }}>hr@magsmen.com</strong> · <strong style={{ color: 'var(--black)' }}>+91 90449 10449</strong></div>
             </div>

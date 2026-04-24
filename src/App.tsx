@@ -31,6 +31,7 @@ import NirvaGoldBrandTheme from './pages/NirvaGoldBrandTheme';
 import NirvaBrandGuidelines2024 from './pages/NirvaBrandGuidelines2024';
 import AvakaiFestivalAudit from './pages/AvakaiFestivalAudit';
 import EmployeOnboardingPortal from './pages/EmployeOnboardingPortal';
+import EODReport from './pages/EODReport';
 // import JewelryCarousel from './pages/JewelryCarousel';
 
 
@@ -187,6 +188,7 @@ function App() {
         <Route path="magsmen-brand-identity-and-communication-proposal" element={<SriMadhVisualIdentityProposal />} />
         <Route path="proposal-for-brand-identity-launch" element={<MantraAdaptation />} />
         <Route path="employee-onboarding-portal" element={<EmployeOnboardingPortal />} />
+        <Route path="eod-report" element={<EODReport />} />
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
