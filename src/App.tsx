@@ -66,6 +66,7 @@ import SkinAffair from './pages/SkinAffair';
 import TdhContentCalenderApril from './pages/TdhContentCalenderApril';
 import SriMadhVisualIdentityProposal from './pages/SriMadhVisualIdentityProposal';
 import MantraAdaptation from './pages/MantraAdaptation';
+import TDHStrartegicReview from './pages/TdhStrategicReview';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -189,6 +190,7 @@ function App() {
         <Route path="proposal-for-brand-identity-launch" element={<MantraAdaptation />} />
         <Route path="employee-onboarding-portal" element={<EmployeOnboardingPortal />} />
         <Route path="eod-report" element={<EODReport />} />
+        <Route path="tdh-strategic-review" element={<TDHStrartegicReview />} />
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}
