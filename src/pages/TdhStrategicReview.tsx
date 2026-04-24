@@ -134,151 +134,151 @@ const TDHStrartegicReview = () => {
   };
 
   // Authentication / Registration state
-//     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-//     const [error, setError] = useState<string>('');
-//     const [successMessage, setSuccessMessage] = useState<string>('');
-//     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const [error, setError] = useState<string>('');
+    const [successMessage, setSuccessMessage] = useState<string>('');
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
  
-//   const [activeTab, setActiveTab] = useState<TabType>('millets');
+  const [activeTab, setActiveTab] = useState<TabType>('millets');
 
     
-//   const getUsers = (): UserData[] => {
-//     return JSON.parse(localStorage.getItem('registeredUsers') || '[]');
-//   };
+  const getUsers = (): UserData[] => {
+    return JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+  };
 
-//   const saveUser = (user: UserData): void => {
-//     const users = getUsers();
-//     users.push(user);
-//     localStorage.setItem('registeredUsers', JSON.stringify(users));
-//   };
+  const saveUser = (user: UserData): void => {
+    const users = getUsers();
+    users.push(user);
+    localStorage.setItem('registeredUsers', JSON.stringify(users));
+  };
 
-//   const findUser = (email: string): UserData | undefined => {
-//     return getUsers().find((u) => u.email === email);
-//   };
+  const findUser = (email: string): UserData | undefined => {
+    return getUsers().find((u) => u.email === email);
+  };
 
 
 
-//  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
-//   e.preventDefault();
+ const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-//   setError('');
-//   setSuccessMessage('');
-//   setIsLoading(true);
+  setError('');
+  setSuccessMessage('');
+  setIsLoading(true);
 
-//   const formData = new FormData(e.currentTarget);
-//   const email = (formData.get('email') as string)?.trim();
+  const formData = new FormData(e.currentTarget);
+  const email = (formData.get('email') as string)?.trim();
 
-//   if (!email) {
-//     setError('Please enter your email address.');
-//     setIsLoading(false);
-//     return;
-//   }
+  if (!email) {
+    setError('Please enter your email address.');
+    setIsLoading(false);
+    return;
+  }
 
-//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//   if (!emailRegex.test(email)) {
-//     setError('Please enter a valid email address.');
-//     setIsLoading(false);
-//     return;
-//   }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    setError('Please enter a valid email address.');
+    setIsLoading(false);
+    return;
+  }
 
-//   const existingUser = findUser(email);
+  const existingUser = findUser(email);
 
-//   try {
+  try {
    
-//     await emailjs.send(
-//       'service_9gmlg2q',
-//       'template_p0q050i',
-//       { email },
-//       '-ePIcI6qQCURx5hAM'
-//     );
+    await emailjs.send(
+      'service_9gmlg2q',
+      'template_p0q050i',
+      { email },
+      '-ePIcI6qQCURx5hAM'
+    );
 
-//     if (existingUser) {
-//       setSuccessMessage('Welcome back.');
-//       setTimeout(() => setIsLoggedIn(true), 800);
-//     } else {
-//       saveUser({ email });
-//       setSuccessMessage('Registered successfully.');
-//       setTimeout(() => setIsLoggedIn(true), 1000);
-//     }
+    if (existingUser) {
+      setSuccessMessage('Welcome back.');
+      setTimeout(() => setIsLoggedIn(true), 800);
+    } else {
+      saveUser({ email });
+      setSuccessMessage('Registered successfully.');
+      setTimeout(() => setIsLoggedIn(true), 1000);
+    }
 
-//   } catch (err) {
-//     setError('Something went wrong. Please try again.');
-//   } finally {
-//     setIsLoading(false);
-//   }
-// };
+  } catch (err) {
+    setError('Something went wrong. Please try again.');
+  } finally {
+    setIsLoading(false);
+  }
+};
   
 
-//   if (!isLoggedIn) {
-//     return (
-//       <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6 font-sans">
-//         <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
+  if (!isLoggedIn) {
+    return (
+      <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6 font-sans">
+        <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
 
-//           <div className="flex flex-col items-center mb-8 text-center">
-//             <div className="p-4 bg-slate-100 rounded-2xl mb-4 text-[#1E293B]">
-//               <LayoutDashboard className="w-8 h-8" />
-//             </div>
-//             <h1 className="text-xl font-bold text-[#1E293B] uppercase">
-//               Strategic Dashboard
-//             </h1>
-//             <p className="text-slate-500 text-sm mt-2">
-//               Enter your email to access
-//             </p>
-//           </div>
+          <div className="flex flex-col items-center mb-8 text-center">
+            <div className="p-4 bg-slate-100 rounded-2xl mb-4 text-[#1E293B]">
+              <LayoutDashboard className="w-8 h-8" />
+            </div>
+            <h1 className="text-xl font-bold text-[#1E293B] uppercase">
+              Strategic Dashboard
+            </h1>
+            <p className="text-slate-500 text-sm mt-2">
+              Enter your email to access
+            </p>
+          </div>
 
-//           <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6">
 
-//             <div>
-//               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-//                 Email
-//               </label>
-//               <div className="relative mt-2">
-//                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
-//                   <Mail className="w-5 h-5" />
-//                 </div>
-//                 <input
-//                   type="email"
-//                   name="email"
-//                   required
-//                   className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#1E293B]/20"
-//                   placeholder="example@email.com"
-//                 />
-//               </div>
-//             </div>
+            <div>
+              <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                Email
+              </label>
+              <div className="relative mt-2">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#1E293B]/20"
+                  placeholder="example@email.com"
+                />
+              </div>
+            </div>
 
-//             {error && (
-//               <div className="flex items-center gap-2 text-red-500 bg-red-50 p-3 rounded-xl text-xs">
-//                 <AlertCircle className="w-4 h-4" />
-//                 {error}
-//               </div>
-//             )}
+            {error && (
+              <div className="flex items-center gap-2 text-red-500 bg-red-50 p-3 rounded-xl text-xs">
+                <AlertCircle className="w-4 h-4" />
+                {error}
+              </div>
+            )}
 
-//             {successMessage && (
-//               <div className="text-green-600 bg-green-50 p-3 rounded-xl text-xs">
-//                 {successMessage}
-//               </div>
-//             )}
+            {successMessage && (
+              <div className="text-green-600 bg-green-50 p-3 rounded-xl text-xs">
+                {successMessage}
+              </div>
+            )}
 
-//             <button
-//               type="submit"
-//               disabled={isLoading}
-//               className="w-full bg-[#1E293B] text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2"
-//             >
-//               {isLoading ? (
-//                 <Loader2 className="w-5 h-5 animate-spin" />
-//               ) : (
-//                 <>
-//                   Access Dashboard
-//                   <ChevronRight className="w-4 h-4" />
-//                 </>
-//               )}
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     );
-//   }
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-[#1E293B] text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2"
+            >
+              {isLoading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <>
+                  Access Dashboard
+                  <ChevronRight className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans p-4 md:p-8 uppercase">
