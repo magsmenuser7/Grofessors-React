@@ -125,7 +125,7 @@ const EODReport: React.FC = () => {
   const [taskWarning, setTaskWarning] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [successData, setSuccessData] = useState<CollectedData | null>(null);
-  const nextTaskIdRef = useRef(5);
+  const nextTaskIdRef = useRef(1);
 
   const today = useMemo(() => new Date(), []);
   const pageDate = useMemo(
