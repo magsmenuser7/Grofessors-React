@@ -161,7 +161,6 @@ const handleFile = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
     };
 
     const submitOnboarding = async () => {
-        debugger;
         if (!validate(7)) return;
         setIsSubmitting(true);
         setSubmitStatus("Uploading files and data...");
