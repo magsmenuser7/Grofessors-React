@@ -176,7 +176,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-[#675F5D]/20 mt-12 pt-8 text-center">
           <p className="text-[#675F5D]">
-            © {currentYear} Grofesion Innovations Pvt Ltd. All rights reserved.
+            © 2019 Grofesion Innovations Pvt Ltd. All rights reserved.
           </p>
         </div>
       </div>
