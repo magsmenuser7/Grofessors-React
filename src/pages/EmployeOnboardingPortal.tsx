@@ -69,14 +69,26 @@ export default function OnboardingPortal() {
         if (errors[id]) setErrors(prev => ({ ...prev, [id]: false }));
     };
 
+const [fileErrors, setFileErrors] = useState<Record<string, string>>({});
+const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1MB
+
 const handleFile = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
   const file = e.target.files?.[0];
-  if (file) {
-    setFiles(prev => ({
+  if (!file) return;
+
+  // Reject if over 1MB
+  if (file.size > MAX_FILE_SIZE) {
+    setFileErrors(prev => ({
       ...prev,
-      [key]: file
+      [key]: `File exceeds 1MB limit (${(file.size / (1024 * 1024)).toFixed(2)}MB)`
     }));
+    e.target.value = ''; // Clear input
+    return; // Don't add to state
   }
+
+  // Clear error & add file to state
+  setFileErrors(prev => { const updated = { ...prev }; delete updated[key]; return updated; });
+  setFiles(prev => ({ ...prev, [key]: file }));
 };
 
     const triggerFile = (id: string) => {
@@ -294,21 +306,26 @@ return (
                   <select id="role" value={vals.role} onChange={handleValChange} className={errors.role ? 'invalid' : ''}>
                     <option value="">Select role</option>
                     <optgroup label="Internship">
-                      <option value="intern">Brand Strategy Intern</option>
-                      <option value="intern">Business Development Intern</option>
-                      <option value="intern">Content & Digital Intern</option>
-                      <option value="intern">Design Intern</option>
-                      <option value="intern">Research Intern</option>
-                      <option value="intern">Management Trainee</option>
+                      <option value="brand-strategy-intern">Brand Strategy Intern</option>
+                      <option value="business-development-intern">Business Development Intern</option>
+                      <option value="content-intern">Content & Digital Intern</option>
+                      <option value="design-intern">Design Intern</option>
+                      <option value="research-intern">Research Intern</option>
+                      <option value="management-intern">Management Trainee</option>
+                       <option value="hr-intern">HR Intern</option>
+                        <option value="we-dev-intern">Web Developer Intern</option>
                     </optgroup>
                     <optgroup label="Full-Time">
-                      <option value="fulltime">Business Associate</option>
-                      <option value="fulltime">Strategy Associate</option>
-                      <option value="fulltime">Operations Associate</option>
-                      <option value="fulltime">Digital Associate</option>
-                      <option value="fulltime">Senior Business Development</option>
-                      <option value="fulltime">Lead Strategist</option>
-                      <option value="fulltime">Head of Operations</option>
+                      <option value="business-fulltime">Business Associate</option>
+                      <option value="strategy-fulltime">Strategy Associate</option>
+                      <option value="operations-fulltime">Operations Associate</option>
+                      <option value="digital-fulltime">Digital Associate</option>
+                      <option value="senior-business-fulltime">Senior Business Development</option>
+                      <option value="strategist-fulltime">Lead Strategist</option>
+                      <option value="oprations-head-fulltime">Head of Operations</option>
+                       <option value="hr-fulltime">HR</option>
+                      <option value="junior-web-fulltime">Junior Web Developer</option>
+                       <option value="senior-web-fulltime">Senior Web Developer</option>
                     </optgroup>
                   </select>
                   {errors.role && <div className="field-error" style={{ display: 'block' }}>Required.</div>}
@@ -437,26 +454,31 @@ return (
             <div className="step-eye">Step 3 of 7 — Documents</div>
             <div className="step-title">Upload Your Documents</div>
             <div className="step-sub">PDF, JPG, or PNG. Max 5MB per file. Salary processing begins only after all required documents are verified.</div>
-            <div className="alert alert-warn"><div className="alert-icon">⚠️</div><div>Ensure all uploads are legible. Blurry or incomplete documents will delay your joining process.</div></div>
+<div className="alert alert-warn"><div className="alert-icon">⚠️</div><div>Ensure all uploads are legible. Blurry or incomplete documents will delay your joining process.</div></div>
 
-            <div className="card">
-              <div className="card-head">Identity Documents</div>
-              {[
-                { id: 'aadhaar', label: 'Aadhaar Card (Front & Back) *', icon: '📄', hint: 'PDF, JPG, PNG — max 5MB', accept: '.pdf,.jpg,.jpeg,.png' },
-                { id: 'pan', label: 'PAN Card *', icon: '🪪', hint: 'PDF, JPG, PNG — max 5MB', accept: '.pdf,.jpg,.jpeg,.png' },
-                { id: 'photo', label: 'Passport-size Photograph *', icon: '🖼', hint: 'JPG or PNG — recent photo — max 5MB', accept: '.jpg,.jpeg,.png' }
-              ].map(d => (
-                <div className="field" key={d.id}>
-                  <label>{d.label}</label>
-                  <div className={`uzone ${files[d.id] ? 'done' : ''}`} onClick={() => triggerFile(`uf-${d.id}`)}>
-                    <input type="file" id={`uf-${d.id}`} accept={d.accept} onChange={(e) => handleFile(d.id, e)} style={{ display: 'none' }} />
-                    <div className="uzone-icon">{d.icon}</div>
-                    <div className="uzone-main">Click or drag to upload</div>
-                    <div className="uzone-hint">{d.hint}</div>
-                    <div className="uzone-fname" style={{ display: files[d.id] ? 'block' : 'none' }}>✓ {files[d.id]?.name}</div>
-                  </div>
-                </div>
-              ))}
+<div className="card">
+  <div className="card-head">Identity Documents</div>
+  {[
+    { id: 'aadhaar', label: 'Aadhaar Card (Front & Back) *', icon: '📄', hint: 'PDF, JPG, PNG — max 1MB', accept: '.pdf,.jpg,.jpeg,.png' },
+    { id: 'pan', label: 'PAN Card *', icon: '🪪', hint: 'PDF, JPG, PNG — max 1MB', accept: '.pdf,.jpg,.jpeg,.png' },
+    { id: 'photo', label: 'Passport-size Photograph *', icon: '🖼', hint: 'JPG or PNG — recent photo — max 1MB', accept: '.jpg,.jpeg,.png' }
+  ].map(d => (
+    <div className="field" key={d.id}>
+      <label>{d.label}</label>
+      <div className={`uzone ${files[d.id] ? 'done' : ''}`} onClick={() => triggerFile(`uf-${d.id}`)}>
+        <input type="file" id={`uf-${d.id}`} accept={d.accept} onChange={(e) => handleFile(d.id, e)} style={{ display: 'none' }} />
+        <div className="uzone-icon">{d.icon}</div>
+        <div className="uzone-main">Click or drag to upload</div>
+        <div className="uzone-hint">{d.hint}</div>
+        {fileErrors[d.id] && (
+          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+            ❌ {fileErrors[d.id]}
+          </div>
+        )}
+        <div className="uzone-fname" style={{ display: files[d.id] ? 'block' : 'none' }}>✓ {files[d.id]?.name}</div>
+      </div>
+    </div>
+  ))}
             </div>
 
             <div className="card">
@@ -473,6 +495,11 @@ return (
                     <div className="uzone-icon">{d.icon}</div>
                     <div className="uzone-main">Click or drag to upload</div>
                     <div className="uzone-hint">{d.hint}</div>
+                    {fileErrors[d.id] && (
+          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+            ❌ {fileErrors[d.id]}
+          </div>
+        )}
                     <div className="uzone-fname" style={{ display: files[d.id] ? 'block' : 'none' }}>✓ {files[d.id]?.name}</div>
                   </div>
                 </div>
@@ -499,7 +526,10 @@ return (
                     <div className="uzone-icon">📋</div>
                     <div className="uzone-main">Click or drag to upload</div>
                     <div className="uzone-hint">Required by many universities for off-campus internship</div>
+                    
+                    
                     <div className="uzone-fname" style={{ display: files.noc ? 'block' : 'none' }}>✓ {files.noc?.name}</div>
+                    
                   </div>
                 </div>
               </div>
@@ -515,6 +545,11 @@ return (
                     <div className="uzone-icon">📄</div>
                     <div className="uzone-main">Click or drag to upload</div>
                     <div className="uzone-hint">From last employer — PDF, JPG, PNG</div>
+                    {fileErrors.relieve && (
+          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+            ❌ {fileErrors.relieve}
+          </div>
+        )}
                     <div className="uzone-fname" style={{ display: files.relieve ? 'block' : 'none' }}>✓ {files.relieve?.name}</div>
                   </div>
                 </div>
@@ -526,10 +561,17 @@ return (
                     <div className="uzone-main">Click or drag to upload</div>
                     <div className="uzone-hint">Payslip or bank statement</div>
                     <div className="uzone-fname" style={{ display: files.salary ? 'block' : 'none' }}>✓ {files.salary?.name}</div>
+                    {fileErrors.salary && (
+          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+            ❌ {fileErrors.salary}
+          </div>
+        )}
                   </div>
                 </div>
               </div>
             )}
+
+            
 
             <div className="btn-row">
               <button className="btn-secondary" onClick={() => goTo(2)}>← Back</button>
