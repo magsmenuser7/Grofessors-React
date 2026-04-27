@@ -59,13 +59,13 @@ const API_URL = 'https://api.mibbs.ai/api/daily-work-report/';
 
 const DEPT_MIN: Record<string, number> = {
   Strategy: 5,
-  'Business Development': 6,
+  'Business Development': 5,
   Operations: 5,
   'Digital & Content': 5,
-  Design: 4,
-  Finance: 4,
-   HR: 2,
-  Management: 4,
+  Design: 5,
+  Finance: 5,
+   HR: 5,
+  Management: 5,
   'Web Development': 3,
  
 };
