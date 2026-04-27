@@ -64,7 +64,10 @@ const DEPT_MIN: Record<string, number> = {
   'Digital & Content': 5,
   Design: 4,
   Finance: 4,
+   HR: 2,
   Management: 4,
+  'Web Development': 3,
+ 
 };
 
 const DEPT_ROLES: Record<string, string[]> = {
@@ -74,7 +77,9 @@ const DEPT_ROLES: Record<string, string[]> = {
   'Digital & Content': ['Digital Associate', 'Content Associate', 'Digital Intern'],
   Design: ['Creative Associate', 'Creative Director', 'Design Intern'],
   Finance: ['Finance Associate', 'Finance Intern'],
+  HR: ['HR', 'HR Intern'],
   Management: ['Founder', 'Head of Operations', 'Manager'],
+  'Web Development': ['Senior Developer', 'Junior Developer', 'Web Developer Intern' ],
 };
 
 const MOOD_LABELS: Record<number, string> = {
@@ -107,7 +112,7 @@ const EODReport: React.FC = () => {
   const [dept, setDept] = useState('');
   const [role, setRole] = useState('');
   const [startTime, setStartTime] = useState('10:00');
-  const [endTime, setEndTime] = useState('18:30');
+  const [endTime, setEndTime] = useState('19:00');
   const [deliverables, setDeliverables] = useState('');
   const [blockerChecked, setBlockerChecked] = useState(false);
   const [blockerText, setBlockerText] = useState('');
@@ -977,13 +982,17 @@ select {
                 onChange={(event) => handleDeptChange(event.target.value)}
               >
                 <option value="">Select</option>
-                <option>Strategy</option>
+            
                 <option>Business Development</option>
-                <option>Operations</option>
-                <option>Digital & Content</option>
                 <option>Design</option>
+                <option>Digital & Content</option>
                 <option>Finance</option>
+                <option>HR</option>
                 <option>Management</option>
+                <option>Operations</option>
+                <option>Strategy</option>
+                <option>Web Development</option>
+
               </select>
               <div className="ferr" id="e-dept" style={{ display: fieldErrors.dept ? 'block' : 'none' }}>
                 Required.
@@ -1116,6 +1125,18 @@ select {
               <div key={meeting.id} className="meet-item">
 
               <button className="meet-del" type="button" onClick={() => delMeeting(meeting.id)}>×</button>
+               <div
+                 style={{
+                   fontSize: '9px',
+                   fontWeight: 700,
+                   letterSpacing: '.1em',
+                   textTransform: 'uppercase',
+                   color: 'var(--g400)',
+                   marginBottom: '8px',
+                 }}
+               >
+                 Meeting {meeting.id}
+               </div>
                 <input
                   className="meet-field"
                   placeholder="Meeting title / with whom"
@@ -1125,7 +1146,7 @@ select {
                 <textarea
                   className="meet-field"
                   rows={2}
-                  placeholder="Key outcome..."
+                  placeholder="Key outcome or decision from this meeting..."
                   value={meeting.outcome}
                   onChange={(event) => updateMeeting(meeting.id, 'outcome', event.target.value)}
                 />
@@ -1188,6 +1209,10 @@ select {
         <div className="sec-sep">Energy Check</div>
 
         <div className="card">
+          <div className="alert alert-info" style={{ marginBottom: '12px' }}>
+      <div className="alert-icon">💡</div>
+      <div>Helps the team lead spot burnout early. Not a performance metric.</div>
+    </div>
           <div className="mood-grid">
             {[1, 2, 3, 4, 5].map((value) => (
               <button
