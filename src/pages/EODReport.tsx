@@ -66,7 +66,7 @@ const DEPT_MIN: Record<string, number> = {
   Finance: 5,
    HR: 5,
   Management: 5,
-  'Web Development': 3,
+  'Web Development': 2,
  
 };
 
@@ -1096,8 +1096,9 @@ select {
                     onChange={(event) => updateTask(task.id, 'time', event.target.value)}
                   >
                     <option value="">Time spent</option>
-                    <option>0.5 hr</option><option>1 hr</option><option>1.5 hrs</option>
-                    <option>2 hrs</option><option>2.5 hrs</option><option>3 hrs</option><option>3+ hrs</option>
+                    <option>15 minutes</option><option>30 minutes</option><option>1 hour</option>
+                    <option>1.5 hours</option><option>2 hours</option><option>2.5 hours</option><option>3 hours</option>
+                    <option>3+ hours</option>
                   </select>
                 </div>
                 {!isRequired && (
