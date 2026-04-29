@@ -918,6 +918,7 @@ select {
     setDept(value);
     setRole('');
   };
+  const [tomorrowPriorities, setTomorrowPriorities] = useState('');
 
   return (
     <div className="eod-page">
@@ -1198,9 +1199,9 @@ select {
             <textarea
               rows={3}
               placeholder="e.g. 1. Follow up with 5 leads  2. Finish strategy deck  3. Team standup"
-              value={deliverables}
+              value={tomorrowPriorities}
               className={fieldErrors.deliverables ? 'err' : ''}
-              onChange={(event) => setDeliverables(event.target.value)}
+              onChange={(event) => setTomorrowPriorities(event.target.value)}
             />
           </div>
         </div>
