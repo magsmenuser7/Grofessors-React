@@ -174,7 +174,6 @@ export default function OnboardingPortal() {
 
 
   const submitOnboarding = async () => {
-    debugger;
     if (!validate(7)) return;
 
     setIsSubmitting(true);
