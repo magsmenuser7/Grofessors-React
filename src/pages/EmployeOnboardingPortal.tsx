@@ -3,210 +3,295 @@ import { jsPDF } from 'jspdf';
 
 // ── HANDBOOK DATA ──
 const hbSections = [
-    { id: '1', title: 'About Grofesion & the Ecosystem', req: true, html: <><p>Grofesion Innovations Private Limited operates across brand consulting, personal branding, professional education, and startup support.</p><p>Divisions: <strong>Magsmen Brand Consultants</strong>, <strong>Stature by Magsmen</strong>, <strong>Launchpad</strong>, <strong>Tapestry of Talents</strong>.</p><p><strong>Vision:</strong> To be at the forefront of every industry, providing innovative and sustainable solutions that shape the world.</p><p><strong>Mission:</strong> To empower our clients to create unparalleled value, enabling them to set new industry standards.</p></> },
-    { id: '2', title: 'Core Values & Culture', req: true, html: <><p>The culture is structured and purposeful — not casual, not corporate. Everyone holds themselves accountable without being managed.</p><ul><li><strong>Creativity</strong> — fresh ideas and novel approaches.</li><li><strong>Excellence</strong> — highest standards in all endeavours.</li><li><strong>Collaboration</strong> — shared goals through partnership.</li><li><strong>Integrity</strong> — transparency and trust in all relationships.</li><li><strong>Passion</strong> — drive to exceed expectations.</li><li><strong>Innovation</strong> — relentlessly pushing boundaries.</li><li><strong>Social Responsibility</strong> — Tapestry of Talents and Launchpad.</li></ul></> },
-    { id: '3', title: 'Working Hours, Attendance & Leave', req: true, html: <><p><strong>Hours:</strong> 10:00 AM – 7:00 PM, Monday to Friday. Arrive by 10:15 AM.</p><p><strong>Late arrivals:</strong> Up to 3 per month without explanation. Beyond 3 requires written justification.</p><p><strong>Leave:</strong> EL — 4 days; SL — 12 days; CL — 12 days per calendar year.</p><p><strong>Applications:</strong> 3 working days in advance via ClickUp or WhatsApp. Emergency leave must be communicated by phone call.</p><p><strong>Absence Without Leave:</strong> Treated as loss-of-pay. 7+ continuous days may result in termination.</p></> },
-    { id: '4', title: 'Dress Code & Office Conduct', req: false, html: <><p><strong>Attire:</strong> Formal every day. Level 3 (business formal) for GM+ client meetings. Level 2 (smart casual) for all other interactions.</p><p><strong>Conduct:</strong> Professional at all times. Workspaces must be clean. Smoking strictly prohibited on premises.</p><p><strong>Lunch:</strong> 1:00 PM – 2:00 PM. Visitors to be seated in the discussion room only.</p></> },
-    { id: '5', title: 'Performance, Appraisal & Incentives', req: false, html: <><p><strong>Probation:</strong> 2 months. Confirmation based on appraisal. Poor performance leads to extension or termination.</p><p><strong>Annual Hike:</strong> 7–20% based on individual and company performance.</p><p><strong>Incentives:</strong> Client acquisition incentives after 6 months. 7–10% for managers, flat 5% for others.</p></> },
-    { id: '6', title: 'Confidentiality, Anti-Harassment & Technology', req: true, html: <><p><strong>Anti-Harassment:</strong> All forms of harassment are strictly prohibited and result in immediate termination. Report to HR.</p><p><strong>Confidentiality:</strong> No disclosure of client data, frameworks, or company IP — during or for 12 months post-employment.</p><p><strong>Non-Compete:</strong> No engagement with clients or competitors for 24 months post-separation.</p><p><strong>Technology:</strong> Company systems are for official use only. The company may review any material on its network without notice.</p></> },
-    { id: '7', title: 'Termination & Exit Policy', req: false, html: <><p><strong>Notice:</strong> 30 days from either party. Salary in lieu accepted.</p><p><strong>Immediate Termination:</strong> For fraud, forgery, breach of confidentiality, insubordination, or criminal conduct.</p><p><strong>Exit:</strong> Full written handover of responsibilities and all company assets is mandatory.</p></> },
+  { id: '1', title: 'About Grofesion & the Ecosystem', req: true, html: <><p>Grofesion Innovations Private Limited operates across brand consulting, personal branding, professional education, and startup support.</p><p>Divisions: <strong>Magsmen Brand Consultants</strong>, <strong>Stature by Magsmen</strong>, <strong>Launchpad</strong>, <strong>Tapestry of Talents</strong>.</p><p><strong>Vision:</strong> To be at the forefront of every industry, providing innovative and sustainable solutions that shape the world.</p><p><strong>Mission:</strong> To empower our clients to create unparalleled value, enabling them to set new industry standards.</p></> },
+  { id: '2', title: 'Core Values & Culture', req: true, html: <><p>The culture is structured and purposeful — not casual, not corporate. Everyone holds themselves accountable without being managed.</p><ul><li><strong>Creativity</strong> — fresh ideas and novel approaches.</li><li><strong>Excellence</strong> — highest standards in all endeavours.</li><li><strong>Collaboration</strong> — shared goals through partnership.</li><li><strong>Integrity</strong> — transparency and trust in all relationships.</li><li><strong>Passion</strong> — drive to exceed expectations.</li><li><strong>Innovation</strong> — relentlessly pushing boundaries.</li><li><strong>Social Responsibility</strong> — Tapestry of Talents and Launchpad.</li></ul></> },
+  { id: '3', title: 'Working Hours, Attendance & Leave', req: true, html: <><p><strong>Hours:</strong> 10:00 AM – 7:00 PM, Monday to Friday. Arrive by 10:15 AM.</p><p><strong>Late arrivals:</strong> Up to 3 per month without explanation. Beyond 3 requires written justification.</p><p><strong>Leave:</strong> EL — 4 days; SL — 12 days; CL — 12 days per calendar year.</p><p><strong>Applications:</strong> 3 working days in advance via ClickUp or WhatsApp. Emergency leave must be communicated by phone call.</p><p><strong>Absence Without Leave:</strong> Treated as loss-of-pay. 7+ continuous days may result in termination.</p></> },
+  { id: '4', title: 'Dress Code & Office Conduct', req: false, html: <><p><strong>Attire:</strong> Formal every day. Level 3 (business formal) for GM+ client meetings. Level 2 (smart casual) for all other interactions.</p><p><strong>Conduct:</strong> Professional at all times. Workspaces must be clean. Smoking strictly prohibited on premises.</p><p><strong>Lunch:</strong> 1:00 PM – 2:00 PM. Visitors to be seated in the discussion room only.</p></> },
+  { id: '5', title: 'Performance, Appraisal & Incentives', req: false, html: <><p><strong>Probation:</strong> 2 months. Confirmation based on appraisal. Poor performance leads to extension or termination.</p><p><strong>Annual Hike:</strong> 7–20% based on individual and company performance.</p><p><strong>Incentives:</strong> Client acquisition incentives after 6 months. 7–10% for managers, flat 5% for others.</p></> },
+  { id: '6', title: 'Confidentiality, Anti-Harassment & Technology', req: true, html: <><p><strong>Anti-Harassment:</strong> All forms of harassment are strictly prohibited and result in immediate termination. Report to HR.</p><p><strong>Confidentiality:</strong> No disclosure of client data, frameworks, or company IP — during or for 12 months post-employment.</p><p><strong>Non-Compete:</strong> No engagement with clients or competitors for 24 months post-separation.</p><p><strong>Technology:</strong> Company systems are for official use only. The company may review any material on its network without notice.</p></> },
+  { id: '7', title: 'Termination & Exit Policy', req: false, html: <><p><strong>Notice:</strong> 30 days from either party. Salary in lieu accepted.</p><p><strong>Immediate Termination:</strong> For fraud, forgery, breach of confidentiality, insubordination, or criminal conduct.</p><p><strong>Exit:</strong> Full written handover of responsibilities and all company assets is mandatory.</p></> },
 ];
 
 const reqHb = ['1', '2', '3', '6'];
 
 export default function OnboardingPortal() {
-    // ── STATE ──
-    const [currentStep, setCurrentStep] = useState<number | 'done'>(1);
-    const [empType, setEmpType] = useState<'' | 'intern' | 'fulltime'>('');
-    const [readItems, setReadItems] = useState<Set<string>>(new Set());
-    const [openHb, setOpenHb] = useState<string | null>(null);
-    const [scrolledOffer, setScrolledOffer] = useState(false);
-    const [scrolledNDA, setScrolledNDA] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState('');
-    const [showHbWarn, setShowHbWarn] = useState(false);
-    const [errors, setErrors] = useState<Record<string, boolean>>({});
+  // ── STATE ──
+  const [currentStep, setCurrentStep] = useState<number | 'done'>(1);
+  const [empType, setEmpType] = useState<'' | 'intern' | 'fulltime'>('');
+  const [readItems, setReadItems] = useState<Set<string>>(new Set());
+  const [openHb, setOpenHb] = useState<string | null>(null);
+  const [scrolledOffer, setScrolledOffer] = useState(false);
+  const [scrolledNDA, setScrolledNDA] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+  const [showHbWarn, setShowHbWarn] = useState(false);
+  const [errors, setErrors] = useState<Record<string, boolean>>({});
 
-    const [vals, setVals] = useState<Record<string, string>>({
-        firstName: "", lastName: "", email: "", mobile: "", doj: "", role: "",
-        division: "", office: "", selfIntro: "", linkedin: "", fatherName: "",
-        dob: "", address: "", emergName: "", emergPhone: "", bloodGroup: "",
-        qual: "", accName: "", bankName: "", accNo: "", ifsc: "", branch: "",
-        ref1Name: "", ref1Desg: "", ref1Org: "", ref1Contact: "",
-        ref2Name: "", ref2Desg: "", ref2Org: "", ref2Contact: "",
-        signature: "", signDate: new Date().toLocaleDateString('en-IN')
-    });
+  const [vals, setVals] = useState<Record<string, string>>({
+    firstName: "", lastName: "", email: "", mobile: "", doj: "", role: "",
+    division: "", office: "", selfIntro: "", linkedin: "", fatherName: "",
+    dob: "", address: "", emergName: "", emergPhone: "", bloodGroup: "",
+    qual: "", accName: "", bankName: "", accNo: "", ifsc: "", branch: "",
+    ref1Name: "", ref1Desg: "", ref1Org: "", ref1Contact: "",
+    ref2Name: "", ref2Desg: "", ref2Org: "", ref2Contact: "",
+    signature: "", signDate: new Date().toLocaleDateString('en-IN')
+  });
 
-    const [checkboxes, setCheckboxes] = useState({
-        offerCb: false,
-        ndaCb: false,
-        finalCb: false
-    });
+  const [checkboxes, setCheckboxes] = useState<Record<string, boolean>>({
+    offerCb: false,
+    ndaCb: false,
+    finalCb: false
+  });
 
-    const [files, setFiles] = useState<Record<string, File | null>>({
-        aadhaar: null, pan: null, photo: null, tenth: null, twelfth: null,
-        degree: null, collegeid: null, noc: null, relieve: null, salary: null
-    });
+  const [files, setFiles] = useState<Record<string, File | null>>({
+    aadhaar: null, pan: null, photo: null, tenth: null, twelfth: null,
+    degree: null, collegeid: null, noc: null, relieve: null, salary: null
+  });
 
-    // ── HANDLERS ──
-    const handleValChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-        const { id, value } = e.target;
-        
-        // Auto-detect empType if role changes
-        if (id === 'role') {
-            const selectedOption = (e.target as HTMLSelectElement).options[(e.target as HTMLSelectElement).selectedIndex];
-            const group = selectedOption.parentElement?.getAttribute('label');
-            if (group === 'Internship') setEmpType('intern');
-            if (group === 'Full-Time') setEmpType('fulltime');
+  // ── HANDLERS ──
+  const handleValChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+
+    // Auto-detect empType if role changes
+    if (id === 'role') {
+      const selectedOption = (e.target as HTMLSelectElement).options[(e.target as HTMLSelectElement).selectedIndex];
+      const group = selectedOption.parentElement?.getAttribute('label');
+      if (group === 'Internship') setEmpType('intern');
+      if (group === 'Full-Time') setEmpType('fulltime');
+    }
+
+    setVals(prev => ({ ...prev, [id]: value }));
+    if (errors[id]) setErrors(prev => ({ ...prev, [id]: false }));
+  };
+
+  const handleCbChange = (id: keyof typeof checkboxes) => {
+    setCheckboxes(prev => ({ ...prev, [id]: !prev[id] }));
+    if (errors[id]) setErrors(prev => ({ ...prev, [id]: false }));
+  };
+
+  const [fileErrors, setFileErrors] = useState<Record<string, string>>({});
+  // const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+
+  const handleFile = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // // Reject if over 2MB
+    // if (file.size > MAX_FILE_SIZE) {
+    //   setFileErrors(prev => ({
+    //     ...prev,
+    //     [key]: `File exceeds 2MB limit (${(file.size / (1024 * 1024)).toFixed(2)}MB)`
+    //   }));
+    //   e.target.value = ''; // Clear input
+    //   return; // Don't add to state
+    // }
+
+    // Clear error & add file to state
+    setFileErrors(prev => { const updated = { ...prev }; delete updated[key]; return updated; });
+    setFiles(prev => ({ ...prev, [key]: file }));
+  };
+
+  const triggerFile = (id: string) => {
+    document.getElementById(id)?.click();
+  };
+
+  const checkScroll = (e: React.UIEvent<HTMLDivElement>, doc: string) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
+    if (scrollHeight - scrollTop <= clientHeight + 50) {
+      if (doc === "offer") setScrolledOffer(true);
+      if (doc === "nda") setScrolledNDA(true);
+    }
+  };
+
+  const markRead = (id: string) => {
+    setReadItems(prev => new Set(prev).add(id));
+  };
+
+  // ── VALIDATION ──
+  const validate = (step: number) => {
+    let newErrors: Record<string, boolean> = {};
+    let ok = true;
+
+    if (step === 1) {
+      const req = ['firstName', 'lastName', 'email', 'mobile', 'doj', 'role', 'division', 'office'];
+      req.forEach(f => { if (!vals[f]) { newErrors[f] = true; ok = false; } });
+      if (vals.selfIntro.length < 50) { newErrors.selfIntro = true; ok = false; }
+    }
+    if (step === 2) {
+      const req = ['fatherName', 'dob', 'address', 'emergName', 'emergPhone', 'qual', 'accName', 'bankName', 'accNo', 'ifsc', 'ref1Name', 'ref1Contact', 'ref2Name', 'ref2Contact'];
+      req.forEach(f => { if (!vals[f]) { newErrors[f] = true; ok = false; } });
+    }
+    if (step === 3) {
+      const req = ['aadhaar', 'pan', 'photo', 'tenth', 'twelfth', 'degree'];
+      if (empType === 'intern') req.push('collegeid');
+      req.forEach(f => { if (!files[f]) { alert(`Please upload ${f}`); ok = false; } });
+    }
+    if (step === 4 && !checkboxes.offerCb) { newErrors.offerCb = true; ok = false; }
+    if (step === 5 && !checkboxes.ndaCb) { newErrors.ndaCb = true; ok = false; }
+    if (step === 7) {
+      if (!vals.signature) { newErrors.signature = true; ok = false; }
+      if (!checkboxes.finalCb) { newErrors.finalCb = true; ok = false; }
+    }
+
+    setErrors(newErrors);
+    if (!ok) window.scrollTo({ top: 100, behavior: 'smooth' });
+    return ok;
+  };
+
+  const goTo = (target: number) => {
+    if (target > (currentStep as number) && !validate(currentStep as number)) return;
+    if (target === 7 && !validateHandbook()) return;
+    setCurrentStep(target);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const validateHandbook = () => {
+    const missing = reqHb.filter(id => !readItems.has(id));
+    if (missing.length) {
+      setShowHbWarn(true);
+      return false;
+    }
+    return true;
+  };
+
+  const getRoleText = () => {
+    return vals.role ? vals.role.charAt(0).toUpperCase() + vals.role.slice(1) : '—';
+  };
+
+  // ── SUBMIT & PDF ──
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(20);
+    doc.text("Grofesion Onboarding Summary", 20, 20);
+    doc.setFontSize(12);
+    doc.text(`Name: ${vals.firstName} ${vals.lastName}`, 20, 40);
+    doc.text(`Role: ${vals.role}`, 20, 50);
+    doc.text(`Division: ${vals.division}`, 20, 60);
+    doc.text(`Joined: ${vals.doj}`, 20, 70);
+    doc.text(`Signed: ${vals.signature} on ${vals.signDate}`, 20, 80);
+    doc.save(`Onboarding_${vals.firstName}.pdf`);
+  };
+
+
+  const submitOnboarding = async () => {
+    debugger;
+    if (!validate(7)) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus("Uploading files and data...");
+
+    try {
+
+      // // ✅ STEP 1: Validate files FIRST
+      // const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+
+      // for (const key in files) {
+      //   const file = files[key];
+      //   if (file && file.size > MAX_FILE_SIZE) {
+      //     alert(`${key} file must be less than 2MB`);
+      //     setIsSubmitting(false);
+      //     return;
+      //   }
+      // }
+
+      // ✅ STEP 2: Create FormData AFTER validation
+      
+      
+      
+      const formData = new FormData();
+
+      Object.keys(vals).forEach(k => formData.append(k, vals[k]));
+      Object.keys(checkboxes).forEach(k =>
+        formData.append(k, String(checkboxes[k]))
+      );
+
+      Object.keys(files).forEach(k => {
+        if (files[k]) formData.append(k, files[k]);
+      });
+
+      formData.append("empType", empType);
+      formData.append("hb_sections", Array.from(readItems).join(","));
+
+      // ✅ STEP 3: API call
+      const response = await fetch(
+        "https://api.mibbs.ai/api/submit-onboarding/",
+        {
+          method: "POST",
+          body: formData
         }
+      );
 
-        setVals(prev => ({ ...prev, [id]: value }));
-        if (errors[id]) setErrors(prev => ({ ...prev, [id]: false }));
-    };
+      const data = await response.json();
 
-    const handleCbChange = (id: keyof typeof checkboxes) => {
-        setCheckboxes(prev => ({ ...prev, [id]: !prev[id] }));
-        if (errors[id]) setErrors(prev => ({ ...prev, [id]: false }));
-    };
+      if (!response.ok) {
+        alert(data.message || "Upload failed");
+        setSubmitStatus("Error");
+        return;
+      }
 
-const [fileErrors, setFileErrors] = useState<Record<string, string>>({});
-const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1MB
+      setSubmitStatus("Success!");
+      setTimeout(() => setCurrentStep('done'), 1000);
 
-const handleFile = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
-  const file = e.target.files?.[0];
-  if (!file) return;
+    } catch (err) {
+      setSubmitStatus("Connection failed.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-  // Reject if over 1MB
-  if (file.size > MAX_FILE_SIZE) {
-    setFileErrors(prev => ({
-      ...prev,
-      [key]: `File exceeds 1MB limit (${(file.size / (1024 * 1024)).toFixed(2)}MB)`
-    }));
-    e.target.value = ''; // Clear input
-    return; // Don't add to state
-  }
+  // const submitOnboarding = async () => {
+  //   if (!validate(7)) return;
+  //   setIsSubmitting(true);
+  //   setSubmitStatus("Uploading files and data...");
 
-  // Clear error & add file to state
-  setFileErrors(prev => { const updated = { ...prev }; delete updated[key]; return updated; });
-  setFiles(prev => ({ ...prev, [key]: file }));
-};
+  //   try {
+  //     const formData = new FormData();
+  //     Object.keys(vals).forEach(k => formData.append(k, vals[k]));
+  //     Object.keys(checkboxes).forEach(k => formData.append(k, String(checkboxes[k as keyof typeof checkboxes])));
+  //     Object.keys(files).forEach(k => { if (files[k]) formData.append(k, files[k] as Blob); });
+  //     formData.append("empType", empType);
+  //     formData.append("hb_sections", Array.from(readItems).join(","));
 
-    const triggerFile = (id: string) => {
-        document.getElementById(id)?.click();
-    };
 
-    const checkScroll = (e: React.UIEvent<HTMLDivElement>, doc: string) => {
-        const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-        if (scrollHeight - scrollTop <= clientHeight + 50) {
-            if (doc === "offer") setScrolledOffer(true);
-            if (doc === "nda") setScrolledNDA(true);
-        }
-    };
+  //     const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
-    const markRead = (id: string) => {
-        setReadItems(prev => new Set(prev).add(id));
-    };
+  //     const validateFiles = (files: { [x: string]: any; }) => {
+  //       for (const key in files) {
+  //         const file = files[key];
 
-    // ── VALIDATION ──
-    const validate = (step: number) => {
-        let newErrors: Record<string, boolean> = {};
-        let ok = true;
+  //         if (file && file.size > MAX_FILE_SIZE) {
+  //           alert(`${key} file must be less than 2MB`);
+  //           return false;
+  //         }
+  //       }
+  //       return true;
+  //     };
 
-        if (step === 1) {
-            const req = ['firstName', 'lastName', 'email', 'mobile', 'doj', 'role', 'division', 'office'];
-            req.forEach(f => { if (!vals[f]) { newErrors[f] = true; ok = false; } });
-            if (vals.selfIntro.length < 50) { newErrors.selfIntro = true; ok = false; }
-        }
-        if (step === 2) {
-            const req = ['fatherName', 'dob', 'address', 'emergName', 'emergPhone', 'qual', 'accName', 'bankName', 'accNo', 'ifsc', 'ref1Name', 'ref1Contact', 'ref2Name', 'ref2Contact'];
-            req.forEach(f => { if (!vals[f]) { newErrors[f] = true; ok = false; } });
-        }
-        if (step === 3) {
-            const req = ['aadhaar', 'pan', 'photo', 'tenth', 'twelfth', 'degree'];
-            if (empType === 'intern') req.push('collegeid');
-            req.forEach(f => { if (!files[f]) { alert(`Please upload ${f}`); ok = false; } });
-        }
-        if (step === 4 && !checkboxes.offerCb) { newErrors.offerCb = true; ok = false; }
-        if (step === 5 && !checkboxes.ndaCb) { newErrors.ndaCb = true; ok = false; }
-        if (step === 7) {
-            if (!vals.signature) { newErrors.signature = true; ok = false; }
-            if (!checkboxes.finalCb) { newErrors.finalCb = true; ok = false; }
-        }
 
-        setErrors(newErrors);
-        if (!ok) window.scrollTo({ top: 100, behavior: 'smooth' });
-        return ok;
-    };
 
-    const goTo = (target: number) => {
-        if (target > (currentStep as number) && !validate(currentStep as number)) return;
-        if (target === 7 && !validateHandbook()) return;
-        setCurrentStep(target);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
 
-    const validateHandbook = () => {
-        const missing = reqHb.filter(id => !readItems.has(id));
-        if (missing.length) {
-            setShowHbWarn(true);
-            return false;
-        }
-        return true;
-    };
+  //     const response = await fetch(
+  //       "https://api.mibbs.ai/api/submit-onboarding/",
+  //       {
+  //         method: "POST",
+  //         body: formData
+  //       }
+  //     );
 
-    const getRoleText = () => {
-        return vals.role ? vals.role.charAt(0).toUpperCase() + vals.role.slice(1) : '—';
-    };
+  //     if (response.ok) {
+  //       setSubmitStatus("Success!");
+  //       setTimeout(() => setCurrentStep('done'), 1000);
+  //     } else {
+  //       setSubmitStatus("Server Error. Please try again.");
+  //     }
+  //   } catch (err) {
+  //     setSubmitStatus("Connection failed.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
-    // ── SUBMIT & PDF ──
-    const downloadPDF = () => {
-        const doc = new jsPDF();
-        doc.setFontSize(20);
-        doc.text("Grofesion Onboarding Summary", 20, 20);
-        doc.setFontSize(12);
-        doc.text(`Name: ${vals.firstName} ${vals.lastName}`, 20, 40);
-        doc.text(`Role: ${vals.role}`, 20, 50);
-        doc.text(`Division: ${vals.division}`, 20, 60);
-        doc.text(`Joined: ${vals.doj}`, 20, 70);
-        doc.text(`Signed: ${vals.signature} on ${vals.signDate}`, 20, 80);
-        doc.save(`Onboarding_${vals.firstName}.pdf`);
-    };
-
-    const submitOnboarding = async () => {
-        if (!validate(7)) return;
-        setIsSubmitting(true);
-        setSubmitStatus("Uploading files and data...");
-
-        try {
-            const formData = new FormData();
-            Object.keys(vals).forEach(k => formData.append(k, vals[k]));
-            Object.keys(checkboxes).forEach(k => formData.append(k, String(checkboxes[k as keyof typeof checkboxes])));
-            Object.keys(files).forEach(k => { if (files[k]) formData.append(k, files[k] as Blob); });
-            formData.append("empType", empType);
-            formData.append("hb_sections", Array.from(readItems).join(","));
-
-            const response = await fetch(
-                "https://api.mibbs.ai/api/submit-onboarding/",
-                {
-                    method: "POST",
-                    body: formData
-                }
-            );
-
-            if (response.ok) {
-                setSubmitStatus("Success!");
-                setTimeout(() => setCurrentStep('done'), 1000);
-            } else {
-                setSubmitStatus("Server Error. Please try again.");
-            }
-        } catch (err) {
-            setSubmitStatus("Connection failed.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
-
-return (
+  return (
     <>
       <style>{cssStyles}</style>
 
@@ -250,7 +335,7 @@ return (
       )}
 
       <div className="shell">
-        
+
         {/* STEP 1 */}
         {currentStep === 1 && (
           <div className="step active">
@@ -312,8 +397,8 @@ return (
                       <option value="design-intern">Design Intern</option>
                       <option value="research-intern">Research Intern</option>
                       <option value="management-intern">Management Trainee</option>
-                       <option value="hr-intern">HR Intern</option>
-                        <option value="we-dev-intern">Web Developer Intern</option>
+                      <option value="hr-intern">HR Intern</option>
+                      <option value="we-dev-intern">Web Developer Intern</option>
                     </optgroup>
                     <optgroup label="Full-Time">
                       <option value="business-fulltime">Business Associate</option>
@@ -323,9 +408,9 @@ return (
                       <option value="senior-business-fulltime">Senior Business Development</option>
                       <option value="strategist-fulltime">Lead Strategist</option>
                       <option value="oprations-head-fulltime">Head of Operations</option>
-                       <option value="hr-fulltime">HR</option>
+                      <option value="hr-fulltime">HR</option>
                       <option value="junior-web-fulltime">Junior Web Developer</option>
-                       <option value="senior-web-fulltime">Senior Web Developer</option>
+                      <option value="senior-web-fulltime">Senior Web Developer</option>
                     </optgroup>
                   </select>
                   {errors.role && <div className="field-error" style={{ display: 'block' }}>Required.</div>}
@@ -386,30 +471,30 @@ return (
             <div className="card">
               <div className="card-head">Personal Information</div>
               <div className="frow">
-                <div className="field"><label>Father's / Guardian's Name <span className="req">*</span></label><input type="text" id="fatherName" value={vals.fatherName} onChange={handleValChange} placeholder="Full name" className={errors.fatherName ? 'invalid' : ''} />{errors.fatherName && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
-                <div className="field"><label>Date of Birth <span className="req">*</span></label><input type="date" id="dob" value={vals.dob} onChange={handleValChange} className={errors.dob ? 'invalid' : ''} />{errors.dob && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                <div className="field"><label>Father's / Guardian's Name <span className="req">*</span></label><input type="text" id="fatherName" value={vals.fatherName} onChange={handleValChange} placeholder="Full name" className={errors.fatherName ? 'invalid' : ''} />{errors.fatherName && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
+                <div className="field"><label>Date of Birth <span className="req">*</span></label><input type="date" id="dob" value={vals.dob} onChange={handleValChange} className={errors.dob ? 'invalid' : ''} />{errors.dob && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
               </div>
-              <div className="field"><label>Permanent Address <span className="req">*</span></label><textarea id="address" rows={2} value={vals.address} onChange={handleValChange} placeholder="Door no., Street, City, State, PIN Code" className={errors.address ? 'invalid' : ''}></textarea>{errors.address && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+              <div className="field"><label>Permanent Address <span className="req">*</span></label><textarea id="address" rows={2} value={vals.address} onChange={handleValChange} placeholder="Door no., Street, City, State, PIN Code" className={errors.address ? 'invalid' : ''}></textarea>{errors.address && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
               <div className="frow">
-                <div className="field"><label>Emergency Contact Name <span className="req">*</span></label><input type="text" id="emergName" value={vals.emergName} onChange={handleValChange} placeholder="Name & relationship" className={errors.emergName ? 'invalid' : ''} />{errors.emergName && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
-                <div className="field"><label>Emergency Contact Number <span className="req">*</span></label><input type="tel" id="emergPhone" value={vals.emergPhone} onChange={handleValChange} placeholder="+91 90000 00000" className={errors.emergPhone ? 'invalid' : ''} />{errors.emergPhone && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                <div className="field"><label>Emergency Contact Name <span className="req">*</span></label><input type="text" id="emergName" value={vals.emergName} onChange={handleValChange} placeholder="Name & relationship" className={errors.emergName ? 'invalid' : ''} />{errors.emergName && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
+                <div className="field"><label>Emergency Contact Number <span className="req">*</span></label><input type="tel" id="emergPhone" value={vals.emergPhone} onChange={handleValChange} placeholder="+91 90000 00000" className={errors.emergPhone ? 'invalid' : ''} />{errors.emergPhone && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
               </div>
               <div className="frow">
                 <div className="field"><label>Blood Group <span className="opt">(optional)</span></label><select id="bloodGroup" value={vals.bloodGroup} onChange={handleValChange}><option value="">Select</option><option>A+</option><option>A−</option><option>B+</option><option>B−</option><option>O+</option><option>O−</option><option>AB+</option><option>AB−</option></select></div>
-                <div className="field"><label>Highest Qualification <span className="req">*</span></label><select id="qual" value={vals.qual} onChange={handleValChange} className={errors.qual ? 'invalid' : ''}><option value="">Select</option><option>Pursuing Undergraduate</option><option>Undergraduate (B.Com / BBA / BA)</option><option>Undergraduate (B.Tech / BE)</option><option>Postgraduate (MBA / PGDM)</option><option>Postgraduate (M.Tech / ME)</option><option>PhD</option></select>{errors.qual && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                <div className="field"><label>Highest Qualification <span className="req">*</span></label><select id="qual" value={vals.qual} onChange={handleValChange} className={errors.qual ? 'invalid' : ''}><option value="">Select</option><option>Pursuing Undergraduate</option><option>Undergraduate (B.Com / BBA / BA)</option><option>Undergraduate (B.Tech / BE)</option><option>Postgraduate (MBA / PGDM)</option><option>Postgraduate (M.Tech / ME)</option><option>PhD</option></select>{errors.qual && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
               </div>
             </div>
 
             <div className="card">
               <div className="card-head">Bank Account Details — Salary Disbursement</div>
               <div className="alert alert-info"><div className="alert-icon">🔒</div><div>Accessed only by the Finance team for payroll. Never shared externally.</div></div>
-              <div className="field"><label>Account Holder Name <span className="req">*</span></label><input type="text" id="accName" value={vals.accName} onChange={handleValChange} placeholder="Exactly as on bank records" className={errors.accName ? 'invalid' : ''} />{errors.accName && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+              <div className="field"><label>Account Holder Name <span className="req">*</span></label><input type="text" id="accName" value={vals.accName} onChange={handleValChange} placeholder="Exactly as on bank records" className={errors.accName ? 'invalid' : ''} />{errors.accName && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
               <div className="frow">
-                <div className="field"><label>Bank Name <span className="req">*</span></label><input type="text" id="bankName" value={vals.bankName} onChange={handleValChange} placeholder="e.g. State Bank of India" className={errors.bankName ? 'invalid' : ''} />{errors.bankName && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
-                <div className="field"><label>Account Number <span className="req">*</span></label><input type="text" id="accNo" value={vals.accNo} onChange={handleValChange} placeholder="Account number" className={errors.accNo ? 'invalid' : ''} />{errors.accNo && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                <div className="field"><label>Bank Name <span className="req">*</span></label><input type="text" id="bankName" value={vals.bankName} onChange={handleValChange} placeholder="e.g. State Bank of India" className={errors.bankName ? 'invalid' : ''} />{errors.bankName && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
+                <div className="field"><label>Account Number <span className="req">*</span></label><input type="text" id="accNo" value={vals.accNo} onChange={handleValChange} placeholder="Account number" className={errors.accNo ? 'invalid' : ''} />{errors.accNo && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
               </div>
               <div className="frow">
-                <div className="field"><label>IFSC Code <span className="req">*</span></label><input type="text" id="ifsc" value={vals.ifsc} onChange={handleValChange} placeholder="SBIN0001234" style={{textTransform:'uppercase'}} className={errors.ifsc ? 'invalid' : ''} />{errors.ifsc && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                <div className="field"><label>IFSC Code <span className="req">*</span></label><input type="text" id="ifsc" value={vals.ifsc} onChange={handleValChange} placeholder="SBIN0001234" style={{ textTransform: 'uppercase' }} className={errors.ifsc ? 'invalid' : ''} />{errors.ifsc && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
                 <div className="field"><label>Branch Name <span className="opt">(optional)</span></label><input type="text" id="branch" value={vals.branch} onChange={handleValChange} placeholder="e.g. Lakshmipuram, Guntur" /></div>
               </div>
             </div>
@@ -417,26 +502,26 @@ return (
             <div className="card">
               <div className="card-head">Professional References</div>
               <div className="alert alert-info"><div className="alert-icon">👥</div><div>Provide 2 references — academic or professional. They may be contacted by HR for verification.</div></div>
-              <div style={{padding:'14px',background:'var(--off-white)',borderRadius:'var(--r-sm)',marginBottom:'14px'}}>
-                <div style={{fontSize:'11px',fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--gray-400)',marginBottom:'12px'}}>Reference 1</div>
+              <div style={{ padding: '14px', background: 'var(--off-white)', borderRadius: 'var(--r-sm)', marginBottom: '14px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--gray-400)', marginBottom: '12px' }}>Reference 1</div>
                 <div className="frow">
-                  <div className="field"><label>Full Name <span className="req">*</span></label><input type="text" id="ref1Name" value={vals.ref1Name} onChange={handleValChange} placeholder="Name" className={errors.ref1Name ? 'invalid' : ''}/>{errors.ref1Name && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
-                  <div className="field"><label>Designation <span className="req">*</span></label><input type="text" id="ref1Desg" value={vals.ref1Desg} onChange={handleValChange} placeholder="e.g. Professor / Manager" className={errors.ref1Desg ? 'invalid' : ''}/>{errors.ref1Desg && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                  <div className="field"><label>Full Name <span className="req">*</span></label><input type="text" id="ref1Name" value={vals.ref1Name} onChange={handleValChange} placeholder="Name" className={errors.ref1Name ? 'invalid' : ''} />{errors.ref1Name && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
+                  <div className="field"><label>Designation <span className="req">*</span></label><input type="text" id="ref1Desg" value={vals.ref1Desg} onChange={handleValChange} placeholder="e.g. Professor / Manager" className={errors.ref1Desg ? 'invalid' : ''} />{errors.ref1Desg && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
                 </div>
                 <div className="frow">
-                  <div className="field"><label>Organisation <span className="req">*</span></label><input type="text" id="ref1Org" value={vals.ref1Org} onChange={handleValChange} placeholder="Company / Institution" className={errors.ref1Org ? 'invalid' : ''}/>{errors.ref1Org && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
-                  <div className="field"><label>Contact <span className="req">*</span></label><input type="tel" id="ref1Contact" value={vals.ref1Contact} onChange={handleValChange} placeholder="Phone or email" className={errors.ref1Contact ? 'invalid' : ''}/>{errors.ref1Contact && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                  <div className="field"><label>Organisation <span className="req">*</span></label><input type="text" id="ref1Org" value={vals.ref1Org} onChange={handleValChange} placeholder="Company / Institution" className={errors.ref1Org ? 'invalid' : ''} />{errors.ref1Org && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
+                  <div className="field"><label>Contact <span className="req">*</span></label><input type="tel" id="ref1Contact" value={vals.ref1Contact} onChange={handleValChange} placeholder="Phone or email" className={errors.ref1Contact ? 'invalid' : ''} />{errors.ref1Contact && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
                 </div>
               </div>
-              <div style={{padding:'14px',background:'var(--off-white)',borderRadius:'var(--r-sm)'}}>
-                <div style={{fontSize:'11px',fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--gray-400)',marginBottom:'12px'}}>Reference 2</div>
+              <div style={{ padding: '14px', background: 'var(--off-white)', borderRadius: 'var(--r-sm)' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--gray-400)', marginBottom: '12px' }}>Reference 2</div>
                 <div className="frow">
-                  <div className="field"><label>Full Name <span className="req">*</span></label><input type="text" id="ref2Name" value={vals.ref2Name} onChange={handleValChange} placeholder="Name" className={errors.ref2Name ? 'invalid' : ''}/>{errors.ref2Name && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
-                  <div className="field"><label>Designation <span className="req">*</span></label><input type="text" id="ref2Desg" value={vals.ref2Desg} onChange={handleValChange} placeholder="e.g. Director / HOD" className={errors.ref2Desg ? 'invalid' : ''}/>{errors.ref2Desg && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                  <div className="field"><label>Full Name <span className="req">*</span></label><input type="text" id="ref2Name" value={vals.ref2Name} onChange={handleValChange} placeholder="Name" className={errors.ref2Name ? 'invalid' : ''} />{errors.ref2Name && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
+                  <div className="field"><label>Designation <span className="req">*</span></label><input type="text" id="ref2Desg" value={vals.ref2Desg} onChange={handleValChange} placeholder="e.g. Director / HOD" className={errors.ref2Desg ? 'invalid' : ''} />{errors.ref2Desg && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
                 </div>
                 <div className="frow">
-                  <div className="field"><label>Organisation <span className="req">*</span></label><input type="text" id="ref2Org" value={vals.ref2Org} onChange={handleValChange} placeholder="Company / Institution" className={errors.ref2Org ? 'invalid' : ''}/>{errors.ref2Org && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
-                  <div className="field"><label>Contact <span className="req">*</span></label><input type="tel" id="ref2Contact" value={vals.ref2Contact} onChange={handleValChange} placeholder="Phone or email" className={errors.ref2Contact ? 'invalid' : ''}/>{errors.ref2Contact && <div className="field-error" style={{display:'block'}}>Required.</div>}</div>
+                  <div className="field"><label>Organisation <span className="req">*</span></label><input type="text" id="ref2Org" value={vals.ref2Org} onChange={handleValChange} placeholder="Company / Institution" className={errors.ref2Org ? 'invalid' : ''} />{errors.ref2Org && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
+                  <div className="field"><label>Contact <span className="req">*</span></label><input type="tel" id="ref2Contact" value={vals.ref2Contact} onChange={handleValChange} placeholder="Phone or email" className={errors.ref2Contact ? 'invalid' : ''} />{errors.ref2Contact && <div className="field-error" style={{ display: 'block' }}>Required.</div>}</div>
                 </div>
               </div>
             </div>
@@ -454,31 +539,31 @@ return (
             <div className="step-eye">Step 3 of 7 — Documents</div>
             <div className="step-title">Upload Your Documents</div>
             <div className="step-sub">PDF, JPG, or PNG. Max 5MB per file. Salary processing begins only after all required documents are verified.</div>
-<div className="alert alert-warn"><div className="alert-icon">⚠️</div><div>Ensure all uploads are legible. Blurry or incomplete documents will delay your joining process.</div></div>
+            <div className="alert alert-warn"><div className="alert-icon">⚠️</div><div>Ensure all uploads are legible. Blurry or incomplete documents will delay your joining process.</div></div>
 
-<div className="card">
-  <div className="card-head">Identity Documents</div>
-  {[
-    { id: 'aadhaar', label: 'Aadhaar Card (Front & Back) *', icon: '📄', hint: 'PDF, JPG, PNG — max 1MB', accept: '.pdf,.jpg,.jpeg,.png' },
-    { id: 'pan', label: 'PAN Card *', icon: '🪪', hint: 'PDF, JPG, PNG — max 1MB', accept: '.pdf,.jpg,.jpeg,.png' },
-    { id: 'photo', label: 'Passport-size Photograph *', icon: '🖼', hint: 'JPG or PNG — recent photo — max 1MB', accept: '.jpg,.jpeg,.png' }
-  ].map(d => (
-    <div className="field" key={d.id}>
-      <label>{d.label}</label>
-      <div className={`uzone ${files[d.id] ? 'done' : ''}`} onClick={() => triggerFile(`uf-${d.id}`)}>
-        <input type="file" id={`uf-${d.id}`} accept={d.accept} onChange={(e) => handleFile(d.id, e)} style={{ display: 'none' }} />
-        <div className="uzone-icon">{d.icon}</div>
-        <div className="uzone-main">Click or drag to upload</div>
-        <div className="uzone-hint">{d.hint}</div>
-        {fileErrors[d.id] && (
-          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
-            ❌ {fileErrors[d.id]}
-          </div>
-        )}
-        <div className="uzone-fname" style={{ display: files[d.id] ? 'block' : 'none' }}>✓ {files[d.id]?.name}</div>
-      </div>
-    </div>
-  ))}
+            <div className="card">
+              <div className="card-head">Identity Documents</div>
+              {[
+                { id: 'aadhaar', label: 'Aadhaar Card (Front & Back) *', icon: '📄', hint: 'PDF, JPG, PNG — max 1MB', accept: '.pdf,.jpg,.jpeg,.png' },
+                { id: 'pan', label: 'PAN Card *', icon: '🪪', hint: 'PDF, JPG, PNG — max 1MB', accept: '.pdf,.jpg,.jpeg,.png' },
+                { id: 'photo', label: 'Passport-size Photograph *', icon: '🖼', hint: 'JPG or PNG — recent photo — max 1MB', accept: '.jpg,.jpeg,.png' }
+              ].map(d => (
+                <div className="field" key={d.id}>
+                  <label>{d.label}</label>
+                  <div className={`uzone ${files[d.id] ? 'done' : ''}`} onClick={() => triggerFile(`uf-${d.id}`)}>
+                    <input type="file" id={`uf-${d.id}`} accept={d.accept} onChange={(e) => handleFile(d.id, e)} style={{ display: 'none' }} />
+                    <div className="uzone-icon">{d.icon}</div>
+                    <div className="uzone-main">Click or drag to upload</div>
+                    <div className="uzone-hint">{d.hint}</div>
+                    {fileErrors[d.id] && (
+                      <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+                        ❌ {fileErrors[d.id]}
+                      </div>
+                    )}
+                    <div className="uzone-fname" style={{ display: files[d.id] ? 'block' : 'none' }}>✓ {files[d.id]?.name}</div>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="card">
@@ -496,10 +581,10 @@ return (
                     <div className="uzone-main">Click or drag to upload</div>
                     <div className="uzone-hint">{d.hint}</div>
                     {fileErrors[d.id] && (
-          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
-            ❌ {fileErrors[d.id]}
-          </div>
-        )}
+                      <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+                        ❌ {fileErrors[d.id]}
+                      </div>
+                    )}
                     <div className="uzone-fname" style={{ display: files[d.id] ? 'block' : 'none' }}>✓ {files[d.id]?.name}</div>
                   </div>
                 </div>
@@ -526,10 +611,10 @@ return (
                     <div className="uzone-icon">📋</div>
                     <div className="uzone-main">Click or drag to upload</div>
                     <div className="uzone-hint">Required by many universities for off-campus internship</div>
-                    
-                    
+
+
                     <div className="uzone-fname" style={{ display: files.noc ? 'block' : 'none' }}>✓ {files.noc?.name}</div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -546,10 +631,10 @@ return (
                     <div className="uzone-main">Click or drag to upload</div>
                     <div className="uzone-hint">From last employer — PDF, JPG, PNG</div>
                     {fileErrors.relieve && (
-          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
-            ❌ {fileErrors.relieve}
-          </div>
-        )}
+                      <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+                        ❌ {fileErrors.relieve}
+                      </div>
+                    )}
                     <div className="uzone-fname" style={{ display: files.relieve ? 'block' : 'none' }}>✓ {files.relieve?.name}</div>
                   </div>
                 </div>
@@ -562,16 +647,16 @@ return (
                     <div className="uzone-hint">Payslip or bank statement</div>
                     <div className="uzone-fname" style={{ display: files.salary ? 'block' : 'none' }}>✓ {files.salary?.name}</div>
                     {fileErrors.salary && (
-          <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
-            ❌ {fileErrors.salary}
-          </div>
-        )}
+                      <div style={{ color: '#dc3545', fontSize: '12px', marginTop: '8px' }}>
+                        ❌ {fileErrors.salary}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             )}
 
-            
+
 
             <div className="btn-row">
               <button className="btn-secondary" onClick={() => goTo(2)}>← Back</button>
@@ -710,8 +795,8 @@ return (
                   </div>
                   <div className={`hb-body ${openHb === s.id ? 'open' : ''}`}>
                     {s.html}
-                    <button 
-                      className={`btn-mark ${readItems.has(s.id) ? 'done' : ''}`} 
+                    <button
+                      className={`btn-mark ${readItems.has(s.id) ? 'done' : ''}`}
                       onClick={() => markRead(s.id)}
                       disabled={readItems.has(s.id)}
                     >
@@ -816,7 +901,7 @@ return (
                 <div className="sck"><div className="sck-dot">✓</div><span>Welcome email sent to your inbox</span></div>
               </div>
               <button className="btn-pdf" onClick={downloadPDF}>⬇ Download Onboarding Summary PDF</button>
-              
+
               <div className="ns-box" style={{ marginTop: '24px' }}>
                 <div className="ns-title">What happens next</div>
                 <div className="ns-item"><div className="ns-num">1</div><span><strong>Day 1–3:</strong> Reading period. Full handbook review. No client work.</span></div>
