@@ -32,6 +32,7 @@ import NirvaBrandGuidelines2024 from './pages/NirvaBrandGuidelines2024';
 import AvakaiFestivalAudit from './pages/AvakaiFestivalAudit';
 import EmployeOnboardingPortal from './pages/EmployeOnboardingPortal';
 import EODReport from './pages/EODReport';
+import KalanikethanBrandPresentation from './pages/KalanikethanBrandPresentation';
 // import JewelryCarousel from './pages/JewelryCarousel';
 
 
@@ -191,6 +192,8 @@ function App() {
         <Route path="employee-onboarding-portal" element={<EmployeOnboardingPortal />} />
         <Route path="eod-report" element={<EODReport />} />
         <Route path="tdh-strategic-review" element={<TDHStrartegicReview />} />
+        <Route path="kalanikethan-brand-presentation" element={<KalanikethanBrandPresentation />} />
+
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
         {/* <Route path="/scorecare-brand-name-proposal" element={<ProtectedPDF />} /> */}

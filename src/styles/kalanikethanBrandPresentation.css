@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&family=Noto+Serif+Telugu:wght@300;400;500&display=swap');
+
+html { scroll-behavior: smooth; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.anim-1 { animation: fadeUp 0.8s 0.1s both; }
+.anim-2 { animation: fadeUp 0.8s 0.25s both; }
+.anim-3 { animation: fadeUp 0.8s 0.4s both; }
+.anim-4 { animation: fadeUp 0.8s 0.55s both; }
+.anim-5 { animation: fadeUp 0.8s 0.7s both; }
+.anim-6 { animation: scaleIn 0.8s 0.3s both; }
+
+.grid-pat {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 70px,
+      #C5A35A 70px,
+      #C5A35A 71px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 70px,
+      #C5A35A 70px,
+      #C5A35A 71px
+    );
+}
+
