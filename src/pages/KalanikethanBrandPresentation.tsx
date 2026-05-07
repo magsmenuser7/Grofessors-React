@@ -42,8 +42,7 @@ import {
 } from 'lucide-react';
 
 // const LOGO_SRC = "/components/assets/logos/grofesion.png"
-import logo from "../components/assets/logos/grofesion.png";
-import '../styles/kalanikethanBrandPresentation.css';
+import logo from "../components/assets/logos/grofesion.png"
 
 export default function KalanikethanBrandPresentation() {
 
@@ -309,8 +308,30 @@ type UserData = {
 
   return (
     <div className="font-['Jost',sans-serif] bg-[#FAF6EE] text-[#1A1410] overflow-x-hidden min-h-screen">
-      {/* Global & Custom Styles (moved to CSS file) */}
-
+      {/* Global & Custom Styles */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&family=Noto+Serif+Telugu:wght@300;400;500&display=swap');
+        
+        html { scroll-behavior: smooth; }
+        
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+        
+        .anim-1 { animation: fadeUp 0.8s 0.1s both; }
+        .anim-2 { animation: fadeUp 0.8s 0.25s both; }
+        .anim-3 { animation: fadeUp 0.8s 0.4s both; }
+        .anim-4 { animation: fadeUp 0.8s 0.55s both; }
+        .anim-5 { animation: fadeUp 0.8s 0.7s both; }
+        .anim-6 { animation: scaleIn 0.8s 0.3s both; }
+        
+        .grid-pat {
+          position: absolute; inset: 0; opacity: 0.035; pointer-events: none;
+          background-image: repeating-linear-gradient(0deg, transparent, transparent 70px, #C5A35A 70px, #C5A35A 71px),
+                            repeating-linear-gradient(90deg, transparent, transparent 70px, #C5A35A 70px, #C5A35A 71px);
+        }
+        `
+      }} />
 
       
 
@@ -386,19 +407,19 @@ type UserData = {
       {/* SLIDE 2: NAME ORIGINS */}
       <section id="s2" className="min-h-screen flex flex-col relative overflow-hidden bg-[#F2EAD8] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem  translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">01 · The Names</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#1A1410] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               Where Each Name<br /><em className="text-[#C5A35A] italic">Comes From</em>
             </div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#6B5744] max-w-[560px] mb-0">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#6B5744] max-w-[560px] mb-0">
             Two names found inside the culture. One a goddess name transformed. The other the word a grandmother uses.
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-[64px] flex-1 reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-[64px] flex-1 reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
             {/* Card 1 */}
             <div className="bg-[#FDFAF4] border-[0.5px] border-[#C5A35A]/20 p-[60px_52px] relative overflow-hidden group">
               <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C5A35A] origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
@@ -453,19 +474,19 @@ type UserData = {
       {/* SLIDE 3: MEANING ARCHITECTURE */}
       <section id="s3" className="min-h-screen flex flex-col relative overflow-hidden bg-[#1A1410] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem  translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">02 · Brand Architecture</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#FAF6EE] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               What Kalavé<br /><em className="text-[#C5A35A] italic">Carries</em>
             </div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#FAF6EE]/55 max-w-[560px]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#FAF6EE]/55 max-w-[560px]">
             A name this carefully rooted carries meaning across six simultaneous dimensions. Every one adds weight to the brand.
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#C5A35A]/10 mt-[64px] flex-1 reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#C5A35A]/10 mt-[64px] flex-1 reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
             {[
               { num: '01', title: 'The Sixty-Four Arts', desc: 'In Sanskrit tradition, Kala refers to the sixty-four divine arts. One of them is the art of honest commercial exchange. Kalavé is the brand that restores an art that commerce forgot.' },
               { num: '02', title: 'The Weaving Root', desc: 'Vé is the Telugu root for weaving — the foundational act of creating a saree. The name contains the product. Every saree sold is literally a Kala Vé — beauty woven.' },
@@ -487,19 +508,19 @@ type UserData = {
       {/* SLIDE 4: LOGO SYSTEM */}
       <section id="s4" className="min-h-screen flex flex-col relative overflow-hidden bg-[#F2EAD8] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem  translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">03 · Visual Identity</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#1A1410] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               The Logo<br /><em className="text-[#C5A35A] italic">System</em>
             </div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#6B5744] max-w-[560px]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#6B5744] max-w-[560px]">
             Calligraphed identity in Telugu and English. Two equal originals — not a translation.
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-[64px] flex-1 reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-[64px] flex-1 reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
             {/* Panel 1 */}
             <div className="min-h-[320px] flex flex-col items-center justify-center p-[60px] relative bg-[#FDFAF4] border-[0.5px] border-[#C5A35A]/20">
               <div className="font-['Cormorant_Garamond',serif] text-[60px] font-light leading-none text-center text-[#1A1410]">
@@ -550,16 +571,16 @@ type UserData = {
       {/* SLIDE 5: COLOUR + TYPE */}
       <section id="s5" className="min-h-screen flex flex-col relative overflow-hidden bg-[#FDFAF4] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">04 · Colour & Typography</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#1A1410] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               The Palette of<br /><em className="text-[#C5A35A] italic">Honesty</em>
             </div>
           </div>
           
-          <div className="flex gap-[2px] mt-[64px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
+          <div className="flex gap-[2px] mt-[64px] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
             {[
               { name: 'Kala Gold', hex: '#C5A35A', desc: 'Primary', bg: 'bg-[#C5A35A]', text: 'text-[#1A1410]' },
               { name: 'Weave Ink', hex: '#1A1410', desc: 'Anchor', bg: 'bg-[#1A1410]', text: 'text-[#FAF6EE]/80' },
@@ -569,14 +590,14 @@ type UserData = {
               { name: 'Zari Shadow', hex: '#3D2E1E', desc: 'Deep', bg: 'bg-[#3D2E1E]', text: 'text-[#FAF6EE]/75' }
             ].map((color, i) => (
               <div key={i} className={`flex-1 h-[180px] flex flex-col justify-end p-[22px] transition-[flex] duration-400 ease-in-out hover:flex-[2.2] cursor-default relative overflow-hidden group ${color.bg} ${color.border || ''}`}>
-                <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:opacity-100"></div>
                 <div className={`text-[11px] tracking-[0.18em] uppercase font-normal relative z-10 ${color.text}`}>{color.name}</div>
                 <div className={`text-[10px] font-light mt-[4px] opacity-65 relative z-10 ${color.text}`}>{color.hex} · {color.desc}</div>
               </div>
             ))}
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[48px] mt-[64px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[48px] mt-[64px] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
             <div>
               <div className="text-[10px] tracking-[0.3em] uppercase text-[#C5A35A] mb-[18px]">Display · Cormorant Garamond 300</div>
               <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#1A1410] text-[52px]">Kalavé</div>
@@ -612,19 +633,19 @@ type UserData = {
       {/* SLIDE 6: IN-STORE */}
       <section id="s6" className="min-h-screen flex flex-col relative overflow-hidden bg-[#1A1410] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">05 · In-Store Experience</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#FAF6EE] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               What Happens<br /><em className="text-[#C5A35A] italic">Inside</em>
             </div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#FAF6EE]/60 max-w-[560px]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms] text-[15px] font-light leading-[1.9] text-[#FAF6EE]/60 max-w-[560px]">
             The store is not a showroom. It is a classroom. Every element makes a woman feel respected, informed, and in control.
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#C5A35A]/10 mt-[64px] flex-1 reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#C5A35A]/10 mt-[64px] flex-1 reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
             {[
               { icon: <svg viewBox="0 0 24 24" className="w-[22px] h-[22px] stroke-[#C5A35A] fill-none stroke-[1.2]"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>, title: 'The Price Board', desc: 'Every saree has a vertical price strip on its stand. Four lines. Fabric. Making. Store. Margin. The total is at the bottom. The breakdown is at the top. No customer has to ask.', tag: 'Transparent by design' },
               { icon: <svg viewBox="0 0 24 24" className="w-[22px] h-[22px] stroke-[#C5A35A] fill-none stroke-[1.2]"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>, title: 'The Origin Wall', desc: 'One wall carries the story of each weaving region. Dharmavaram. Kanchipuram. Gadwal. Pochampally. The woman knows the place before she touches the saree.', tag: 'Heritage as identity' },
@@ -649,16 +670,16 @@ type UserData = {
       {/* SLIDE 7: PRICE TAG */}
       <section id="s7" className="min-h-screen flex flex-col relative overflow-hidden bg-[#FDFAF4] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem  translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">06 · The Price Tag</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#1A1410] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               The Product That<br />Changes <em className="text-[#C5A35A] italic">Everything</em>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[80px] items-center mt-[64px] flex-1 reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[80px] items-center mt-[64px] flex-1 reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
             <div className="border-[0.5px] border-[#C5A35A]/20 p-[48px] bg-white shadow-[0_20px_70px_rgba(26,20,16,0.1)]">
               <div className="flex items-center justify-between pb-[24px] border-b-[0.5px] border-[#C5A35A]/20 mb-[28px]">
                 <div className="font-['Cormorant_Garamond',serif] text-[28px] font-light">
@@ -721,16 +742,16 @@ type UserData = {
       {/* SLIDE 8: VOICE */}
       <section id="s8" className="min-h-screen flex flex-col relative overflow-hidden bg-[#F2EAD8] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">07 · Brand Voice</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#1A1410] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               How <em className="text-[#C5A35A] italic">Kalavé</em><br />Speaks
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[64px] mt-[64px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[64px] mt-[64px] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
             {/* Col 1 */}
             <div>
               <div className="text-[10px] tracking-[0.3em] uppercase text-[#C5A35A] mb-[10px]">Storefront · Signage</div>
@@ -798,16 +819,16 @@ type UserData = {
       {/* SLIDE 9: SIGNAGE */}
       <section id="s9" className="min-h-screen flex flex-col relative overflow-hidden bg-[#FDFAF4] px-[80px] py-[100px]">
         <div className="relative z-10 w-full flex-1 flex flex-col">
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[100ms]">
             <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A]">08 · Signage & Store Identity</div>
           </div>
-          <div className="reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             <div className="font-['Cormorant_Garamond',serif] font-light leading-[1.05] text-[#1A1410] text-[clamp(38px,5vw,66px)] mt-[8px] mb-[6px]">
               How the Brand<br /><em className="text-[#C5A35A] italic">Looks</em> in the World
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-[64px] flex-1 reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-[64px] flex-1 reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
             {/* Storefront Kalave */}
             <div>
               <div className="bg-[#1A1410] p-[60px_50px] flex flex-col items-center justify-center min-h-[400px] relative text-center">
@@ -867,14 +888,14 @@ type UserData = {
       {/* SLIDE 10: TAGLINE */}
       <section id="s10" className="min-h-screen flex flex-col relative overflow-hidden bg-[#1A1410] items-center justify-center text-center px-[80px] py-[100px]">
         <div className="relative z-10 w-full max-w-[800px] mx-auto">
-          <div className="text-[10px] tracking-[0.5em] uppercase text-[#C5A35A] mb-[56px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">The Brand Promise</div>
-          <div className="font-['Cormorant_Garamond',serif] text-[clamp(44px,6.5vw,86px)] font-light leading-[1.1] text-[#FAF6EE] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+          <div className="text-[10px] tracking-[0.5em] uppercase text-[#C5A35A] mb-[56px] reveal-elem  translate-y-8 transition-all duration-900 ease-out delay-[100ms]">The Brand Promise</div>
+          <div className="font-['Cormorant_Garamond',serif] text-[clamp(44px,6.5vw,86px)] font-light leading-[1.1] text-[#FAF6EE] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
             The art of knowing<br />what you <em className="text-[#C5A35A] italic">pay for.</em>
           </div>
-          <div className="text-[12px] font-light tracking-[0.22em] text-[#FAF6EE]/40 mt-[36px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
+          <div className="text-[12px] font-light tracking-[0.22em] text-[#FAF6EE]/40 mt-[36px] reveal-elem  translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
             Kalavé · Saadi Mart · Kalanikethan 2025
           </div>
-          <div className="flex items-center justify-center gap-[72px] mt-[90px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
+          <div className="flex items-center justify-center gap-[72px] mt-[90px] reveal-elem  translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
             <div>
               <div className="font-['Cormorant_Garamond',serif] text-[36px] font-light text-[#FAF6EE]">Kalavé</div>
               <div className="font-['Cormorant_Garamond',serif] text-[17px] font-light italic text-[#C5A35A] mt-[10px]">The art of honest beauty.</div>
@@ -892,17 +913,17 @@ type UserData = {
       <section id="s11" className="min-h-screen flex flex-col relative overflow-hidden bg-[#FDFAF4] items-center justify-center px-[80px] py-[100px]">
         <div className="relative z-10 w-full max-w-[720px] mx-auto text-center">
           <div className="max-w-[680px] mx-auto">
-            <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A] mb-[20px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[100ms]">12 · Name Approval</div>
-            <div className="font-['Cormorant_Garamond',serif] text-[clamp(44px,6vw,80px)] font-light leading-[1.05] text-[#1A1410] mb-[28px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
+            <div className="text-[10px] font-normal tracking-[0.4em] uppercase text-[#C5A35A] mb-[20px] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[100ms]">12 · Name Approval</div>
+            <div className="font-['Cormorant_Garamond',serif] text-[clamp(44px,6vw,80px)] font-light leading-[1.05] text-[#1A1410] mb-[28px] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[250ms]">
               Approve the<br /><em className="italic text-[#C5A35A]">Brand Names</em>
             </div>
-            <div className="text-[15px] font-light leading-[1.9] text-[#6B5744] max-w-[520px] mx-auto mb-[56px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
+            <div className="text-[15px] font-light leading-[1.9] text-[#6B5744] max-w-[520px] mx-auto mb-[56px] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[400ms]">
               Select the names you would like to move forward with. Once approved, our team at Magsmen will immediately begin the trademark screening and identity development process.
             </div>
             
             {!isApproved ? (
               <>
-                <div className="flex gap-[16px] justify-center flex-wrap mb-[52px] reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
+                <div className="flex gap-[16px] justify-center flex-wrap mb-[52px] reveal-elem translate-y-8 transition-all duration-900 ease-out delay-[550ms]">
                   {[
                     { name: 'Kalavé', tel: 'కలవే' },
                     { name: 'Saadi Mart', tel: 'సాడీ మార్ట్' },
@@ -927,7 +948,7 @@ type UserData = {
                 </div>
 
                 {selectedNames.length > 0 && (
-                  <div className="bg-[#F2EAD8] border-[0.5px] border-[#C5A35A]/20 p-[40px] max-w-[480px] mx-auto block reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out">
+                  <div className="bg-[#F2EAD8] border-[0.5px] border-[#C5A35A]/20 p-[40px] max-w-[480px] mx-auto block reveal-elem translate-y-8 transition-all duration-900 ease-out">
                     <div className="font-['Cormorant_Garamond',serif] text-[22px] font-normal text-[#1A1410] text-left mb-[6px]">Complete Your Approval</div>
                     <div className="text-[11px] tracking-[0.2em] uppercase text-[#C5A35A] text-left mb-[24px]">Selected: {selectedNames.join(' + ')}</div>
                     
@@ -946,7 +967,7 @@ type UserData = {
                 )}
               </>
             ) : (
-              <div className="p-[40px] bg-[#1A1410] max-w-[480px] mx-auto text-center block reveal-elem opacity-0 translate-y-8 transition-all duration-900 ease-out">
+              <div className="p-[40px] bg-[#1A1410] max-w-[480px] mx-auto text-center block reveal-elem translate-y-8 transition-all duration-900 ease-out">
                 <div className="text-[32px] mb-[16px] text-[#C5A35A]">✦</div>
                 <div className="font-['Cormorant_Garamond',serif] text-[28px] font-light text-[#FAF6EE] mb-[12px]">Approval Confirmed</div>
                 <div className="text-[13px] font-light text-[#FAF6EE]/55 leading-[1.8]">
