@@ -70,21 +70,21 @@ export default function OnboardingPortal() {
   };
 
   const [fileErrors, setFileErrors] = useState<Record<string, string>>({});
-  // const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+  const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
   const handleFile = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // // Reject if over 2MB
-    // if (file.size > MAX_FILE_SIZE) {
-    //   setFileErrors(prev => ({
-    //     ...prev,
-    //     [key]: `File exceeds 2MB limit (${(file.size / (1024 * 1024)).toFixed(2)}MB)`
-    //   }));
-    //   e.target.value = ''; // Clear input
-    //   return; // Don't add to state
-    // }
+    // // Reject if over 2MB 
+    if (file.size > MAX_FILE_SIZE) {
+      setFileErrors(prev => ({
+        ...prev,
+        [key]: `File exceeds 1MB limit (${(file.size / (1024 * 1024)).toFixed(2)}MB)`
+      }));
+      e.target.value = ''; // Clear input
+      return; // Don't add to state
+    }
 
     // Clear error & add file to state
     setFileErrors(prev => { const updated = { ...prev }; delete updated[key]; return updated; });

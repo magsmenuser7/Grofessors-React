@@ -57,17 +57,48 @@ const CFG = {
 const API_URL = 'https://api.mibbs.ai/api/daily-work-report/';
 
 
-const DEPT_MIN: Record<string, number> = {
-  Strategy: 5,
-  'Business Development': 5,
-  Operations: 5,
-  'Digital & Content': 5,
-  Design: 5,
-  Finance: 5,
-   HR: 5,
-  Management: 5,
-  'Web Development': 2,
- 
+const ROLE_MIN_TASKS: Record<string, number> = {
+  // Strategy
+  'Strategy Associate': 5,
+  'Lead Strategist': 5,
+  'Strategy Intern': 3,
+
+  // Business Development
+  'Business Associate': 5,
+  'Senior Business Development': 5,
+  'BD Intern': 3,
+
+  // Operations
+  'Operations Associate': 5,
+  'Head of Operations': 5,
+  'Operations Intern': 3,
+
+  // Digital & Content
+  'Digital Associate': 5,
+  'Content Associate': 5,
+  'Digital Intern': 3,
+
+  // Design
+  'Creative Associate': 5,
+  'Creative Director': 5,
+  'Design Intern': 3,
+
+  // Finance
+  'Finance Associate': 5,
+  'Finance Intern': 3,
+
+  // HR
+  'HR': 5,
+  'HR Intern': 2,
+
+  // Management
+  Founder: 5,
+  Manager: 5,
+
+  // Web Development
+  'Senior Developer': 2,
+  'Junior Developer': 2,
+  'Web Developer Intern': 2,
 };
 
 const DEPT_ROLES: Record<string, string[]> = {
@@ -148,7 +179,7 @@ const EODReport: React.FC = () => {
     [today]
   );
 
-  const minTasks = DEPT_MIN[dept] || 4;
+  const minTasks = ROLE_MIN_TASKS[role] || 5;
   const roleOptions = DEPT_ROLES[dept] || [];
   const taskCount = tasks.filter((task) => task.desc.trim().length > 0).length;
 
