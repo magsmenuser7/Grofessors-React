@@ -76,7 +76,7 @@ export default function OnboardingPortal() {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // // Reject if over 2MB 
+    // // Reject if over 1MB 
     if (file.size > MAX_FILE_SIZE) {
       setFileErrors(prev => ({
         ...prev,
@@ -182,16 +182,16 @@ export default function OnboardingPortal() {
     try {
 
       // // ✅ STEP 1: Validate files FIRST
-      // const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+      const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
-      // for (const key in files) {
-      //   const file = files[key];
-      //   if (file && file.size > MAX_FILE_SIZE) {
-      //     alert(`${key} file must be less than 2MB`);
-      //     setIsSubmitting(false);
-      //     return;
-      //   }
-      // }
+      for (const key in files) {
+        const file = files[key];
+        if (file && file.size > MAX_FILE_SIZE) {
+          alert(`${key} file must be less than 2MB`);
+          setIsSubmitting(false);
+          return;
+        }
+      }
 
       // ✅ STEP 2: Create FormData AFTER validation
       
