@@ -68,6 +68,7 @@ import TdhContentCalenderApril from './pages/TdhContentCalenderApril';
 import SriMadhVisualIdentityProposal from './pages/SriMadhVisualIdentityProposal';
 import MantraAdaptation from './pages/MantraAdaptation';
 import TDHStrartegicReview from './pages/TdhStrategicReview';
+import KalaniketanBrandCreation from './pages/KalaniketanBrandCreation';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -193,6 +194,7 @@ function App() {
         <Route path="eod-report" element={<EODReport />} />
         <Route path="tdh-strategic-review" element={<TDHStrartegicReview />} />
         <Route path="kalanikethan-brand-presentation" element={<KalanikethanBrandPresentation />} />
+        <Route path="kalaniketan-brand-creation" element={<KalaniketanBrandCreation />} />
 
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
