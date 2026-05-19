@@ -811,6 +811,7 @@ function SlideSogasari() {
     { suffix: "Studio", tel: "సొగసరి స్టూడియో", reg: "Register: Curated · Boutique · Elevated", desc: "Studio signals curation, expertise, and a hands-on approach to saree retail. Not a mart, not a mall. A studio is where beautiful things are made and selected with intention. Elevated register for the premium tier." },
     { suffix: "Haat", tel: "సొగసరి హాట్", reg: "Register: Community · Folk · Trusted local market", desc: "Haat is the ancient Indian word for a weekly community market where honest, transparent commerce happens. Where farmers and weavers bring their goods directly. Sogasari Haat is the transparent pricing brand naming itself after the most honest form of Indian commerce." },
     { suffix: "Kendra", tel: "సొగసరి కేంద్ర", reg: "Register: Authoritative · Destination · Category anchor", desc: "Kendra means centre, the place everything flows toward. Sogasari Kendra is the destination brand — the place women in the city go for sarees the way they go to a specific doctor or a specific jeweller. Authority through destination status." },
+    { suffix: "Mart", tel: "మైరా మార్ట్", reg: "Register: Authoritative · Destination · Category anchor", desc: "Myra Mart represents a modern yet approachable saree shopping destination. The name carries a graceful and stylish feminine feel, making it suitable for contemporary women while still remaining easy for family audiences to remember. ‘Mart’ adds instant retail familiarity and accessibility." },
   ];
   const tmItems = [
     { label: "Word Search", val: "Sogasari", desc: "No indexed trademark found for Sogasari in any class in Indian databases. Original word. Original territory." },
@@ -833,16 +834,30 @@ function SlideSogasari() {
         <div className="reveal rd4">
           <div style={{ fontSize: "10px", letterSpacing: "0.35em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "28px" }}>Suffix Alternatives · Pick the register</div>
           <div className="sog-grid" style={{ marginBottom: "64px" }}>
-            {variants.map(v => (
-              <div key={v.suffix} className="sog-card">
-                <div className="sog-card-name">Sogasari<br /><span>{v.suffix}</span></div>
-                <div className="sog-card-tel">{v.tel}</div>
-                <div className="sog-card-reg">{v.reg}</div>
-                <div className="sog-card-desc">{v.desc}</div>
-                <div className="sog-tm-badge">TM Risk: Very Low</div>
-              </div>
-            ))}
-          </div>
+  {variants.map((v, index) => (
+    <div key={v.suffix} className="sog-card">
+      
+      <div className="sog-card-name">
+  {index === 6 ? (
+    <>
+      Myra<br />
+      <span>{v.suffix}</span>
+    </>
+  ) : (
+    <>
+      Sogasari<br />
+      <span>{v.suffix}</span>
+    </>
+  )}
+</div>
+
+      <div className="sog-card-tel">{v.tel}</div>
+      <div className="sog-card-reg">{v.reg}</div>
+      <div className="sog-card-desc">{v.desc}</div>
+      <div className="sog-tm-badge">TM Risk: Very Low</div>
+    </div>
+  ))}
+</div>
           <div className="sog-tm-grid">
             {tmItems.map(t => (
               <div key={t.label}>
@@ -999,7 +1014,8 @@ function Slide12() {
     { sub: "Trust & Value", en: "Trusted Quality • Fair Price", tel: "నమ్మకమైన నాణ్యత • న్యాయమైన ధర" },
     { sub: "Superior Integrity", en: "Better Quality • True Price", tel: "మెరుగైన నాణ్యత • నిజమైన ధర" },
     { sub: "Authentic Heritage", en: "Quality Sarees • Fair Prices", tel: "నాణ్యమైన చీరలు • న్యాయమైన ధరలు" },
-    { sub: "Artistic Economy", en: "Artistic Sarees • Accessible Prices", tel: "కళాత్మక చీరలు • కలిసివచ్చే ధరలు" }
+    { sub: "Artistic Economy", en: "Artistic Sarees • Accessible Prices", tel: "కళాత్మక చీరలు • కలిసివచ్చే ధరలు" },
+     { sub: "Artistic Economy", en: "Artistic Sarees • Affordable Prices", tel: "కళాత్మక చీరలు • కొనదగిన ధరలు" }
   ];
 
   return (
