@@ -811,8 +811,38 @@ function SlideSogasari() {
     { suffix: "Studio", tel: "సొగసరి స్టూడియో", reg: "Register: Curated · Boutique · Elevated", desc: "Studio signals curation, expertise, and a hands-on approach to saree retail. Not a mart, not a mall. A studio is where beautiful things are made and selected with intention. Elevated register for the premium tier." },
     { suffix: "Haat", tel: "సొగసరి హాట్", reg: "Register: Community · Folk · Trusted local market", desc: "Haat is the ancient Indian word for a weekly community market where honest, transparent commerce happens. Where farmers and weavers bring their goods directly. Sogasari Haat is the transparent pricing brand naming itself after the most honest form of Indian commerce." },
     { suffix: "Kendra", tel: "సొగసరి కేంద్ర", reg: "Register: Authoritative · Destination · Category anchor", desc: "Kendra means centre, the place everything flows toward. Sogasari Kendra is the destination brand — the place women in the city go for sarees the way they go to a specific doctor or a specific jeweller. Authority through destination status." },
-    { suffix: "Mart", tel: "మైరా మార్ట్", reg: "Register: Authoritative · Destination · Category anchor", desc: "Myra Mart represents a modern yet approachable saree shopping destination. The name carries a graceful and stylish feminine feel, making it suitable for contemporary women while still remaining easy for family audiences to remember. ‘Mart’ adds instant retail familiarity and accessibility." },
+    { suffix: "Mart", tel: "మైవా మార్ట్", reg: "Register: Authoritative · Destination · Category anchor", desc: "Myra Mart represents a modern yet approachable saree shopping destination. The name carries a graceful and stylish feminine feel, making it suitable for contemporary women while still remaining easy for family audiences to remember. ‘Mart’ adds instant retail familiarity and accessibility." },
+    { suffix: "Mart", tel: "Myva | మైవా | மைவா | ಮೈವಾ", },
+    { suffix: "Mart", tel: "In a world where fashion changes every season, Myva stands for something timeless — Value.", },
+    { suffix: "Mart", tel: "Myva is born from two powerful ideas:", },
+    { suffix: "Mart", tel: "My Vastra — the garment she wears.", },
+    { suffix: "Mart", tel: "My Value — the woman she is.", },
+     { suffix: "Mart", tel: "Every drape at Myva is more than fabric.", },
+     { suffix: "Mart", tel: "It is heritage woven with purpose, craftsmanship shaped by human hands, and elegance designed to reflect inner worth.", },
+     { suffix: "Mart", tel: "Myva believes luxury is not loud.", },
+     { suffix: "Mart", tel: "Luxury is meaningful.", },
+     { suffix: "Mart", tel: "When a woman chooses Myva, she is not buying clothing — she is wearing her identity, her confidence, and her values.", },
+     { suffix: "Mart", tel: "Myva — Wear Your Value.", },
+
+
   ];
+
+
+
+  // function SlideSogasaries() {
+  // const variants = [
+  //   { suffix: "Sarees", tel: "Shi | షి | ஷி | शी | ಶಿ",  },
+  //   { suffix: "Mart", tel: "Fashion often tries to define women.", },
+  //   { suffix: "Co.", tel: "Shi was created to do the opposite — to celebrate women exactly as they are.",  },
+  //   { suffix: "Studio", tel: "She — identity, individuality, presence.", },
+  //   { suffix: "Haat", tel: "Hi (ही) — only, exclusive, singular.", },
+  //   { suffix: "Kendra", tel: "Together, they form a simple yet profound truth:", },
+  //     { suffix: "Kendra", tel: "She alone is enough.", },
+
+
+  // ];
+
+
   const tmItems = [
     { label: "Word Search", val: "Sogasari", desc: "No indexed trademark found for Sogasari in any class in Indian databases. Original word. Original territory." },
     { label: "Class 24 · Textiles", val: "Clear", desc: "No conflict found. Preliminary indication only. Confirm via live IPIndia search before filing.", green: true },
@@ -840,7 +870,7 @@ function SlideSogasari() {
       <div className="sog-card-name">
   {index === 6 ? (
     <>
-      Myra<br />
+      Myva<br />
       <span>{v.suffix}</span>
     </>
   ) : (
@@ -852,8 +882,8 @@ function SlideSogasari() {
 </div>
 
       <div className="sog-card-tel">{v.tel}</div>
-      <div className="sog-card-reg">{v.reg}</div>
-      <div className="sog-card-desc">{v.desc}</div>
+      {/* <div className="sog-card-reg">{v.reg}</div>
+      <div className="sog-card-desc">{v.desc}</div> */}
       <div className="sog-tm-badge">TM Risk: Very Low</div>
     </div>
   ))}
