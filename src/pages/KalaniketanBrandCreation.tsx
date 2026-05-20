@@ -811,36 +811,9 @@ function SlideSogasari() {
     { suffix: "Studio", tel: "సొగసరి స్టూడియో", reg: "Register: Curated · Boutique · Elevated", desc: "Studio signals curation, expertise, and a hands-on approach to saree retail. Not a mart, not a mall. A studio is where beautiful things are made and selected with intention. Elevated register for the premium tier." },
     { suffix: "Haat", tel: "సొగసరి హాట్", reg: "Register: Community · Folk · Trusted local market", desc: "Haat is the ancient Indian word for a weekly community market where honest, transparent commerce happens. Where farmers and weavers bring their goods directly. Sogasari Haat is the transparent pricing brand naming itself after the most honest form of Indian commerce." },
     { suffix: "Kendra", tel: "సొగసరి కేంద్ర", reg: "Register: Authoritative · Destination · Category anchor", desc: "Kendra means centre, the place everything flows toward. Sogasari Kendra is the destination brand — the place women in the city go for sarees the way they go to a specific doctor or a specific jeweller. Authority through destination status." },
-    { suffix: "Mart", tel: "మైవా మార్ట్", reg: "Register: Authoritative · Destination · Category anchor", desc: "Myra Mart represents a modern yet approachable saree shopping destination. The name carries a graceful and stylish feminine feel, making it suitable for contemporary women while still remaining easy for family audiences to remember. ‘Mart’ adds instant retail familiarity and accessibility." },
-    { suffix: "Mart", tel: "Myva | మైవా | மைவா | ಮೈವಾ", },
-    { suffix: "Mart", tel: "In a world where fashion changes every season, Myva stands for something timeless — Value.", },
-    { suffix: "Mart", tel: "Myva is born from two powerful ideas:", },
-    { suffix: "Mart", tel: "My Vastra — the garment she wears.", },
-    { suffix: "Mart", tel: "My Value — the woman she is.", },
-     { suffix: "Mart", tel: "Every drape at Myva is more than fabric.", },
-     { suffix: "Mart", tel: "It is heritage woven with purpose, craftsmanship shaped by human hands, and elegance designed to reflect inner worth.", },
-     { suffix: "Mart", tel: "Myva believes luxury is not loud.", },
-     { suffix: "Mart", tel: "Luxury is meaningful.", },
-     { suffix: "Mart", tel: "When a woman chooses Myva, she is not buying clothing — she is wearing her identity, her confidence, and her values.", },
-     { suffix: "Mart", tel: "Myva — Wear Your Value.", },
 
 
   ];
-
-
-
-  // function SlideSogasaries() {
-  // const variants = [
-  //   { suffix: "Sarees", tel: "Shi | షి | ஷி | शी | ಶಿ",  },
-  //   { suffix: "Mart", tel: "Fashion often tries to define women.", },
-  //   { suffix: "Co.", tel: "Shi was created to do the opposite — to celebrate women exactly as they are.",  },
-  //   { suffix: "Studio", tel: "She — identity, individuality, presence.", },
-  //   { suffix: "Haat", tel: "Hi (ही) — only, exclusive, singular.", },
-  //   { suffix: "Kendra", tel: "Together, they form a simple yet profound truth:", },
-  //     { suffix: "Kendra", tel: "She alone is enough.", },
-
-
-  // ];
 
 
   const tmItems = [
@@ -882,6 +855,88 @@ function SlideSogasari() {
 </div>
 
       <div className="sog-card-tel">{v.tel}</div>
+      <div className="sog-card-reg">{v.reg}</div>
+      <div className="sog-card-desc">{v.desc}</div>
+      <div className="sog-tm-badge">TM Risk: Very Low</div>
+    </div>
+  ))}
+</div>
+          <div className="sog-tm-grid">
+            {tmItems.map(t => (
+              <div key={t.label}>
+                <div className="sog-tm-label">{t.label}</div>
+                <div className={t.green ? "sog-tm-clear" : "sog-tm-val"}>{t.val}</div>
+                <div className="sog-tm-desc">{t.desc}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ fontSize: "10px", fontWeight: 300, color: "var(--ink-soft)", marginTop: "12px", lineHeight: 1.7, padding: "0 4px" }}>Note: This is a preliminary web-indexed search, not a live IPIndia database clearance. Run the live search on quickcompany.in across Classes 16, 24, 25 and 35 before filing. All results here are indicative only and do not constitute legal advice.</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+function SlideMyva() {
+  const variants = [
+    { suffix: "Mart", tel: "మైవా మార్ట్", reg: "Register: Authoritative · Destination · Category anchor", desc: "Myra Mart represents a modern yet approachable saree shopping destination. The name carries a graceful and stylish feminine feel, making it suitable for contemporary women while still remaining easy for family audiences to remember. ‘Mart’ adds instant retail familiarity and accessibility." },
+    { suffix: "Mart", tel: "Myva | మైవా | மைவா | ಮೈವಾ", },
+    { suffix: "Mart", tel: "In a world where fashion changes every season, Myva stands for something timeless — Value.", },
+    { suffix: "Mart", tel: "Myva is born from two powerful ideas:", },
+    { suffix: "Mart", tel: "My Vastra — the garment she wears.", },
+    { suffix: "Mart", tel: "My Value — the woman she is.", },
+    //  { suffix: "Mart", tel: "Every drape at Myva is more than fabric.", },
+    //  { suffix: "Mart", tel: "It is heritage woven with purpose, craftsmanship shaped by human hands, and elegance designed to reflect inner worth.", },
+    //  { suffix: "Mart", tel: "Myva believes luxury is not loud.", },
+    //  { suffix: "Mart", tel: "Luxury is meaningful.", },
+    //  { suffix: "Mart", tel: "When a woman chooses Myva, she is not buying clothing — she is wearing her identity, her confidence, and her values.", },
+    //  { suffix: "Mart", tel: "Myva — Wear Your Value.", },
+
+
+  ];
+
+
+  const tmItems = [
+    { label: "Word Search", val: "Myva", desc: "No indexed trademark found for Myva in any class in Indian databases. Original word. Original territory." },
+    { label: "Class 24 · Textiles", val: "Clear", desc: "No conflict found. Preliminary indication only. Confirm via live IPIndia search before filing.", green: true },
+    { label: "Class 25 · Clothing", val: "Clear", desc: "No indexed conflict in clothing, sarees, or ethnic wear category. Clean trademark territory.", green: true },
+    { label: "Class 35 · Retail", val: "Clear", desc: "No conflict in retail services. Recommended to file across all four classes simultaneously.", green: true },
+  ];
+  return (
+    <section id="s10b" className="slide" style={{ background: "var(--cream-deep)", padding: "100px 80px" }}>
+      <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
+        <div className="reveal rd1"><div className="label">09 · Fourth Name Candidate</div></div>
+        <div className="reveal rd2">
+          <div className="display" style={{ fontSize: "clamp(38px,5vw,66px)", marginTop: "8px", marginBottom: "6px" }}>
+            Myva<br /><em style={{ color: "var(--gold)", fontStyle: "italic" }}>మైవా</em>
+          </div>
+        </div>
+        <div className="reveal rd3 body-text" style={{ maxWidth: "620px", marginBottom: "48px" }}>
+          Myva (మైవా) is a Telugu word that means one who is beautifully adorned, graceful in appearance, elegant by nature. It describes the woman, not the garment. It is the compliment a Telugu mother gives her daughter when she has dressed well. "Chala myva ga unnav" — you look beautifully adorned. That is the entire brand promise in one word.
+        </div>
+        <div className="reveal rd4">
+          <div style={{ fontSize: "10px", letterSpacing: "0.35em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "28px" }}>Suffix Alternatives · Pick the register</div>
+          <div className="sog-grid" style={{ marginBottom: "64px" }}>
+  {variants.map((v, index) => (
+    <div key={v.suffix} className="sog-card">
+      
+      <div className="sog-card-name">
+  {index === 6 ? (
+    <>
+      Myva<br />
+      <span>{v.suffix}</span>
+    </>
+  ) : (
+    <>
+      Myva<br />
+      <span>{v.suffix}</span>
+    </>
+  )}
+</div>
+
+      <div className="sog-card-tel">{v.tel}</div>
       {/* <div className="sog-card-reg">{v.reg}</div>
       <div className="sog-card-desc">{v.desc}</div> */}
       <div className="sog-tm-badge">TM Risk: Very Low</div>
@@ -903,6 +958,11 @@ function SlideSogasari() {
     </section>
   );
 }
+
+
+
+
+
  
 function Slide10() {
   return (
@@ -943,8 +1003,9 @@ function Slide11() {
     { name: "Kalavé", tel: "కలవే" },
     { name: "Saadi Mart", tel: "సాడీ మార్ట్" },
     { name: "Sogasari Mart", tel: "సొగసరి మార్ట్" },
-    { name: "Sogasari Co.", tel: "సొగసరి కో." },
-    { name: "All Three Names", tel: "మూడూ అంగీకారం" },
+    // { name: "Sogasari Co.", tel: "సొగసరి కో." },
+    { name: "Myva", tel: "మైవా" },
+    // { name: "All Three Names", tel: "మూడూ అంగీకారం" },
   ];
  
   function toggleName(pillName: string) {
@@ -1164,6 +1225,7 @@ export default function KalaniketanBrandCreation() {
         <Slide8 />
         <Slide9 />
         <SlideSogasari />
+        <SlideMyva />
         <Slide10 />
         <Slide11 />
         <Slide12 />
