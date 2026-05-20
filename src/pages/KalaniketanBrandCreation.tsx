@@ -220,7 +220,7 @@ const css = `
   .tl-main{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.5vw,86px);font-weight:300;line-height:1.1;color:var(--cream)}
   .tl-main em{color:var(--gold);font-style:italic}
   .tl-sub{font-size:12px;font-weight:300;letter-spacing:0.22em;color:rgba(250,246,238,0.4);margin-top:36px}
-  .tl-duo{display:flex;align-items:center;justify-content:center;gap:72px;margin-top:90px}
+  .tl-duo{display:flex;align-items:center;justify-content:center;gap:42px;margin-top:90px}
   .tl-item-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--cream)}
   .tl-item-l{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;font-style:italic;color:var(--gold);margin-top:10px}
   .tl-sep{width:1px;height:72px;background:rgba(197,163,90,0.25)}
@@ -882,11 +882,11 @@ function SlideSogasari() {
 function SlideMyva() {
   const variants = [
     { suffix: "Mart", tel: "మైవా మార్ట్", reg: "Register: Authoritative · Destination · Category anchor", desc: "Myra Mart represents a modern yet approachable saree shopping destination. The name carries a graceful and stylish feminine feel, making it suitable for contemporary women while still remaining easy for family audiences to remember. ‘Mart’ adds instant retail familiarity and accessibility." },
-    { suffix: "Mart", tel: "Myva | మైవా | மைவா | ಮೈವಾ", },
-    { suffix: "Mart", tel: "In a world where fashion changes every season, Myva stands for something timeless — Value.", },
-    { suffix: "Mart", tel: "Myva is born from two powerful ideas:", },
-    { suffix: "Mart", tel: "My Vastra — the garment she wears.", },
-    { suffix: "Mart", tel: "My Value — the woman she is.", },
+    { suffix: "Silks", tel: "మైవా సిల్క్స్ ", },
+    // { suffix: "Mart", tel: "In a world where fashion changes every season, Myva stands for something timeless — Value.", },
+    // { suffix: "Mart", tel: "Myva is born from two powerful ideas:", },
+    // { suffix: "Mart", tel: "My Vastra — the garment she wears.", },
+    // { suffix: "Mart", tel: "My Value — the woman she is.", },
     //  { suffix: "Mart", tel: "Every drape at Myva is more than fabric.", },
     //  { suffix: "Mart", tel: "It is heritage woven with purpose, craftsmanship shaped by human hands, and elegance designed to reflect inner worth.", },
     //  { suffix: "Mart", tel: "Myva believes luxury is not loud.", },
@@ -967,7 +967,7 @@ function SlideMyva() {
 function Slide10() {
   return (
     <section id="s10" className="slide" style={{ background: "var(--ink)", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "100px 80px" }}>
-      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: "800px", margin: "0 auto" }}>
+      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: "1150px", margin: "0 auto" }}>
         <div className="tl-eye anim-1">The Brand Promise</div>
         <div className="tl-main anim-2">The art of knowing<br />what you <em>pay for.</em></div>
         <div className="tl-sub anim-3">Kalavé · Saadi Mart · Kalanikethan 2025</div>
@@ -986,6 +986,23 @@ function Slide10() {
             <div className="tl-item-n">Sogasari</div>
             <div className="tl-item-l">She who is beautifully adorned.</div>
           </div>
+          <div className="tl-sep" />
+          <div>
+            <div className="tl-item-n">Myva</div>
+            {/* <div className="tl-item-l">She who is beautifully adorned.</div> */}
+          </div>
+          <div className="tl-sep" />
+          <div>
+            <div className="tl-item-n">Myva Vastra</div>
+            {/* <div className="tl-item-l">She who is beautifully adorned.</div> */}
+          </div>
+          <div className="tl-sep" /><div>
+            <div className="tl-item-n">Myva Value</div>
+            {/* <div className="tl-item-l">She who is beautifully adorned.</div> */}
+          </div>
+
+          
+          
         </div>
       </div>
     </section>
