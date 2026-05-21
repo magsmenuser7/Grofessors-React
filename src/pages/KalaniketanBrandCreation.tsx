@@ -914,7 +914,12 @@ function SlideMyva() {
           </div>
         </div>
         <div className="reveal rd3 body-text" style={{ maxWidth: "620px", marginBottom: "48px" }}>
-          Myva (మైవా) is a Telugu word that means one who is beautifully adorned, graceful in appearance, elegant by nature. It describes the woman, not the garment. It is the compliment a Telugu mother gives her daughter when she has dressed well. "Chala myva ga unnav" — you look beautifully adorned. That is the entire brand promise in one word.
+          మైవా | மைவா | ಮೈವಾ | मायवा
+Myva is a modern expression born from two powerful ideas — My Vastra and My Value.
+It represents not just what a woman wears, but what she stands for.
+Myva celebrates the woman whose elegance comes from within — where clothing becomes a reflection of self-worth, confidence, and timeless grace.
+It describes the woman, not merely the garment.
+
         </div>
         <div className="reveal rd4">
           <div style={{ fontSize: "10px", letterSpacing: "0.35em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "28px" }}>Suffix Alternatives · Pick the register</div>
@@ -989,19 +994,13 @@ function Slide10() {
           <div className="tl-sep" />
           <div>
             <div className="tl-item-n">Myva</div>
-            {/* <div className="tl-item-l">She who is beautifully adorned.</div> */}
+            <div className="tl-item-l">Myva Vastra.</div>
           </div>
           <div className="tl-sep" />
-          <div>
-            <div className="tl-item-n">Myva Vastra</div>
-            {/* <div className="tl-item-l">She who is beautifully adorned.</div> */}
+         <div>
+            <div className="tl-item-n">Myva</div>
+            <div className="tl-item-l">Myva Value.</div>
           </div>
-          <div className="tl-sep" /><div>
-            <div className="tl-item-n">Myva Value</div>
-            {/* <div className="tl-item-l">She who is beautifully adorned.</div> */}
-          </div>
-
-          
           
         </div>
       </div>
