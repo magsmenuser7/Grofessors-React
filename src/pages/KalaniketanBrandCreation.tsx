@@ -994,12 +994,7 @@ function Slide10() {
           <div className="tl-sep" />
           <div>
             <div className="tl-item-n">Myva</div>
-            <div className="tl-item-l">Myva Vastra.</div>
-          </div>
-          <div className="tl-sep" />
-         <div>
-            <div className="tl-item-n">Myva</div>
-            <div className="tl-item-l">Myva Value.</div>
+            <div className="tl-item-l">My Vastra and My Value.</div>
           </div>
           
         </div>
