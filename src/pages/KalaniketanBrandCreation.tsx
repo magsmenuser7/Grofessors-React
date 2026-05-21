@@ -905,7 +905,7 @@ function SlideMyva() {
     { label: "Class 35 · Retail", val: "Clear", desc: "No conflict in retail services. Recommended to file across all four classes simultaneously.", green: true },
   ];
   return (
-    <section id="s10b" className="slide" style={{ background: "var(--cream-deep)", padding: "100px 80px" }}>
+    <section id="s10c" className="slide" style={{ background: "var(--cream-deep)", padding: "100px 80px" }}>
       <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
         <div className="reveal rd1"><div className="label">09 · Fourth Name Candidate</div></div>
         <div className="reveal rd2">
@@ -1219,6 +1219,7 @@ export default function KalaniketanBrandCreation() {
             <a href="#s6" onClick={e => { e.preventDefault(); scrollTo("s6"); }}>In-Store</a>
             <a href="#s8" onClick={e => { e.preventDefault(); scrollTo("s8"); }}>Voice</a>
             <a href="#s10b" onClick={e => { e.preventDefault(); scrollTo("s10b"); }}>Sogasari</a>
+            <a href="#s10c" onClick={e => { e.preventDefault(); scrollTo("s10c"); }}>Myva</a>
             <a href="#s11" onClick={e => { e.preventDefault(); scrollTo("s11"); }}>Approve</a>
             <a href="#s12" onClick={e => { e.preventDefault(); scrollTo("taglines"); }}>Taglines</a>
           </div>
