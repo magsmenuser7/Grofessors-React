@@ -69,6 +69,7 @@ import SriMadhVisualIdentityProposal from './pages/SriMadhVisualIdentityProposal
 import MantraAdaptation from './pages/MantraAdaptation';
 import TDHStrartegicReview from './pages/TdhStrategicReview';
 import KalaniketanBrandCreation from './pages/KalaniketanBrandCreation';
+import SrujanaProjectOverview from './pages/SrujanaProjectOverview';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -195,6 +196,7 @@ function App() {
         <Route path="tdh-strategic-review" element={<TDHStrartegicReview />} />
         <Route path="kalanikethan-brand-presentation" element={<KalanikethanBrandPresentation />} />
         <Route path="kalaniketan-brand-creation" element={<KalaniketanBrandCreation />} />
+        <Route path="dr-srujana-project-status-overview-magsmen-strategic-analysis" element={<SrujanaProjectOverview />} />
 
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
