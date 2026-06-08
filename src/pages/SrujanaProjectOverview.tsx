@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import magsmennewlogo1 from "../components/assets/logos/magsmen-new-logo-white-landscape.png"
+import magsmennewlogo from "../components/assets/logos/Favi-light.svg"
 
 
 import {
@@ -631,8 +633,9 @@ export default function MagsmenDashboard() {
         <div style={{ maxWidth: 1320, margin: "0 auto", position: "relative", zIndex: 10, display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 24 }}>
           <div>
             <div style={{ marginBottom: 24 }}>
-              <h2 style={{ fontFamily: "DM Sans, sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", color: "white" }}>M A G S M E N</h2>
-              <p style={{ fontSize: 9, letterSpacing: "0.3em", color: C.purpleMuted, fontWeight: 600, marginTop: 4 }}>STRATEGY CONSULTANTS</p>
+                <img src={magsmennewlogo1} alt="Magsmen Logo" className="w-[190px]" />
+              {/* <h2 style={{ fontFamily: "DM Sans, sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", color: "white" }}>M A G S M E N</h2>
+              <p style={{ fontSize: 9, letterSpacing: "0.3em", color: C.purpleMuted, fontWeight: 600, marginTop: 4 }}>STRATEGY CONSULTANTS</p> */}
             </div>
             <h1 style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 700, lineHeight: 1.2, marginBottom: 8 }}>
               Dr. Srujana — Project Status Overview
@@ -699,8 +702,9 @@ export default function MagsmenDashboard() {
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "48px 48px 24px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 32, marginBottom: 32 }}>
             <div>
-              <h2 style={{ fontSize: 18, letterSpacing: "0.2em", fontWeight: 700, marginBottom: 16 }}>MAGSMEN</h2>
-              <p style={{ fontSize: 10, color: "rgba(255,255,255,0.6)", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16 }}>Strategy Consultants</p>
+              <img src={magsmennewlogo} alt="Magsmen Logo" className="w-20 h-20"  />
+              {/* <h2 style={{ fontSize: 18, letterSpacing: "0.2em", fontWeight: 700, marginBottom: 16 }}>MAGSMEN</h2>
+              <p style={{ fontSize: 10, color: "rgba(255,255,255,0.6)", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16 }}>Strategy Consultants</p> */}
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", lineHeight: 1.8, maxWidth: 280 }}>
                 A division of Grofessors Innovations Pvt Ltd.<br />
                 Defining the strategic direction for brands that intend to lead.
