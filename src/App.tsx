@@ -33,6 +33,7 @@ import AvakaiFestivalAudit from './pages/AvakaiFestivalAudit';
 import EmployeOnboardingPortal from './pages/EmployeOnboardingPortal';
 import EODReport from './pages/EODReport';
 import KalanikethanBrandPresentation from './pages/KalanikethanBrandPresentation';
+import KalaikethanBrandDiscovery from './pages/KalaikethanBrandDiscovery';
 // import JewelryCarousel from './pages/JewelryCarousel';
 
 
@@ -197,6 +198,7 @@ function App() {
         <Route path="kalanikethan-brand-presentation" element={<KalanikethanBrandPresentation />} />
         <Route path="kalaniketan-brand-creation" element={<KalaniketanBrandCreation />} />
         <Route path="dr-srujana-project-status-overview-magsmen-strategic-analysis" element={<SrujanaProjectOverview />} />
+        <Route path="kalaikethan-brand-discovery" element={<KalaikethanBrandDiscovery />} />
 
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
