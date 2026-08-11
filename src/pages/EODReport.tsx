@@ -59,8 +59,10 @@ const ROLE_MIN_TASKS: Record<string, number> = {
   'Strategy Associate': 5,
   'Lead Strategist': 5,
   'Strategy Intern': 3,
+  'Client Strategy & Growth Lead': 5, // NEW
 
- 
+  
+
   'Business Associate': 5,
   'Senior Business Development': 5,
   'BD Intern': 3,
@@ -96,10 +98,12 @@ const ROLE_MIN_TASKS: Record<string, number> = {
   'Senior Developer': 2,
   'Junior Developer': 2,
   'Web Developer Intern': 2,
+
 };
 
 const DEPT_ROLES: Record<string, string[]> = {
   Strategy: ['Strategy Associate', 'Lead Strategist', 'Strategy Intern'],
+  'Client Strategy & Growth': ['Client Strategy & Growth Lead'],
   'Business Development': ['Business Associate', 'Senior Business Development', 'BD Intern'],
   Operations: ['Operations Associate', 'Head of Operations', 'Operations Intern'],
   'Digital & Content': ['Digital Associate', 'Content Associate', 'Digital Intern'],
@@ -108,6 +112,7 @@ const DEPT_ROLES: Record<string, string[]> = {
   HR: ['HR', 'HR Intern'],
   Management: ['Founder', 'Head of Operations', 'Manager'],
   'Web Development': ['Senior Developer', 'Junior Developer', 'Web Developer Intern'],
+  'Client Strategy & Growth Lead': ['Client Strategy & Growth Lead']
 };
 
 const MOOD_LABELS: Record<number, string> = {
@@ -993,6 +998,7 @@ select {
                 <option>Operations</option>
                 <option>Strategy</option>
                 <option>Web Development</option>
+                <option>Client Strategy & Growth</option>
               </select>
               <div className="ferr" id="e-dept" style={{ display: fieldErrors.dept ? 'block' : 'none' }}>
                 Required.
