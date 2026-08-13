@@ -410,6 +410,8 @@ export default function OnboardingPortal() {
                       <option value="hr-fulltime">HR</option>
                       <option value="junior-web-fulltime">Junior Web Developer</option>
                       <option value="senior-web-fulltime">Senior Web Developer</option>
+                      <option value="senior-web-fulltime">Client Strategy & Growth</option>
+                      {/* <option value="senior-web-fulltime">Video Editor</option> */}
                     </optgroup>
                   </select>
                   {errors.role && <div className="field-error" style={{ display: 'block' }}>Required.</div>}
