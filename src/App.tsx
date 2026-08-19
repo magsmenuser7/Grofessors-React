@@ -71,6 +71,8 @@ import MantraAdaptation from './pages/MantraAdaptation';
 import TDHStrartegicReview from './pages/TdhStrategicReview';
 import KalaniketanBrandCreation from './pages/KalaniketanBrandCreation';
 import SrujanaProjectOverview from './pages/SrujanaProjectOverview';
+import SEOCommandCenter from './pages/SEOCommandCenter';
+import EmployeeExitPortal from './pages/EmployeeExitPortal';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -199,6 +201,8 @@ function App() {
         <Route path="kalaniketan-brand-creation" element={<KalaniketanBrandCreation />} />
         <Route path="dr-srujana-project-status-overview-magsmen-strategic-analysis" element={<SrujanaProjectOverview />} />
         <Route path="kalaikethan-brand-discovery" element={<KalaikethanBrandDiscovery />} />
+        <Route path="seo-command-center" element={<SEOCommandCenter />} />
+        <Route path="employee-exit-portal" element={<EmployeeExitPortal />} />
 
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
