@@ -73,6 +73,7 @@ import KalaniketanBrandCreation from './pages/KalaniketanBrandCreation';
 import SrujanaProjectOverview from './pages/SrujanaProjectOverview';
 import SEOCommandCenter from './pages/SEOCommandCenter';
 import EmployeeExitPortal from './pages/EmployeeExitPortal';
+import AkinJanakiEcosystemDiagramStandalone from './pages/AkinJanakiEcosystemDiagramStandalone';
 
 // ------------------ MAIN LAYOUT ------------------
 function MainLayout() {
@@ -203,6 +204,7 @@ function App() {
         <Route path="kalaikethan-brand-discovery" element={<KalaikethanBrandDiscovery />} />
         <Route path="seo-command-center" element={<SEOCommandCenter />} />
         <Route path="employee-exit-portal" element={<EmployeeExitPortal />} />
+        <Route path="akin-janaki-ecosystem-diagram-standalone" element={<AkinJanakiEcosystemDiagramStandalone />} />
 
         
         {/* <Route path="jewelry-carousel" element={<JewelryCarousel />} /> */}
