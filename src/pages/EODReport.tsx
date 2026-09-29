@@ -53,8 +53,11 @@ const CFG = {
 };
 
 // const API_URL = 'https://api.mibbs.ai/api/daily-work-report/';
-const API_URL = 'https:/api.grofesion.com/api/daily-work-report/';
+// const API_URL = 'https:/api.grofesion.com/api/daily-work-report/';
 // const API_URL = 'http://127.0.0.1:8000/api/daily-work-report/';
+
+
+const API_URL = 'https://api.grofesion.com/api/daily-work-report/';
 
 const ROLE_MIN_TASKS: Record<string, number> = {
   
