@@ -213,7 +213,9 @@ export default function OnboardingPortal() {
 
       // ✅ STEP 3: API call
       const response = await fetch(
-        "https://api.mibbs.ai/api/submit-onboarding/",
+        // "https://api.mibbs.ai/api/submit-onboarding/",
+        "https://api.grofesion.com/api/submit-onboarding/",
+        // "http://127.0.0.1:8000/api/submit-onboarding/",
         {
           method: "POST",
           body: formData

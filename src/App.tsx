@@ -178,9 +178,9 @@ function App() {
         <Route path="tdh-group-strategy-review" element={<TdhGroup />} />
         <Route path="communication-audit-brand-guidelines-digital-packaging" element={<TenalidoubleHorse />} />
         <Route path="tdh-yearly-analytics-meta-linkedIn" element={<TdhYearlyAnalysis />} />
-        <Route path="tdh-plan-Of-Action-2026" element={<TDHPlanOfAction2026 />} />
-        <Route path="tdh-consumer-preference-analysis" element={<TDHConsumerPreferenceAnalysis />} />
-        <Route path="tdh-brands-products-to-focus-on" element={<TDHBrandsProductsToFocusOn />} />
+        <Route path="tdh-plasumer-preference-analysis" element={<TDHConsumerPreferenceAnalysis />} />
+        <Route path="tdh-brn-Of-Action-2026" element={<TDHPlanOfAction2026 />} />
+        <Route path="tdh-conands-products-to-focus-on" element={<TDHBrandsProductsToFocusOn />} />
         <Route path="tdh-calendar-2026-feb" element={<TDHCalendar2026FEB />} />
         <Route path="tdh-plan-Of-action-latest" element={<TDHPlanOfActionLatest />} />
         <Route path="nirva-the-beginning-of-something-golden" element={<TheBeginningOfSomethingGolden />} />

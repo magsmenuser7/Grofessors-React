@@ -301,8 +301,9 @@ export default function EmployeeExitPortal() {
       formData.append("rejoin", rejoin);
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/submit-exit/",
+        // "http://127.0.0.1:8000/api/submit-exit/",
         // "https://api.mibbs.ai/api/submit-exit/",
+        "https://api.grofesion.com/api/submit-exit/",
         { method: "POST", body: formData }
       );
 
