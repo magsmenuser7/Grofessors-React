@@ -1174,7 +1174,8 @@ select {
 
         <div className="card">
           <div className="field">
-            <label className="lbl">What did you deliver today? <span className="req">*</span></label>
+            <label className="lbl">What did you deliver today? </label>
+            {/* <span className="req">*</span> */}
             <textarea
               rows={3}
               placeholder="e.g. Sent proposal to 3 leads · Completed brand audit for Client X · Updated all ClickUp tasks"
