@@ -59,7 +59,7 @@ type ApiError = {
 
 const API_BASE_URL =
   (import.meta.env.VITE_API_BASE_URL as string) ||
-  "http://127.0.0.1:8000/api";
+  "https://api.grofesion.com/api/";
 
 const ONBOARDING_API =
   `${API_BASE_URL}/client-onboarding/`;
