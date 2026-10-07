@@ -68,10 +68,11 @@ const ONBOARDING_API =
 const NDA_PDF_URL =
   `${import.meta.env.BASE_URL}Grofesion_Innovations_NDA.pdf`;
 
-const NDA_SOURCE_PAGES = "Pages 2–3";
+// const NDA_SOURCE_PAGES = "Pages 2–3";
+const NDA_SOURCE_PAGES ="";
 const NDA_TERMS_POINTS = [
   {
-    title: "Page 2 — Definitions and interpretation",
+    // title: "Page 2 — Definitions and interpretation",
     points: [
       "The agreement includes its schedules, annexures, and amendments.",
       "Applicable law includes the Indian Contract Act, Companies Act, Information Technology Act, Digital Personal Data Protection Act, Copyright Act, Trade Marks Act, and Arbitration and Conciliation Act, together with amendments and other applicable laws.",
@@ -86,7 +87,7 @@ const NDA_TERMS_POINTS = [
     ],
   },
   {
-    title: "Page 3 — Confidential information scope",
+    // title: "Page 3 — Confidential information scope",
     points: [
       "References to laws include later changes; singular words include plural and vice versa; gendered terms include all genders; clause and schedule references point to this agreement; headings are for convenience; written communication includes email with delivery and read-receipt confirmation; and 'including' means without limitation.",
       "Work Product includes deliverables, reports, strategies, frameworks, audit documents, recommendations, presentations, and other outputs Magsmen produces specifically for the Client's Engagement.",
