@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 
 /* =========================================================
-   TYPES
+    TYPES
 ========================================================= */
 
 type Step = 1 | 2 | 3 | 4;
@@ -54,13 +54,13 @@ type ApiError = {
 };
 
 /* =========================================================
-   API CONFIG
+    API CONFIG
 ========================================================= */
 
 const API_BASE_URL =
   (import.meta.env.VITE_API_BASE_URL as string) ||
-    "https://api.grofesion.com/api";
-  // "http://127.0.0.1:8000/api";
+        // "https://api.grofesion.com/api";
+    "http://127.0.0.1:8000/api";
 
 const ONBOARDING_API =
   `${API_BASE_URL}/client-onboarding/`;
@@ -68,39 +68,200 @@ const ONBOARDING_API =
 const NDA_PDF_URL =
   `${import.meta.env.BASE_URL}Grofesion_Innovations_NDA.pdf`;
 
-// const NDA_SOURCE_PAGES = "Pages 2–3";
-const NDA_SOURCE_PAGES ="";
+// const NDA_SOURCE_PAGES = "Pages 1–11";
+const NDA_SOURCE_PAGES = "";
+
 const NDA_TERMS_POINTS = [
   {
-    // title: "Page 2 — Definitions and interpretation",
+    title: "RECITALS",
     points: [
-      "The agreement includes its schedules, annexures, and amendments.",
-      "Applicable law includes the Indian Contract Act, Companies Act, Information Technology Act, Digital Personal Data Protection Act, Copyright Act, Trade Marks Act, and Arbitration and Conciliation Act, together with amendments and other applicable laws.",
-      "Confidential information covers information and materials disclosed in any form when marked confidential, identified as confidential when shared orally, or reasonably understood to be confidential from its nature and context.",
-      "The Consulting Party is Grofesion Innovations Private Limited, operating as Magsmen Strategy Consultants, including its directors, employees, authorised consultants, and representatives.",
-      "The Disclosing Party shares confidential information; the Receiving Party receives it. The Effective Date is the execution date on the cover page.",
-      "The Engagement covers consulting, advisory, strategy, diagnostic, and strategy-development services under a separate engagement document or during pre-engagement discussions.",
-      "Intellectual Property includes patents, copyrights, trademarks, trade secrets, know-how, design, database, moral, and other intellectual-property rights.",
-      "The Permitted Purpose is evaluating, structuring, negotiating, and carrying out the Engagement and implementing its outputs within the Client's organisation.",
-      "Proprietary Methodology includes Magsmen's frameworks, diagnostic tools, models, templates, playbooks, and named systems, including the Five-Pillar OTC Diagnostic, 13-Stage Strategy Creation Framework, Strategy Health Index, Strategy Volatility Matrix, Competitive Gravity Map, MACES Qualification System, Stature methodology, Strategy Expresso structure, Linkfluence system, Perception Audit format, and 5D Consulting Framework.",
-      "A Trade Secret is information with economic value because it is not generally known or readily ascertainable, and is subject to reasonable efforts to maintain its secrecy.",
+      "WHEREAS, Grofesion Innovations Private Limited, operating as Magsmen Strategy Consultants ('Magsmen'), is engaged in the business of providing Strategy strategy consulting, Strategy creation, business diagnostics, personal Strategy development (Stature), digital Strategy advisory (Linkfluence), Strategy Expresso consulting, Strategy naming, and related strategic advisory and consulting services to businesses, organisations, founders, and individuals[cite: 1];",
+      "WHEREAS, the Client is desirous of exploring, evaluating, or entering into a consulting engagement with Magsmen for the provision of one or more of the services mentioned above (the 'Engagement')[cite: 1];",
+      "WHEREAS, in the course of discussions, negotiations, and the execution of the Engagement, each Party may disclose to the other Party certain confidential, proprietary, sensitive, and non-public information, including business data, trade secrets, strategies, methodologies, and intellectual property[cite: 1];",
+      "WHEREAS, both Parties are desirous of protecting such confidential information from unauthorised disclosure, misuse, or exploitation, and of defining the terms governing the receipt, use, and protection of such information[cite: 1]."
     ],
   },
   {
-    // title: "Page 3 — Confidential information scope",
+    title: "1. DEFINITIONS AND INTERPRETATION",
     points: [
-      "References to laws include later changes; singular words include plural and vice versa; gendered terms include all genders; clause and schedule references point to this agreement; headings are for convenience; written communication includes email with delivery and read-receipt confirmation; and 'including' means without limitation.",
-      "Work Product includes deliverables, reports, strategies, frameworks, audit documents, recommendations, presentations, and other outputs Magsmen produces specifically for the Client's Engagement.",
-      "Client information can include business strategy, growth and expansion plans, competitive intelligence, financial and pricing data, customer and supplier information, product-development plans, technology and trade secrets, personnel and HR information, legal and regulatory matters, IP registrations, brand assets, communications, naming, and positioning.",
-      "Personal, financial, health, relationship, reputational, or political information shared for an individual Stature engagement receives heightened confidentiality, as specified in the agreement.",
-      "Information shared verbally during discovery sessions, briefings, workshops, or meetings is covered whether or not it is written down.",
-      "Magsmen information can include proprietary methods and consulting systems, proposals, engagement and scoping documents, service-delivery plans, fee structures, pricing logic, commercial terms, discount rationale, internal processes, team composition, delivery protocols, and resource allocation.",
+      "1.1 In this Agreement, unless the context otherwise requires, the following expressions shall have the meanings ascribed to them[cite: 2]:",
+      "1.1.1 'Agreement' means this Non-Disclosure Agreement, together with all schedules, annexures, and amendments hereto, as amended from time to time in accordance with the provisions hereof[cite: 2].",
+      "1.1.2 'Applicable Law' means all statutes, enactments, acts of legislature, laws, ordinances, rules, bye-laws, regulations, notifications, guidelines, policies, directions, directives, and orders of any governmental authority or regulatory body having jurisdiction over the Parties or the subject matter of this Agreement, including but not limited to: the Indian Contract Act, 1872; the Companies Act, 2013; the Information Technology Act, 2000 and the rules made thereunder; the Digital Personal Data Protection Act, 2023; the Indian Copyright Act, 1957; the Trade Marks Act, 1999; the Arbitration and Conciliation Act, 1996; and any other applicable law as amended from time to time[cite: 2].",
+      "1.1.3 'Confidential Information' means any and all information, data, knowledge, materials, documents, trade secrets, know-how, formulae, processes, ideas, concepts, or other proprietary information, in any form or medium, whether written, oral, electronic, visual, graphic, or otherwise, disclosed by the Disclosing Party to the Receiving Party, or to which the Receiving Party obtains access, in connection with this Agreement or the Engagement, that: (i) is designated or marked as 'confidential' or 'proprietary' or equivalent; (ii) is disclosed orally and identified as confidential at the time of disclosure; or (iii) a reasonable person would understand to be confidential given the nature of the information and the circumstances of disclosure. Confidential Information includes, without limitation, the categories described in Clause 2 hereof[cite: 2].",
+      "1.1.4 'Consulting Party' means Grofesion Innovations Private Limited, operating as Magsmen Strategy Consultants, including its directors, employees, authorised consultants, and representatives[cite: 2].",
+      "1.1.5 'Disclosing Party' means the Party disclosing confidential Information to the other Party[cite: 2].",
+      "1.1.6 'Effective Date' means the date of execution of this Agreement as stated on the cover page hereof[cite: 2].",
+      "1.1.7 'Engagement' means any consulting, advisory, strategy, diagnostic, or Strategy development service provided or to be provided by Magsmen to the Client under a separate engagement agreement, statement of work, or letter of engagement, or in the course of pre-engagement discussions[cite: 2].",
+      "1.1.8 'Intellectual Property' means all patents, copyrights, trademarks, trade secrets, know-how, design rights, database rights, moral rights, and all other intellectual and industrial property rights, whether registered or unregistered, and applications for any of the foregoing[cite: 2].",
+      "1.1.9 'Permitted Purpose' means the sole and exclusive purpose of evaluating, structuring, negotiating, and executing the Engagement between the Parties, and implementing the outputs of such Engagement within the Client's own organisation[cite: 2].",
+      "1.1.10 'Proprietary Methodology' means all Strategy strategy frameworks, consulting systems, diagnostic tools, scoring models, analytical frameworks, templates, playbooks, process maps, engagement formats, and associated materials developed and owned by Magsmen, including but not limited to: the Five-Pillar OTC Diagnostic, the 13-Stage Strategy Creation Framework, the Strategy Health Index, the Strategy Volatility Matrix, the Competitive Gravity Map, the MACES Qualification System, the Stature by Magsmen methodology, the Strategy Expresso structure, the Linkfluence system, the Perception Audit format, and the 5D Consulting Framework[cite: 2].",
+      "1.1.11 'Receiving Party' means the Party receiving confidential Information from the Disclosing Party[cite: 2].",
+      "1.1.12 'Trade Secret' means any information that derives economic value from not being generally known or readily ascertainable by persons who can obtain economic value from its disclosure or use, and that is the subject of reasonable efforts to maintain its secrecy[cite: 2].",
+      "1.1.13 'Work Product' means all deliverables, reports, strategies, Strategy frameworks, audit documents, recommendations, presentations, and other outputs produced by Magsmen for the Client specifically in connection with the Engagement[cite: 3].",
+      "1.2 In this Agreement, unless the context otherwise requires[cite: 3]:",
+      "1.2.1 References to any statute or statutory provision include references to any modification, re-enactment, or extension thereof[cite: 3].",
+      "1.2.2 Words importing the singular include the plural and vice versa; words importing any gender include all genders[cite: 3].",
+      "1.2.3 References to 'Clauses' and 'Schedules' are to clauses and schedules of this Agreement[cite: 3].",
+      "1.2.4 The headings of clauses are for convenience only and shall not affect the construction or interpretation of this Agreement[cite: 3].",
+      "1.2.5 References to 'writing' or 'written' include email communications with delivery and read receipt confirmation[cite: 3].",
+      "1.2.6 The expression 'including' or 'includes' shall be construed as 'including without limitation' or 'includes without limitation'[cite: 3]."
+    ],
+  },
+  {
+    title: "2. SCOPE AND CATEGORIES OF CONFIDENTIAL INFORMATION",
+    points: [
+      "2.1 Without limiting the generality of Clause 1.1.3, and by way of illustration, Confidential Information includes the following specific categories of information[cite: 3]:",
+      "2.2 Confidential Information Disclosed by the Client to Magsmen[cite: 3]: Business strategies, growth plans, market expansion intentions, competitive intelligence, and strategic direction; financial data, revenue figures, cost structures, pricing models, profit margins, investment plans, funding details, and debt obligations; customer lists, customer data, customer contracts, supplier relationships, distribution networks, and vendor agreements; product or service development plans, including unreleased products, technology developments, formulations, innovations, and trade secrets; personnel information, organisational charts, human resources data, compensation structures, and internal communications; legal matters, disputes, regulatory correspondence, pending agreements, intellectual property registrations, and compliance issues; Strategy assets, visual identity materials, communication strategies, naming decisions, and market positioning information shared for the Permitted Purpose; personal, financial, health, relationship, reputational, or political information shared by individual clients in connection with Stature personal Strategy engagements which shall be treated with heightened confidentiality equivalent to legally privileged communications; any information disclosed verbally in discovery sessions, briefings, workshops, or meetings, whether or not reduced to writing[cite: 3].",
+      "2.3 Confidential Information Disclosed by Magsmen to the Client[cite: 3]: All Proprietary Methodology, frameworks, diagnostic tools, analytical models, and consulting systems as defined in Clause 1.1.10; proposal documents, engagement structures, scoping frameworks, and service delivery plans; fee structures, pricing logic, commercial terms, and discount rationale; internal operating processes, team composition, delivery protocols, and resource allocation; research insights, benchmark data, market analysis, competitor intelligence, and case study findings shared in the context of the Engagement; strategic recommendations, Strategy audit findings, perception analysis, positioning frameworks, and communication strategies; materials explicitly marked 'Confidential,' 'Strictly Confidential,' 'Proprietary,' or equivalent designations[cite: 3, 4].",
+      "2.4 For the avoidance of doubt, information shall not lose its character as confidential Information merely because it was disclosed orally or was not marked with a confidentiality label, if by its nature and the circumstances of disclosure it ought reasonably to be understood as confidential[cite: 4]."
+    ],
+  },
+  {
+    title: "3. EXCLUSIONS FROM CONFIDENTIALITY OBLIGATIONS",
+    points: [
+      "3.1 The obligations of confidentiality under this Agreement shall not apply to any Confidential Information that the Receiving Party can demonstrate, by documentary evidence satisfactory to a court of competent jurisdiction, that[cite: 4]:",
+      "3.1.1 Was in the public domain at the time of disclosure to the Receiving Party, through no act or omission of the Receiving Party or any person to whom the Receiving Party disclosed such information[cite: 4];",
+      "3.1.2 Enters the public domain after disclosure through no act, omission, or breach by the Receiving Party or any person to whom the Receiving Party disclosed such information[cite: 4];",
+      "3.1.3 Was lawfully and demonstrably known to the Receiving Party prior to disclosure by the Disclosing Party, as evidenced by written records pre-dating such disclosure[cite: 4];",
+      "3.1.4 Was lawfully received by the Receiving Party from a bona fide third party who had the unrestricted right to disclose it without any obligation of confidentiality[cite: 4];",
+      "3.1.5 Was independently developed by the Receiving Party without reference to, use of, or access to the Disclosing Party's Confidential Information, as demonstrated by contemporaneous written records[cite: 4];",
+      "3.1.6 Is required to be disclosed pursuant to: (i) any Applicable Law; (ii) the order or direction of a court of competent jurisdiction; or (iii) the requirement of any regulatory or governmental authority having jurisdiction over the Receiving Party provided that the Receiving Party shall: (a) give the Disclosing Party prompt written notice of such requirement prior to disclosure; (b) cooperate fully with the Disclosing Party in seeking a protective order or other appropriate relief; (c) use all reasonable endeavours to obtain confidential treatment of any information so disclosed; and (d) limit such disclosure to the minimum extent strictly required[cite: 4].",
+      "3.2 The burden of proving that any exclusion set forth in Clause 3.1 applies shall rest entirely and exclusively with the Receiving Party. The absence of a confidentiality marking or legend shall not be sufficient to establish that information falls within any exclusion[cite: 4]."
+    ],
+  },
+  {
+    title: "4. OBLIGATIONS OF THE RECEIVING PARTY",
+    points: [
+      "4.1 Each Receiving Party hereby undertakes and covenants with the Disclosing Party that it shall[cite: 4]:",
+      "4.1.1 Hold all confidential Information in strict confidence and safeguard it with a standard of care not less than the standard it applies to its own most sensitive confidential information, and in no event less than a reasonable standard of professional care[cite: 4, 5].",
+      "4.1.2 Use the confidential information solely and exclusively for the Permitted Purpose and for no other purpose whatsoever without the prior written consent of the Disclosing Party[cite: 4].",
+      "4.1.3 Not, without the prior written consent of the Disclosing Party, disclose, reveal, divulge, publish, distribute, reproduce, copy, transmit, or communicate any confidential Information to any person or entity, other than Authorised Personnel as defined in Clause 4.2 below[cite: 4, 5].",
+      "4.1.4 Not use confidential Information for any competitive advantage, commercial exploitation, or any purpose that benefits the Receiving Party or any third party at the expense of the Disclosing Party[cite: 5].",
+      "4.1.5 Promptly notify the Disclosing Party in writing upon becoming aware of: (i) any actual or suspected unauthorised access to, disclosure of, or use of Confidential Information; (ii) any loss, theft, or compromise of any material containing Confidential Information; or (iii) any demand or request from a third party for access to Confidential Information and in each case cooperate fully with the Disclosing Party in mitigating the consequences[cite: 5].",
+      "4.1.6 Not make any copies, reproductions, abstracts, or extracts of confidential Information except to the extent strictly necessary for the Permitted Purpose[cite: 5].",
+      "4.1.7 Store and handle all confidential Information in a secure manner, including implementing reasonable technical, administrative, and physical safeguards against unauthorized access, use, or disclosure[cite: 5].",
+      "4.2 Authorised Personnel: The Receiving Party may disclose Confidential Information only to those of its directors, employees, professional advisors (including legal counsel and accountants), and specifically authorised consultants or contractors who: (i) Have a legitimate and documented need to access the specific Confidential Information for the Permitted Purpose; (ii) Have been informed of the confidential nature of the information and the obligations arising from this Agreement; and (iii) Are bound by confidentiality obligations, whether by contract or by professional duty, that are at least as stringent as those contained in this Agreement[cite: 5].",
+      "4.3 The Receiving Party shall remain fully responsible and liable for any breach of the confidentiality obligations in this Agreement by any Authorised Personnel to whom it discloses confidential Information, as if such breach were a breach by the Receiving Party itself[cite: 5].",
+      "4.4 Specific Obligations of the Client as Receiving Party[cite: 5]:",
+      "4.4.1 The Client shall not use, reproduce, adapt, reverse-engineer, reconstruct, or replicate Magsmen's Proprietary Methodology, frameworks, tools, templates, or consulting systems in whole or in part for any purpose other than the internal implementation of Work Product delivered under the Engagement[cite: 5].",
+      "4.4.2 The Client shall not share, provide, or make available Magsmen's proposals, strategy documents, frameworks, or Proprietary Methodology to any competitor of Magsmen, or to any other consulting firm, agency, or advisor, for any purpose[cite: 5].",
+      "4.4.3 The Client shall not commission any person, entity, or firm to replicate or recreate Magsmen's Proprietary Methodology based on information received from Magsmen under this Agreement[cite: 5].",
+      "4.4.4 The Client shall not make any public announcement, press release, social media post, or public communication referencing the Engagement, its terms, or Magsmen's involvement without Magsmen's prior written consent[cite: 5]."
+    ],
+  },
+  {
+    title: "5. INTELLECTUAL PROPERTY RIGHTS",
+    points: [
+      "5.1 No Transfer of Rights: Nothing in this Agreement shall be construed or interpreted as granting to the Receiving Party any right, title, interest, licence whether express, implied, by estoppel, or otherwise in or to any Intellectual Property, trade secret, know-how, or other proprietary right of the Disclosing Party, except as expressly and specifically stated herein[cite: 5].",
+      "5.2 Magsmen's Pre-existing and Proprietary IP: All Intellectual Property, including the Proprietary Methodology, owned by Magsmen prior to the Effective Date of this Agreement, or developed independently of the Engagement, is and shall remain the exclusive property of Grofesion Innovations Private Limited. No use, adaptation, reproduction, or disclosure of such Intellectual Property is permitted except for the Permitted Purpose and as expressly authorised in writing by Magsmen[cite: 5].",
+      "5.3 Client's Pre-existing IP: All Intellectual Property owned by the Client prior to the Effective Date, or developed independently of the Engagement, is and shall remain the exclusive property of the Client[cite: 6].",
+      "5.4 Work Product Conditional Transfer: All Work Product produced by Magsmen for the Client shall vest in and be assigned to the Client upon receipt of full and final payment of all fees due and payable under the applicable engagement agreement. For the avoidance of doubt, partial payment, pending payment, or payment under dispute shall not trigger any assignment or transfer of Work Product[cite: 6].",
+      "5.5 Underlying Systems Retained: Notwithstanding Clause 5.4, the assignment of Work Product shall not include any of Magsmen's Proprietary Methodology, underlying frameworks, analytical models, or consulting systems used to produce such Work Product. The Client receives only the specific output of those systems applied to its context, and not the systems themselves[cite: 6].",
+      "5.6 No Reverse Engineering: The Client shall not, and shall ensure that its personnel do not, reverse-engineer, disassemble, decompile, or attempt to derive or reconstruct Magsmen's Proprietary Methodology from any Work Product or Confidential Information provided under this Agreement[cite: 6].",
+      "5.7 Strategy Asset Usage: Neither Party shall use the name, logo, trademark, or Strategy identifier of the other Party in any manner including in marketing materials, presentations, social media content, or public communications without the prior written consent of that other Party, except to the extent strictly necessary for the performance of obligations under this Agreement[cite: 6].",
+      "5.8 Attribution Obligation: Any joint output including co-authored content, research, or publications produced during the Engagement shall maintain attribution to Magsmen in all forms of publication, sharing, or presentation, unless both Parties agree otherwise in writing[cite: 6]."
+    ],
+  },
+  {
+    title: "6. NON-SOLICITATION, NON-CIRCUMVENTION, AND RESTRICTIONS ON COMPETITIVE CONDUCT",
+    points: [
+      "6.1 Non-Solicitation of Personnel: During the term of this Agreement and for a period of twenty-four (24) calendar months from the date of termination or expiry of this Agreement, the Client shall not, directly or indirectly, whether for itself or on behalf of any other person: (i) Solicit, approach, recruit, induce, or encourage any employee, contractor, consultant, or advisor of Magsmen who was involved in the Engagement to terminate or diminish their relationship with Magsmen; (ii) Employ, engage, retain, or otherwise contract with any such person without the prior written consent of Magsmen[cite: 6].",
+      "6.2 Non-Circumvention: The Client shall not use Confidential Information received from Magsmen including information about Magsmen's sub-contractors, vendors, specialist partners, or strategic network to bypass Magsmen and directly engage such parties for services that fall within, or are substantially similar to, the scope of the Engagement, without Magsmen's prior written consent[cite: 6].",
+      "6.3 Restriction on Competing Use: The Client shall not use Magsmen's Confidential Information, Proprietary Methodology, or any portion thereof directly, indirectly, or in adapted form to develop, build, offer, or support any service that competes with Magsmen's consulting practice[cite: 6].",
+      "6.4 Parallel Engagement Disclosure Obligation: If the Client is concurrently engaged with, or subsequently engages, any other Strategy consulting firm, strategy advisor, or agency on the same or substantially similar scope as the Engagement with Magsmen, the Client shall disclose this to Magsmen in writing prior to or at the commencement of such parallel engagement. Failure to make this disclosure, where the consequence is that Magsmen's Confidential Information or strategies are shared with or benefit a competing advisor, shall constitute a material breach of this Agreement[cite: 6]."
+    ],
+  },
+  {
+    title: "7. PERSONAL DATA AND DATA PROTECTION",
+    points: [
+      "7.1 Compliance with Applicable Law: Each Party shall comply with all Applicable Laws governing the collection, storage, use, processing, sharing, and protection of personal data, including but not limited to the Information Technology Act, 2000, the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and the Digital Personal Data Protection Act, 2023, as amended or substituted from time to time[cite: 7].",
+      "7.2 Data Shared in Confidence: Any personal data shared by one Party to the other under or in connection with this Agreement shall be used solely for the Permitted Purpose and shall not be shared with any third party without the prior written consent of the Party whose data or whose principals' data is involved[cite: 7].",
+      "7.3 Special Category Data Stature Engagements: Where the engagement involves Magsmen's Stature personal Strategy service, the Client acknowledges that information of a sensitive personal nature including health conditions, financial circumstances, family relationships, legal matters, political associations, and reputation-sensitive information may be shared. Such data shall be treated by Magsmen with a heightened standard of confidentiality, equivalent to that applied to legally privileged communications, and shall under no circumstances be shared with any third party without the Client's explicit written consent[cite: 7].",
+      "7.4 Data Minimisation: Each Party shall limit the personal data it discloses to the other to the minimum necessary for the Permitted Purpose[cite: 7].",
+      "7.5 Security Safeguards: Each Party shall implement and maintain adequate technical, administrative, and physical safeguards to prevent unauthorised access to, misuse of, alteration of, or accidental loss or destruction of personal data received under this Agreement[cite: 7].",
+      "7.6 Data Breach Notification: In the event of any actual, suspected, or threatened breach affecting personal data disclosed under this Agreement, the Party affected shall notify the other Party in writing within forty-eight (48) hours of becoming aware of such breach, and shall cooperate fully in investigating, managing, and mitigating the consequences thereof[cite: 7].",
+      "7.7 Data Retention: Personal data shared under this Agreement shall not be retained beyond the period strictly necessary for the Permitted Purpose, except where retention is required under Applicable Law. Upon conclusion or termination of the Engagement, personal data shall be deleted, anonymised, or returned, as mutually agreed in writing[cite: 7]."
+    ],
+  },
+  {
+    title: "8. TERM AND DURATION OF OBLIGATIONS",
+    points: [
+      "8.1 Commencement: This Agreement shall come into force and take effect on the Effective Date and shall apply to all Confidential Information exchanged between the Parties from the Effective Date, including information exchanged in anticipation of the formal execution of this Agreement[cite: 7].",
+      "8.2 Duration: This Agreement shall remain in force for the entire duration of the Engagement and shall continue thereafter for: (i) A period of five (5) years from the date of completion, expiry, or termination of the Engagement in respect of all Confidential Information other than Trade Secrets; and (ii) Indefinitely in respect of Confidential Information that constitutes a Trade Secret, for so long as such information retains its character as a Trade Secret under Applicable Law[cite: 7].",
+      "8.3 Early Termination: Either Party may terminate this Agreement by giving thirty (30) days' prior written notice to the other Party. Termination shall not affect or diminish the confidentiality obligations arising in respect of information disclosed prior to the effective date of termination, which obligations shall continue for the periods specified in Clause 8.2[cite: 7].",
+      "8.4 Survival: The provisions of Clause 3 (Exclusions), Clause 5 (Intellectual Property), Clause 6 (Non-Solicitation), Clause 8 (Term), Clause 9 (Return and Destruction), Clause 11 (Remedies), Clause 13 (Governing Law), and Clause 14 (General Provisions) shall survive the termination or expiry of this Agreement[cite: 8]."
+    ],
+  },
+  {
+    title: "9. RETURN, RETENTION, AND DESTRUCTION OF CONFIDENTIAL INFORMATION",
+    points: [
+      "9.1 Upon Request: Upon written demand by the Disclosing Party at any time, the Receiving Party shall, within fifteen (15) business days of such demand, either: (i) return to the Disclosing Party all tangible materials including documents, copies, notes, electronic files, and storage media containing or embodying the Disclosing Party's Confidential Information; or (ii) permanently destroy or delete all such materials and provide written confirmation of such destruction or deletion, including certification of the means of destruction employed[cite: 8].",
+      "9.2 Upon Termination: Within thirty (30) days of the termination or expiry of this Agreement or the completion of the Engagement, whichever is earlier, each Party shall, unless otherwise agreed in writing, return or destroy all Confidential Information of the other Party in its possession or control, including all copies and derivatives thereof, whether in physical or electronic form, and provide written confirmation thereof[cite: 8].",
+      "9.3 Legally Required Retention: The Receiving Party may retain copies of confidential Information solely to the extent required by Applicable Law or by a bona fide document retention policy adopted in good faith and applied consistently. Any such retained materials shall remain subject to the full confidentiality obligations of this Agreement[cite: 8].",
+      "9.4 Magsmen's Engagement Archives: Magsmen shall retain encrypted, access-controlled archive copies of all Work Product and engagement records for a period of seven (7) years following the conclusion of the Engagement, for the purposes of quality assurance, professional liability management, and institutional knowledge retention. Such archived materials shall not be accessed or disclosed outside of Magsmen's authorised engagement team[cite: 8].",
+      "9.5 Client's Work Product: The obligation in Clause 9.2 shall not require the Client to destroy copies of Work Product formally delivered to and accepted by the Client as part of the Engagement, provided such Work Product is held subject to the confidentiality obligations of this Agreement[cite: 8]."
+    ],
+  },
+  {
+    title: "10. REPRESENTATIONS AND WARRANTIES",
+    points: [
+      "10.1 Each Party represents and warrants to the other Party that, as of the Effective Date and throughout the term of this Agreement[cite: 8]: (i) It has full legal authority, capacity, power, and right to enter into, execute, and perform its obligations under this Agreement, and that the execution of this Agreement has been duly authorised by all necessary corporate or other action[cite: 8]; (ii) This Agreement constitutes a legal, valid, and binding obligation of the Party, enforceable against it in accordance with its terms[cite: 8]; (iii) The execution and performance of this Agreement does not conflict with, violate, or constitute a default under: (a) any Applicable Law; (b) any judgment, order, or injunction of any court or governmental authority; or (c) any agreement, contract, or instrument to which it is a party or by which it is bound[cite: 8, 9]; (iv) The confidential Information it discloses to the other Party does not, to the best of its knowledge, infringe upon or misappropriate the Intellectual Property or any other rights of any third party[cite: 9].",
+      "10.2 Magsmen additionally represents and warrants that[cite: 9]: (i) It is a company duly incorporated and validly existing under the Companies Act, 2013, with its registered office in India, and is in good standing with all applicable regulatory authorities[cite: 9]; (ii) Its Proprietary Methodology and consulting frameworks have been independently developed by Magsmen and do not, to the best of its knowledge, infringe upon any third party's Intellectual Property rights[cite: 9].",
+      "10.3 The Client additionally represents and warrants that[cite: 9]: (i) It has lawfully obtained all information it discloses to Magsmen under this Agreement, and has the full right and authority to disclose such information for the Permitted Purpose[cite: 9]; (ii) The disclosure of such information does not violate any duty of confidentiality owed to any third party, or any Applicable Law[cite: 9]."
+    ],
+  },
+  {
+    title: "11. REMEDIES, LIABILITY, AND ENFORCEMENT",
+    points: [
+      "11.1 Acknowledgement of Irreparable Harm: Each Party acknowledges and agrees that any breach or threatened breach of the confidentiality, Intellectual Property, or non-solicitation provisions of this Agreement will cause immediate, serious, and irreparable harm and damage to the Disclosing Party, for which monetary compensation would be an inadequate and insufficient remedy[cite: 9].",
+      "11.2 Equitable Relief: In the event of any actual or threatened breach, the Disclosing Party shall, in addition to any other remedy available at law or in equity, be entitled to seek: (i) an immediate ex parte or inter partes injunction or restraining order; (ii) a decree of specific performance; and (iii) such other equitable relief as the court may deem appropriate from any court of competent jurisdiction, without the necessity of proving actual damages, without the requirement to post any bond or other security, and without prejudice to any other remedies available[cite: 9].",
+      "11.3 Monetary Damages: The right to seek equitable relief under Clause 11.2 is cumulative and without prejudice to any other right or remedy available under this Agreement, at law, or in equity, including the right to recover all direct, indirect, consequential, and special damages caused by the breach[cite: 9].",
+      "11.4 Costs: In any proceeding to enforce this Agreement, the prevailing Party shall be entitled to recover from the breaching Party all reasonable costs, legal fees, and expenses incurred in connection with such enforcement[cite: 9].",
+      "11.5 Indemnification: The breaching Party shall indemnify, defend, and hold harmless the non-breaching Party against all claims, losses, damages, liabilities, costs, and expenses (including reasonable legal fees) arising directly or indirectly from any breach of this Agreement by the breaching Party or its Authorised Personnel[cite: 9].",
+      "11.6 No Limitation on Liability: Nothing in this Agreement shall be construed as limiting or excluding the liability of either Party for: (i) fraud or fraudulent misrepresentation; (ii) wilful misconduct or gross negligence; or (iii) any other liability which cannot be limited or excluded under Applicable Law[cite: 9]."
+    ],
+  },
+  {
+    title: "12. NON-DISPARAGEMENT",
+    points: [
+      "12.1 During the term of this Agreement and for a period of two (2) years following its termination or expiry, neither Party shall, directly or indirectly, make, publish, communicate, or cause to be made, published, or communicated any statement whether oral, written, electronic, or through any medium that is false, misleading, defamatory, derogatory, or damaging to the professional reputation, goodwill, or standing of the other Party, its directors, officers, employees, or business[cite: 9].",
+      "12.2 This clause shall not prohibit either Party from making truthful statements required by Applicable Law, regulatory obligation, or in the context of bona fide legal proceedings[cite: 9].",
+      "12.3 Any testimonial, case study, or public reference to the Engagement whether by Magsmen or the Client shall require the prior written approval of the other Party before publication or communication[cite: 9]."
+    ],
+  },
+  {
+    title: "13. GOVERNING LAW AND DISPUTE RESOLUTION",
+    points: [
+      "13.1 Governing Law: This Agreement shall be governed by and construed in accordance with the laws of the Republic of India, without reference to its conflict of laws, rules or principles[cite: 10].",
+      "13.2 Amicable Resolution: In the event of any dispute, controversy, or claim arising out of or in connection with this Agreement, including any question regarding its existence, validity, interpretation, breach, or termination ('Dispute'), the Parties shall first attempt to resolve the Dispute through good-faith negotiation between their respective senior authorised representatives. Such negotiations shall commence within fifteen (15) days of one Party issuing a written notice to the other Party identifying the Dispute ('Dispute Notice'). The Parties shall negotiate in good faith for a period not exceeding thirty (30) days from the Dispute Notice, or such longer period as the Parties may agree in writing[cite: 10].",
+      "13.3 Arbitration: If the Dispute is not resolved through negotiation within the period specified in Clause 13.2, the Dispute shall be referred to and finally resolved by binding arbitration in accordance with the Arbitration and Conciliation Act, 1996, as amended. The following terms shall apply to the arbitration: (i) Seat and Venue: The seat of arbitration shall be Guntur, Andhra Pradesh, India. The venue of the arbitral proceedings shall be Guntur unless the arbitrator directs otherwise; (ii) Arbitrator: The arbitration shall be conducted by a sole arbitrator mutually appointed by the Parties within fifteen (15) days of agreement to arbitrate. Failing such agreement, the arbitrator shall be appointed in accordance with the Arbitration and Conciliation Act, 1996; (iii) Language: The language of arbitration shall be English; (iv) Confidentiality: The existence of the arbitral proceedings, the arbitral award, and all information, documents, and evidence disclosed in the course of arbitration shall be kept strictly confidential by both Parties and the arbitrator; (v) Award: The arbitral award shall be final and binding on the Parties and may be enforced in any court of competent jurisdiction[cite: 10].",
+      "13.4 Courts: Subject to the arbitration clause above, the courts of Guntur, Andhra Pradesh, India, shall have exclusive jurisdiction over all matters relating to this Agreement, including the enforcement of any arbitral award[cite: 10].",
+      "13.5 Emergency Relief: Nothing in this Clause 13 shall prevent either Party from seeking urgent interim or emergency relief from a court of competent jurisdiction where delay pending arbitration would cause or threaten irreparable harm[cite: 10].",
+      "13.6 Continuity of Performance: Unless otherwise agreed in writing, both Parties shall continue to perform their respective obligations under this Agreement during the pendency of any Dispute resolution proceedings[cite: 10]."
+    ],
+  },
+  {
+    title: "14. GENERAL PROVISIONS",
+    points: [
+      "14.1 Entire Agreement: This Agreement, together with all Schedules hereto, constitutes the entire agreement between the Parties with respect to the confidentiality and protection of information exchanged in connection with the Engagement, and supersedes all prior negotiations, representations, warranties, understandings, and agreements whether oral or written between the Parties on the same subject[cite: 10].",
+      "14.2 Amendment: No amendment, modification, supplement, or variation to this Agreement shall be valid or binding unless made in writing, specifically referencing this Agreement and the provision being amended, and duly signed by authorised representatives of both Parties[cite: 10].",
+      "14.3 Waiver: No failure or delay by either Party in exercising any right, power, privilege, or remedy under this Agreement shall operate as a waiver of such right, power, privilege, or remedy. No single or partial exercise of any right, power, privilege, or remedy shall preclude any other or further exercise thereof or the exercise of any other right, power, privilege, or remedy. A waiver of any specific breach shall not constitute a waiver of any subsequent or different breach[cite: 11].",
+      "14.4 Severability: If any provision of this Agreement is determined by a court of competent jurisdiction or arbitral tribunal to be invalid, illegal, void, or unenforceable under Applicable Law, such provision shall be severed from this Agreement without affecting the validity or enforceability of the remaining provisions, which shall continue in full force and effect. Where legally permissible, the invalid provision shall be modified to the minimum extent necessary to render it valid and enforceable while preserving the original intent of the Parties[cite: 11].",
+      "14.5 Assignment: Neither Party may assign, transfer, sub-contract, or otherwise deal with its rights or obligations under this Agreement, in whole or in part, without the prior written consent of the other Party. Any purported assignment without such consent shall be void and of no legal effect[cite: 11].",
+      "14.6 Notices: All notices, demands, consents, approvals, requests, and other communications required or permitted under this Agreement shall be in writing and shall be duly served if delivered by: (i) hand delivery with signed acknowledgment of receipt; (ii) registered post with acknowledgment due (RPAD); or (iii) electronic mail with delivery and read-receipt confirmation to the addresses specified in Schedule A of this Agreement, or as updated by written notice. Notices shall be deemed received on the date of acknowledgment in the case of hand delivery or RPAD, and on the date the read-receipt is generated in the case of email[cite: 11].",
+      "14.7 Counterparts: This Agreement may be executed in two or more counterparts, each of which shall be deemed an original and all of which, taken together, shall constitute one and the same instrument. A counterpart transmitted by electronic means, including a scanned copy bearing original signatures or a digitally executed copy, shall be treated as equivalent to a physical original for all purposes[cite: 11].",
+      "14.8 No Partnership or Agency: Nothing in this Agreement shall be construed as creating, or shall be deemed to create, any partnership, joint venture, employment, or agency relationship between the Parties. Each Party is an independent party and has no authority to bind the other Party in any manner[cite: 11].",
+      "14.9 Force Majeure: Neither Party shall be deemed in breach of this Agreement, and shall not incur any liability to the other Party, for any failure or delay in the performance of its obligations under this Agreement to the extent such failure or delay is caused by circumstances beyond the reasonable control of the affected Party, including acts of God, fire, flood, earthquake, epidemic, pandemic, acts of war, terrorism, civil unrest, governmental action, or nationwide infrastructure failure ('Force Majeure Event'), provided that: (i) the affected Party gives prompt written notice to the other Party describing the Force Majeure Event; (ii) the affected Party uses all reasonable endeavours to resume performance as soon as possible; and (iii) the obligations of confidentiality in this Agreement shall not be suspended by reason of a Force Majeure Event[cite: 11].",
+      "14.10 Language: This Agreement is executed in the English language, which shall be the authoritative and governing language for all purposes, including interpretation, construction, and dispute resolution[cite: 11].",
+      "14.11 Headings: The clause headings and titles in this Agreement are inserted for convenience of reference only and shall not affect the interpretation or construction of any provision of this Agreement[cite: 11].",
+      "14.12 Stamp Duty: This Agreement shall be stamped in accordance with the Indian Stamp Act, 1899, and the applicable stamp duty legislation of the State of Andhra Pradesh. The cost of stamping shall be borne equally by the Parties unless otherwise agreed[cite: 11].",
+      "14.13 Registration: The Parties acknowledge that this Agreement is not required to be compulsorily registered under the Registration Act, 1908. However, either Party may choose to register this Agreement and shall bear the cost of such registration[cite: 11]."
     ],
   },
 ];
 
 /* =========================================================
-   SERVICE OUTCOMES
+    SERVICE OUTCOMES
 ========================================================= */
 
 const SERVICE_OUTCOMES: Record<string, string[]> = {
@@ -175,7 +336,7 @@ const getServiceOutcomes = (service: Service) => {
 };
 
 /* =========================================================
-   INITIAL FORM
+    INITIAL FORM
 ========================================================= */
 
 const INITIAL_FORM: ClientForm = {
@@ -187,7 +348,7 @@ const INITIAL_FORM: ClientForm = {
 };
 
 /* =========================================================
-   MAIN COMPONENT
+    MAIN COMPONENT
 ========================================================= */
 
 const ClientOnboarding: React.FC = () => {
@@ -210,7 +371,6 @@ const ClientOnboarding: React.FC = () => {
 
   const [termsReadToEnd, setTermsReadToEnd] =
     useState(false);
-
 
   const [clientSignature, setClientSignature] =
     useState("");
@@ -237,7 +397,7 @@ const ClientOnboarding: React.FC = () => {
     useState<Record<string, string>>({});
 
   /* =========================================================
-     FETCH SERVICES
+      FETCH SERVICES
   ========================================================= */
 
   useEffect(() => {
@@ -279,17 +439,6 @@ const ClientOnboarding: React.FC = () => {
           ? data.services
           : [];
 
-      /*
-       * IMPORTANT:
-       * We use the IDs returned by Django.
-       *
-       * We DO NOT create fallback IDs like:
-       * 1,2,3,4,5,6,7
-       *
-       * This prevents:
-       * "One or more selected services are invalid."
-       */
-
       const activeServices =
         serviceData.filter(
           (service) =>
@@ -297,11 +446,6 @@ const ClientOnboarding: React.FC = () => {
         );
 
       setServices(activeServices);
-
-      /*
-       * If database has no active services,
-       * show an appropriate message.
-       */
 
       if (activeServices.length === 0) {
         setError(
@@ -328,14 +472,14 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     INPUT HANDLING
+      INPUT HANDLING
   ========================================================= */
 
   const handleInputChange = (
     event: React.ChangeEvent<
-      HTMLInputElement |
-        HTMLTextAreaElement |
-        HTMLSelectElement
+      | HTMLInputElement
+      | HTMLTextAreaElement
+      | HTMLSelectElement
     >
   ) => {
     const {
@@ -368,7 +512,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     FILTER SERVICES
+      FILTER SERVICES
   ========================================================= */
 
   const filteredServices = useMemo(() => {
@@ -391,7 +535,7 @@ const ClientOnboarding: React.FC = () => {
   }, [services, serviceSearch]);
 
   /* =========================================================
-     TOGGLE SERVICE
+      TOGGLE SERVICE
   ========================================================= */
 
   const toggleService = (
@@ -414,7 +558,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     VALIDATE CLIENT DETAILS
+      VALIDATE CLIENT DETAILS
   ========================================================= */
 
   const validateClientDetails = (): boolean => {
@@ -470,7 +614,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     VALIDATE SERVICES
+      VALIDATE SERVICES
   ========================================================= */
 
   const validateServices = (): boolean => {
@@ -481,12 +625,6 @@ const ClientOnboarding: React.FC = () => {
 
       return false;
     }
-
-    /*
-     * Additional frontend safety:
-     * Make sure every selected ID actually
-     * exists in the services received from Django.
-     */
 
     const validIds = new Set(
       services.map(
@@ -515,7 +653,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     NEXT
+      NEXT
   ========================================================= */
 
   const handleNext = () => {
@@ -560,7 +698,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     BACK
+      BACK
   ========================================================= */
 
   const handleBack = () => {
@@ -586,7 +724,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     SUBMIT
+      SUBMIT
   ========================================================= */
 
   const handleSubmit = async () => {
@@ -618,11 +756,6 @@ const ClientOnboarding: React.FC = () => {
     setSubmitting(true);
 
     try {
-      /*
-       * This payload matches the Django
-       * ClientOnboardingSerializer.
-       */
-
       const payload = {
         name: form.name.trim(),
 
@@ -636,12 +769,6 @@ const ClientOnboarding: React.FC = () => {
         address:
           form.address.trim(),
 
-        /*
-         * IMPORTANT:
-         * These are REAL IDs returned
-         * from Django.
-         */
-
         service_ids:
           selectedServices,
 
@@ -651,11 +778,6 @@ const ClientOnboarding: React.FC = () => {
         special_confidentiality_notes:
           "Client accepted the NDA terms and conditions electronically during onboarding.",
       };
-
-      console.log(
-        "Submitting onboarding payload:",
-        payload
-      );
 
       const response = await fetch(
         ONBOARDING_API,
@@ -680,11 +802,6 @@ const ClientOnboarding: React.FC = () => {
         await response
           .json()
           .catch(() => ({}));
-
-      console.log(
-        "Onboarding API response:",
-        data
-      );
 
       if (!response.ok) {
         if (
@@ -763,7 +880,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   /* =========================================================
-     RESET
+      RESET
   ========================================================= */
 
   const resetOnboarding = () => {
@@ -778,7 +895,6 @@ const ClientOnboarding: React.FC = () => {
     setTermsAccepted(false);
 
     setTermsReadToEnd(false);
-
 
     setClientSignature("");
 
@@ -796,10 +912,6 @@ const ClientOnboarding: React.FC = () => {
     });
   };
 
-  /* =========================================================
-     SELECTED SERVICE OBJECTS
-  ========================================================= */
-
   const selectedServiceObjects =
     services.filter((service) =>
       selectedServices.includes(
@@ -808,7 +920,7 @@ const ClientOnboarding: React.FC = () => {
     );
 
   /* =========================================================
-     SUCCESS SCREEN
+      SUCCESS SCREEN
   ========================================================= */
 
   if (success) {
@@ -869,7 +981,7 @@ const ClientOnboarding: React.FC = () => {
   }
 
   /* =========================================================
-     MAIN UI
+      MAIN UI
   ========================================================= */
 
   return (
@@ -882,10 +994,7 @@ const ClientOnboarding: React.FC = () => {
     >
       <div className="min-h-screen flex flex-col lg:flex-row">
 
-        {/* =====================================================
-            DESKTOP SIDEBAR
-        ===================================================== */}
-
+        {/* SIDEBAR */}
         <aside className="hidden lg:flex w-[300px] xl:w-[340px] shrink-0 bg-[#111827] text-white px-8 xl:px-10 py-10 flex-col">
           <div className="mt-20">
             <div className="text-xs uppercase tracking-[0.2em] text-gray-500 font-semibold">
@@ -949,10 +1058,7 @@ const ClientOnboarding: React.FC = () => {
           </div>
         </aside>
 
-        {/* =====================================================
-            MOBILE HEADER
-        ===================================================== */}
-
+        {/* MOBILE HEADER */}
         <div className="lg:hidden bg-white border-b border-gray-200 px-5 py-5">
           <div className="flex items-center justify-between">
             <div>
@@ -994,16 +1100,9 @@ const ClientOnboarding: React.FC = () => {
           </div>
         </div>
 
-        {/* =====================================================
-            MAIN
-        ===================================================== */}
-
+        {/* MAIN CONTENT AREA */}
         <main className="flex-1 min-w-0 px-4 sm:px-6 lg:px-10 xl:px-16 py-7 sm:py-9 lg:py-12">
           <div className="max-w-5xl mx-auto">
-
-            {/* =================================================
-                PAGE HEADER
-            ================================================= */}
 
             <div className="mb-7 sm:mb-9">
               <div className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
@@ -1044,10 +1143,6 @@ const ClientOnboarding: React.FC = () => {
               </p>
             </div>
 
-            {/* =================================================
-                ERROR
-            ================================================= */}
-
             {error && (
               <div className="mb-6 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3.5 text-sm text-red-700">
                 <AlertCircle
@@ -1061,13 +1156,9 @@ const ClientOnboarding: React.FC = () => {
               </div>
             )}
 
-            {/* =================================================
-                STEP 1
-            ================================================= */}
-
+            {/* STEP 1 */}
             {step === 1 && (
               <section className="bg-white rounded-[24px] border border-gray-200 shadow-sm p-5 sm:p-7 lg:p-9">
-
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center">
                     <User
@@ -1089,7 +1180,6 @@ const ClientOnboarding: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-
                   <FormInput
                     label="Full Name"
                     name="name"
@@ -1208,15 +1298,10 @@ const ClientOnboarding: React.FC = () => {
               </section>
             )}
 
-            {/* =================================================
-                STEP 2
-            ================================================= */}
-
+            {/* STEP 2 */}
             {step === 2 && (
               <section>
-
                 <div className="mb-6 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
-
                   <div className="relative w-full sm:max-w-sm">
                     <Search
                       size={18}
@@ -1301,7 +1386,6 @@ const ClientOnboarding: React.FC = () => {
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-
                     {filteredServices.map(
                       (
                         service,
@@ -1429,13 +1513,9 @@ const ClientOnboarding: React.FC = () => {
               </section>
             )}
 
-            {/* =================================================
-                STEP 3
-            ================================================= */}
-
+            {/* STEP 3 */}
             {step === 3 && (
               <section className="bg-white rounded-[24px] border border-gray-200 shadow-sm p-5 sm:p-7 lg:p-9 space-y-6">
-
                 <div className="flex items-center gap-4 mb-2">
                   <div className="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center">
                     <FileText
@@ -1490,10 +1570,10 @@ const ClientOnboarding: React.FC = () => {
                   }}
                   className="max-h-[60vh] min-h-[45vh] overflow-y-auto overscroll-contain rounded-xl border border-gray-200 bg-gray-50 p-3 sm:p-5"
                 >
-                  <div className="sticky top-0 z-10 mb-3 flex justify-between rounded-lg bg-white/95 px-3 py-2 text-xs font-semibold text-gray-600 shadow-sm backdrop-blur">
-                    <span>Key terms from the NDA</span>
+                  {/* <div className="sticky top-0 z-10 mb-3 flex justify-between rounded-lg bg-white/95 px-3 py-2 text-xs font-semibold text-gray-600 shadow-sm backdrop-blur">
+                    <span>Full NDA Terms (Recitals to Clause 14)</span>
                     <span>{NDA_SOURCE_PAGES}</span>
-                  </div>
+                  </div> */}
 
                   <div className="space-y-4 text-sm leading-6 text-gray-700">
                     {NDA_TERMS_POINTS.map((section) => (
@@ -1603,15 +1683,9 @@ const ClientOnboarding: React.FC = () => {
               </section>
             )}
 
-            {/* =================================================
-                STEP 4
-            ================================================= */}
-
+            {/* STEP 4 */}
             {step === 4 && (
               <section className="space-y-5">
-
-                {/* CLIENT DETAILS */}
-
                 <ReviewCard
                   title="Client Details"
                   icon={
@@ -1660,8 +1734,6 @@ const ClientOnboarding: React.FC = () => {
                     </div>
                   </div>
                 </ReviewCard>
-
-                {/* SERVICES */}
 
                 <ReviewCard
                   title="Selected Services"
@@ -1723,8 +1795,6 @@ const ClientOnboarding: React.FC = () => {
                   </div>
                 </ReviewCard>
 
-                {/* TERMS */}
-
                 <ReviewCard
                   title="Terms and Client Acceptance"
                   icon={
@@ -1771,12 +1841,8 @@ const ClientOnboarding: React.FC = () => {
               </section>
             )}
 
-            {/* =================================================
-                NAVIGATION
-            ================================================= */}
-
+            {/* NAVIGATION BUTTONS */}
             <div className="mt-8 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-4">
-
               {step > 1 ? (
                 <button
                   type="button"
@@ -1856,7 +1922,7 @@ const ClientOnboarding: React.FC = () => {
 };
 
 /* =========================================================
-   FORM INPUT
+    FORM INPUT
 ========================================================= */
 
 type FormInputProps = {
@@ -1926,7 +1992,7 @@ const FormInput: React.FC<
 );
 
 /* =========================================================
-   SIDEBAR STEP
+    SIDEBAR STEP
 ========================================================= */
 
 type SidebarStepProps = {
@@ -1972,7 +2038,7 @@ const SidebarStep: React.FC<
 );
 
 /* =========================================================
-   REVIEW CARD
+    REVIEW CARD
 ========================================================= */
 
 type ReviewCardProps = {
@@ -2020,7 +2086,7 @@ const ReviewCard: React.FC<
 );
 
 /* =========================================================
-   REVIEW ITEM
+    REVIEW ITEM
 ========================================================= */
 
 type ReviewItemProps = {
@@ -2046,8 +2112,6 @@ const ReviewItem: React.FC<
 );
 
 export default ClientOnboarding;
-
-
 
 
 
