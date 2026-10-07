@@ -59,7 +59,8 @@ type ApiError = {
 
 const API_BASE_URL =
   (import.meta.env.VITE_API_BASE_URL as string) ||
-  "https://api.grofesion.com/api";
+    "https://api.grofesion.com/api";
+  // "http://127.0.0.1:8000/api";
 
 const ONBOARDING_API =
   `${API_BASE_URL}/client-onboarding/`;
@@ -67,7 +68,35 @@ const ONBOARDING_API =
 const NDA_PDF_URL =
   `${import.meta.env.BASE_URL}Grofesion_Innovations_NDA.pdf`;
 
-const NDA_PAGE_COUNT = 15;
+const NDA_SOURCE_PAGES = "Pages 2–3";
+const NDA_TERMS_POINTS = [
+  {
+    title: "Page 2 — Definitions and interpretation",
+    points: [
+      "The agreement includes its schedules, annexures, and amendments.",
+      "Applicable law includes the Indian Contract Act, Companies Act, Information Technology Act, Digital Personal Data Protection Act, Copyright Act, Trade Marks Act, and Arbitration and Conciliation Act, together with amendments and other applicable laws.",
+      "Confidential information covers information and materials disclosed in any form when marked confidential, identified as confidential when shared orally, or reasonably understood to be confidential from its nature and context.",
+      "The Consulting Party is Grofesion Innovations Private Limited, operating as Magsmen Strategy Consultants, including its directors, employees, authorised consultants, and representatives.",
+      "The Disclosing Party shares confidential information; the Receiving Party receives it. The Effective Date is the execution date on the cover page.",
+      "The Engagement covers consulting, advisory, strategy, diagnostic, and strategy-development services under a separate engagement document or during pre-engagement discussions.",
+      "Intellectual Property includes patents, copyrights, trademarks, trade secrets, know-how, design, database, moral, and other intellectual-property rights.",
+      "The Permitted Purpose is evaluating, structuring, negotiating, and carrying out the Engagement and implementing its outputs within the Client's organisation.",
+      "Proprietary Methodology includes Magsmen's frameworks, diagnostic tools, models, templates, playbooks, and named systems, including the Five-Pillar OTC Diagnostic, 13-Stage Strategy Creation Framework, Strategy Health Index, Strategy Volatility Matrix, Competitive Gravity Map, MACES Qualification System, Stature methodology, Strategy Expresso structure, Linkfluence system, Perception Audit format, and 5D Consulting Framework.",
+      "A Trade Secret is information with economic value because it is not generally known or readily ascertainable, and is subject to reasonable efforts to maintain its secrecy.",
+    ],
+  },
+  {
+    title: "Page 3 — Confidential information scope",
+    points: [
+      "References to laws include later changes; singular words include plural and vice versa; gendered terms include all genders; clause and schedule references point to this agreement; headings are for convenience; written communication includes email with delivery and read-receipt confirmation; and 'including' means without limitation.",
+      "Work Product includes deliverables, reports, strategies, frameworks, audit documents, recommendations, presentations, and other outputs Magsmen produces specifically for the Client's Engagement.",
+      "Client information can include business strategy, growth and expansion plans, competitive intelligence, financial and pricing data, customer and supplier information, product-development plans, technology and trade secrets, personnel and HR information, legal and regulatory matters, IP registrations, brand assets, communications, naming, and positioning.",
+      "Personal, financial, health, relationship, reputational, or political information shared for an individual Stature engagement receives heightened confidentiality, as specified in the agreement.",
+      "Information shared verbally during discovery sessions, briefings, workshops, or meetings is covered whether or not it is written down.",
+      "Magsmen information can include proprietary methods and consulting systems, proposals, engagement and scoping documents, service-delivery plans, fee structures, pricing logic, commercial terms, discount rationale, internal processes, team composition, delivery protocols, and resource allocation.",
+    ],
+  },
+];
 
 /* =========================================================
    SERVICE OUTCOMES
@@ -181,8 +210,6 @@ const ClientOnboarding: React.FC = () => {
   const [termsReadToEnd, setTermsReadToEnd] =
     useState(false);
 
-  const [ndaLastPageLoaded, setNdaLastPageLoaded] =
-    useState(false);
 
   const [clientSignature, setClientSignature] =
     useState("");
@@ -751,7 +778,6 @@ const ClientOnboarding: React.FC = () => {
 
     setTermsReadToEnd(false);
 
-    setNdaLastPageLoaded(false);
 
     setClientSignature("");
 
@@ -1451,7 +1477,6 @@ const ClientOnboarding: React.FC = () => {
                       event.currentTarget;
 
                     if (
-                      ndaLastPageLoaded &&
                       panel.scrollTop +
                         panel.clientHeight >=
                         panel.scrollHeight -
@@ -1465,78 +1490,24 @@ const ClientOnboarding: React.FC = () => {
                   className="max-h-[60vh] min-h-[45vh] overflow-y-auto overscroll-contain rounded-xl border border-gray-200 bg-gray-50 p-3 sm:p-5"
                 >
                   <div className="sticky top-0 z-10 mb-3 flex justify-between rounded-lg bg-white/95 px-3 py-2 text-xs font-semibold text-gray-600 shadow-sm backdrop-blur">
-                    <span>
-                      Complete
-                      Non-Disclosure
-                      Agreement
-                    </span>
-
-                    <span>
-                      {NDA_PAGE_COUNT}{" "}
-                      pages
-                    </span>
+                    <span>Key terms from the NDA</span>
+                    <span>{NDA_SOURCE_PAGES}</span>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3">
-                    {Array.from(
-                      {
-                        length:
-                          NDA_PAGE_COUNT,
-                      },
-                      (_, index) => {
-                        const pageNumber =
-                          index + 1;
-
-                        const pageUrl =
-                          `${
-                            import.meta.env
-                              .BASE_URL
-                          }nda-pages/nda-page-${String(
-                            pageNumber
-                          ).padStart(
-                            2,
-                            "0"
-                          )}.jpg`;
-
-                        return (
-                          <img
-                            key={`nda-page-${pageNumber}`}
-                            src={pageUrl}
-                            alt={`Non-Disclosure Agreement page ${pageNumber} of ${NDA_PAGE_COUNT}`}
-                            width={1604}
-                            height={2200}
-                            loading="lazy"
-                            decoding="async"
-                            onLoad={() => {
-                              if (
-                                pageNumber ===
-                                NDA_PAGE_COUNT
-                              ) {
-                                setNdaLastPageLoaded(
-                                  true
-                                );
-
-                                const panel =
-                                  termsContentRef.current;
-
-                                if (
-                                  panel &&
-                                  panel.scrollTop +
-                                    panel.clientHeight >=
-                                    panel.scrollHeight -
-                                      8
-                                ) {
-                                  setTermsReadToEnd(
-                                    true
-                                  );
-                                }
-                              }
-                            }}
-                            className="block h-auto w-full max-w-[820px] rounded-md bg-white shadow-sm"
-                          />
-                        );
-                      }
-                    )}
+                  <div className="space-y-4 text-sm leading-6 text-gray-700">
+                    {NDA_TERMS_POINTS.map((section) => (
+                      <section key={section.title} className="rounded-lg border border-gray-200 bg-white p-4 sm:p-5">
+                        <h3 className="font-bold text-gray-900">{section.title}</h3>
+                        <ul className="mt-3 space-y-3">
+                          {section.points.map((point) => (
+                            <li key={point} className="flex items-start gap-2.5">
+                              <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-500" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    ))}
                   </div>
                 </div>
 
