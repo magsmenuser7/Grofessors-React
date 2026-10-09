@@ -67,8 +67,8 @@ type ApiError = {
 
 const API_BASE_URL =
   (import.meta.env.VITE_API_BASE_URL as string) ||
-    "https://api.grofesion.com/api";
-    // "http://127.0.0.1:8000/api";
+    // "https://api.grofesion.com/api";
+     "http://127.0.0.1:8000/api";
 
 const ONBOARDING_API =
   `${API_BASE_URL}/client-onboarding/`;
@@ -81,108 +81,108 @@ const NDA_SECTIONS = [
     id: 1,
     title: "Recitals & Background",
     points: [
-      "WHEREAS, Grofesion Innovations Private Limited, operating as Magsmen Strategy Consultants ('Magsmen'), is engaged in the business of providing strategy consulting, strategy creation, business diagnostics, personal strategy development (Stature), digital strategy advisory (Linkfluence), and related strategic advisory services[cite: 1].",
-      "WHEREAS, the Client is desirous of exploring, evaluating, or entering into a consulting engagement with Magsmen for the provision of one or more of the services mentioned above (the 'Engagement')[cite: 1].",
-      "WHEREAS, in the course of discussions, negotiations, and execution of the Engagement, each Party may disclose certain confidential, proprietary, sensitive, and non-public information[cite: 1].",
-      "WHEREAS, both Parties are desirous of protecting such confidential information from unauthorised disclosure, misuse, or exploitation[cite: 1]."
+      "WHEREAS, Grofesion Innovations Private Limited, operating as Magsmen Strategy Consultants ('Magsmen'), is engaged in the business of providing strategy consulting, strategy creation, business diagnostics, personal strategy development (Stature), digital strategy advisory (Linkfluence), and related strategic advisory services.",
+      "WHEREAS, the Client is desirous of exploring, evaluating, or entering into a consulting engagement with Magsmen for the provision of one or more of the services mentioned above (the 'Engagement').",
+      "WHEREAS, in the course of discussions, negotiations, and execution of the Engagement, each Party may disclose certain confidential, proprietary, sensitive, and non-public information.",
+      "WHEREAS, both Parties are desirous of protecting such confidential information from unauthorised disclosure, misuse, or exploitation."
     ]
   },
   {
     id: 2,
     title: "1. Definitions and Interpretation",
     points: [
-      "Agreement means this Non-Disclosure Agreement, together with all schedules, annexures, and amendments[cite: 2].",
-      "Applicable Law includes Indian Contract Act 1872, Companies Act 2013, Information Technology Act 2000, Digital Personal Data Protection Act 2023, Copyright Act 1957, Trade Marks Act 1999, and Arbitration and Conciliation Act 1996[cite: 2].",
-      "Confidential Information covers information and materials disclosed in any form when marked confidential or reasonably understood to be confidential[cite: 2].",
-      "Consulting Party is Grofesion Innovations Private Limited operating as Magsmen Strategy Consultants[cite: 2].",
-      "Intellectual Property includes patents, copyrights, trademarks, trade secrets, know-how, design, database, and moral rights[cite: 2].",
-      "Permitted Purpose is evaluating, structuring, negotiating, and carrying out the Engagement and implementing outputs within the Client's organisation[cite: 2]."
+      "Agreement means this Non-Disclosure Agreement, together with all schedules, annexures, and amendments.",
+      "Applicable Law includes Indian Contract Act 1872, Companies Act 2013, Information Technology Act 2000, Digital Personal Data Protection Act 2023, Copyright Act 1957, Trade Marks Act 1999, and Arbitration and Conciliation Act 1996.",
+      "Confidential Information covers information and materials disclosed in any form when marked confidential or reasonably understood to be confidential.",
+      "Consulting Party is Grofesion Innovations Private Limited operating as Magsmen Strategy Consultants.",
+      "Intellectual Property includes patents, copyrights, trademarks, trade secrets, know-how, design, database, and moral rights.",
+      "Permitted Purpose is evaluating, structuring, negotiating, and carrying out the Engagement and implementing outputs within the Client's organisation."
     ]
   },
   {
     id: 3,
     title: "2. Scope and Categories of Confidential Information",
     points: [
-      "Client Confidential Information: Business strategies, growth plans, market expansion intentions, financial data, pricing models, customer lists, and vendor agreements[cite: 3].",
-      "Stature Engagements: Personal, financial, health, relationship, and political information shared receives heightened confidentiality equivalent to legally privileged communications[cite: 3].",
-      "Magsmen Confidential Information: Proprietary methodology, frameworks, diagnostic tools, analytical models, pricing logic, commercial terms, and internal operating processes[cite: 3, 4]."
+      "Client Confidential Information: Business strategies, growth plans, market expansion intentions, financial data, pricing models, customer lists, and vendor agreements.",
+      "Stature Engagements: Personal, financial, health, relationship, and political information shared receives heightened confidentiality equivalent to legally privileged communications.",
+      "Magsmen Confidential Information: Proprietary methodology, frameworks, diagnostic tools, analytical models, pricing logic, commercial terms, and internal operating processes."
     ]
   },
   {
     id: 4,
     title: "3. Exclusions from Confidentiality Obligations",
     points: [
-      "Information in the public domain through no breach by the Receiving Party[cite: 4].",
-      "Lawfully known prior to disclosure or independently developed without reference to Disclosing Party's information[cite: 4].",
-      "Required disclosure pursuant to Applicable Law or court order under strict notice and cooperation requirements[cite: 4]."
+      "Information in the public domain through no breach by the Receiving Party.",
+      "Lawfully known prior to disclosure or independently developed without reference to Disclosing Party's information.",
+      "Required disclosure pursuant to Applicable Law or court order under strict notice and cooperation requirements."
     ]
   },
   {
     id: 5,
     title: "4. Obligations of the Receiving Party",
     points: [
-      "Hold all confidential information in strict confidence and safeguard it with reasonable professional care[cite: 4, 5].",
-      "Use information solely and exclusively for the Permitted Purpose[cite: 4].",
-      "Client shall not reverse-engineer, decompile, adapt, or replicate Magsmen's Proprietary Methodology, nor share proposals or frameworks with competitors[cite: 5]."
+      "Hold all confidential information in strict confidence and safeguard it with reasonable professional care.",
+      "Use information solely and exclusively for the Permitted Purpose.",
+      "Client shall not reverse-engineer, decompile, adapt, or replicate Magsmen's Proprietary Methodology, nor share proposals or frameworks with competitors."
     ]
   },
   {
     id: 6,
     title: "5. Intellectual Property Rights",
     points: [
-      "Nothing in the agreement grants the Receiving Party any ownership right, title, or license in the other Party's IP[cite: 5].",
-      "Magsmen's pre-existing IP and Proprietary Methodology remain the exclusive property of Grofesion Innovations Private Limited[cite: 5].",
-      "Work Product vests in the Client only upon receipt of full and final payment of all fees due[cite: 6]."
+      "Nothing in the agreement grants the Receiving Party any ownership right, title, or license in the other Party's IP.",
+      "Magsmen's pre-existing IP and Proprietary Methodology remain the exclusive property of Grofesion Innovations Private Limited.",
+      "Work Product vests in the Client only upon receipt of full and final payment of all fees due."
     ]
   },
   {
     id: 7,
     title: "6. Non-Solicitation and Non-Circumvention",
     points: [
-      "Client shall not solicit, recruit, or employ any employee, contractor, or advisor of Magsmen involved in the Engagement for 24 months post-termination[cite: 6].",
-      "Client shall not use confidential information to bypass Magsmen and directly engage sub-contractors or specialist partners[cite: 6]."
+      "Client shall not solicit, recruit, or employ any employee, contractor, or advisor of Magsmen involved in the Engagement for 24 months post-termination.",
+      "Client shall not use confidential information to bypass Magsmen and directly engage sub-contractors or specialist partners."
     ]
   },
   {
     id: 8,
     title: "7. Personal Data and Data Protection",
     points: [
-      "Compliance with all applicable data protection laws, including the Digital Personal Data Protection Act 2023[cite: 7].",
-      "Special category personal data during Stature engagements receives heightened confidentiality equivalent to legal privilege[cite: 7].",
-      "Parties must implement adequate security safeguards and notify breaches within 48 hours[cite: 7]."
+      "Compliance with all applicable data protection laws, including the Digital Personal Data Protection Act 2023.",
+      "Special category personal data during Stature engagements receives heightened confidentiality equivalent to legal privilege.",
+      "Parties must implement adequate security safeguards and notify breaches within 48 hours."
     ]
   },
   {
     id: 9,
     title: "8. Term and Duration of Obligations",
     points: [
-      "Agreement takes effect on the Effective Date and remains in force for the duration of the Engagement[cite: 7].",
-      "Confidentiality obligations continue for 5 years post-engagement for standard information and indefinitely for Trade Secrets[cite: 7]."
+      "Agreement takes effect on the Effective Date and remains in force for the duration of the Engagement.",
+      "Confidentiality obligations continue for 5 years post-engagement for standard information and indefinitely for Trade Secrets."
     ]
   },
   {
     id: 10,
     title: "9. Return and Destruction of Information",
     points: [
-      "Upon written demand or termination, return or permanently destroy all tangible and electronic confidential materials[cite: 8].",
-      "Magsmen may retain encrypted archive copies of work products for 7 years for quality assurance and liability management[cite: 8]."
+      "Upon written demand or termination, return or permanently destroy all tangible and electronic confidential materials.",
+      "Magsmen may retain encrypted archive copies of work products for 7 years for quality assurance and liability management."
     ]
   },
   {
     id: 11,
     title: "10 & 11. Representations, Warranties, and Remedies",
     points: [
-      "Each party warrants full legal authority to enter into and perform the agreement[cite: 8, 9].",
-      "Breach of confidentiality causes irreparable harm, entitling non-breaching party to seek immediate injunctive relief and specific performance[cite: 9]."
+      "Each party warrants full legal authority to enter into and perform the agreement.",
+      "Breach of confidentiality causes irreparable harm, entitling non-breaching party to seek immediate injunctive relief and specific performance."
     ]
   },
   {
     id: 12,
     title: "12, 13 & 14. Governing Law and General Provisions",
     points: [
-      "Agreement is governed by the laws of the Republic of India[cite: 10].",
-      "Disputes shall be resolved through good-faith negotiations or binding arbitration in Guntur, Andhra Pradesh, India[cite: 10].",
-      "Includes standard general clauses covering amendments, severability, assignment restrictions, notices, and force majeure[cite: 10, 11]."
+      "Agreement is governed by the laws of the Republic of India.",
+      "Disputes shall be resolved through good-faith negotiations or binding arbitration in Guntur, Andhra Pradesh, India.",
+      "Includes standard general clauses covering amendments, severability, assignment restrictions, notices, and force majeure."
     ]
   }
 ];
@@ -259,7 +259,7 @@ const INITIAL_FORM: ClientForm = {
   email: "",
   mobile: "",
   company_name: "",
-  entity_type: "Private Limited Company",
+  entity_type: "",
   cin_no: "",
   gst_no: "",
   pan_no: "",
@@ -385,6 +385,7 @@ const ClientOnboarding: React.FC = () => {
       errors.mobile = "Please enter a valid mobile number.";
     }
     if (!form.company_name.trim()) errors.company_name = "Business/company name is required.";
+    if (!form.entity_type.trim()) errors.entity_type = "Type of Entity is required.";
     if (!form.cin_no.trim()) errors.cin_no = "CIN / Registration No. is required.";
     if (!form.gst_no.trim()) errors.gst_no = "GST Registration No. is required.";
     if (!form.pan_no.trim()) errors.pan_no = "PAN is required.";
@@ -622,7 +623,7 @@ const ClientOnboarding: React.FC = () => {
               </div>
             )}
 
-            {/* STEP 1: CLIENT DETAILS (Includes Entity Type, CIN, GST, PAN, Signatory details) */}
+            {/* STEP 1: CLIENT DETAILS (Manual Input for Type of Entity) */}
             {step === 1 && (
               <section className="bg-white rounded-[24px] border border-gray-200 shadow-sm p-5 sm:p-7 lg:p-9 space-y-6">
                 <div className="flex items-center gap-4 mb-2">
@@ -640,31 +641,8 @@ const ClientOnboarding: React.FC = () => {
                   <FormInput label="Email Address" name="email" type="email" value={form.email} onChange={handleInputChange} placeholder="name@company.com" icon={<Mail size={18} />} required error={fieldErrors.email} />
                   <FormInput label="Mobile Number" name="mobile" type="tel" value={form.mobile} onChange={handleInputChange} placeholder="+91 XXXXX XXXXX" icon={<Phone size={18} />} required error={fieldErrors.mobile} />
                   <FormInput label="Business / Company Name" name="company_name" value={form.company_name} onChange={handleInputChange} placeholder="Enter company name" icon={<Building2 size={18} />} required error={fieldErrors.company_name} />
-
-                  <div className="md:col-span-2">
-                    <label className="block mb-2 text-sm font-semibold text-gray-800">
-                      Type of Entity <span className="ml-1 text-red-500">*</span>
-                    </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                      {["Private Limited Company", "LLP", "Proprietorship", "Partnership", "Individual"].map((type) => (
-                        <label key={type} className={`flex items-center gap-2.5 rounded-xl border p-3.5 text-xs font-semibold cursor-pointer transition ${form.entity_type === type ? "border-gray-900 bg-gray-900 text-white" : "border-gray-200 bg-gray-50 text-gray-800 hover:bg-white"}`}>
-                          <input
-                            type="radio"
-                            name="entity_type"
-                            value={type}
-                            checked={form.entity_type === type}
-                            onChange={handleInputChange}
-                            className="sr-only"
-                          />
-                          <span className={`w-4 h-4 rounded-full border flex items-center justify-center ${form.entity_type === type ? "border-white bg-white text-gray-900" : "border-gray-300"}`}>
-                            {form.entity_type === type && <span className="w-2 h-2 rounded-full bg-gray-900" />}
-                          </span>
-                          <span className="truncate">{type}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
+                  
+                  <FormInput label="Type of Entity" name="entity_type" value={form.entity_type} onChange={handleInputChange} placeholder="e.g. Private Limited Company / LLP / Proprietorship" icon={<Building2 size={18} />} required error={fieldErrors.entity_type} />
                   <FormInput label="CIN / Registration No." name="cin_no" value={form.cin_no} onChange={handleInputChange} placeholder="Enter CIN or Reg No." icon={<FileText size={18} />} required error={fieldErrors.cin_no} />
                   <FormInput label="GST Registration No." name="gst_no" value={form.gst_no} onChange={handleInputChange} placeholder="Enter GSTIN" icon={<FileText size={18} />} required error={fieldErrors.gst_no} />
                   <FormInput label="PAN" name="pan_no" value={form.pan_no} onChange={handleInputChange} placeholder="Enter PAN" icon={<FileText size={18} />} required error={fieldErrors.pan_no} />
@@ -770,7 +748,7 @@ const ClientOnboarding: React.FC = () => {
               </section>
             )}
 
-            {/* STEP 3: NDA ACCORDION */}
+            {/* STEP 3: NDA ACCORDION (Button left-aligned, citations removed) */}
             {step === 3 && (
               <section className="space-y-4">
                 <div className="flex items-center justify-between mb-4">
@@ -818,7 +796,8 @@ const ClientOnboarding: React.FC = () => {
                             ))}
                           </ul>
 
-                          <div className="pt-4 flex justify-end">
+                          {/* Left aligned button */}
+                          <div className="pt-4 flex justify-start">
                             <button
                               type="button"
                               onClick={() => markSectionAsRead(sec.id)}
