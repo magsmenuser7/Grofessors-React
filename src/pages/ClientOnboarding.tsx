@@ -555,6 +555,7 @@ const ClientOnboarding: React.FC = () => {
   };
 
   const handleSubmit = async () => {
+    debugger;
     setError("");
     if (!validateClientDetails()) { setStep(1); return; }
     if (!validateServices()) { setStep(2); return; }
